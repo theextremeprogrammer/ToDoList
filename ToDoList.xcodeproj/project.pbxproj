@@ -7,12 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B82B33142191886D007FB06B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B33132191886D007FB06B /* AppDelegate.swift */; };
-		B82B33162191886D007FB06B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B33152191886D007FB06B /* ViewController.swift */; };
-		B82B33192191886D007FB06B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82B33172191886D007FB06B /* Main.storyboard */; };
-		B82B331B2191886E007FB06B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82B331A2191886E007FB06B /* Assets.xcassets */; };
-		B82B331E2191886E007FB06B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B82B331C2191886E007FB06B /* LaunchScreen.storyboard */; };
-		B82B33292191886E007FB06B /* ToDoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B33282191886E007FB06B /* ToDoListTests.swift */; };
+		5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AD4932909A9BAF2E57516 /* Assets.xcassets */; };
+		5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */; };
+		5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */; };
+		B82B333B21918A1E007FB06B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B333A21918A1E007FB06B /* main.swift */; };
+		B82B333F21918AFF007FB06B /* WiringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD390F02886113C41E2FE /* WiringTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +25,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B6AD390F02886113C41E2FE /* WiringTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WiringTest.swift; sourceTree = "<group>"; };
+		5B6AD42E111941A0DCBD6BE4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		5B6AD4932909A9BAF2E57516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B6AD6FB7690707120910247 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B82B33102191886D007FB06B /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B82B33132191886D007FB06B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B82B33152191886D007FB06B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B82B33182191886D007FB06B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B82B331A2191886E007FB06B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B82B331D2191886E007FB06B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B82B331F2191886E007FB06B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B82B33242191886E007FB06B /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B82B33282191886E007FB06B /* ToDoListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListTests.swift; sourceTree = "<group>"; };
-		B82B332A2191886E007FB06B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B82B333A21918A1E007FB06B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +75,10 @@
 		B82B33122191886D007FB06B /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
-				B82B33132191886D007FB06B /* AppDelegate.swift */,
-				B82B33152191886D007FB06B /* ViewController.swift */,
-				B82B33172191886D007FB06B /* Main.storyboard */,
-				B82B331A2191886E007FB06B /* Assets.xcassets */,
-				B82B331C2191886E007FB06B /* LaunchScreen.storyboard */,
-				B82B331F2191886E007FB06B /* Info.plist */,
+				B82B33342191889A007FB06B /* Application */,
+				B82B33352191889A007FB06B /* Components */,
+				B82B33362191889A007FB06B /* Frameworks */,
+				B82B33332191889A007FB06B /* UI */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -90,10 +86,67 @@
 		B82B33272191886E007FB06B /* ToDoListTests */ = {
 			isa = PBXGroup;
 			children = (
-				B82B33282191886E007FB06B /* ToDoListTests.swift */,
-				B82B332A2191886E007FB06B /* Info.plist */,
+				B82B33372191891A007FB06B /* Application */,
+				B82B33382191891A007FB06B /* Components */,
+				B82B33392191891A007FB06B /* UI */,
 			);
 			path = ToDoListTests;
+			sourceTree = "<group>";
+		};
+		B82B33332191889A007FB06B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		B82B33342191889A007FB06B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5B6AD6FB7690707120910247 /* Info.plist */,
+				5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */,
+				5B6AD4932909A9BAF2E57516 /* Assets.xcassets */,
+				5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */,
+				B82B333A21918A1E007FB06B /* main.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B82B33352191889A007FB06B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B82B33362191889A007FB06B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Frameworks;
+			sourceTree = "<group>";
+		};
+		B82B33372191891A007FB06B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5B6AD42E111941A0DCBD6BE4 /* Info.plist */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B82B33382191891A007FB06B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5B6AD390F02886113C41E2FE /* WiringTest.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B82B33392191891A007FB06B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +230,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B82B331E2191886E007FB06B /* LaunchScreen.storyboard in Resources */,
-				B82B331B2191886E007FB06B /* Assets.xcassets in Resources */,
-				B82B33192191886D007FB06B /* Main.storyboard in Resources */,
+				5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */,
+				5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +249,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B82B33162191886D007FB06B /* ViewController.swift in Sources */,
-				B82B33142191886D007FB06B /* AppDelegate.swift in Sources */,
+				B82B333B21918A1E007FB06B /* main.swift in Sources */,
+				5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +258,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B82B33292191886E007FB06B /* ToDoListTests.swift in Sources */,
+				B82B333F21918AFF007FB06B /* WiringTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,25 +271,6 @@
 			targetProxy = B82B33252191886E007FB06B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		B82B33172191886D007FB06B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B82B33182191886D007FB06B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B82B331C2191886E007FB06B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B82B331D2191886E007FB06B /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B82B332B2191886E007FB06B /* Debug */ = {
@@ -362,7 +395,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LFKG3J295;
-				INFOPLIST_FILE = ToDoList/Info.plist;
+				INFOPLIST_FILE = ToDoList/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +413,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LFKG3J295;
-				INFOPLIST_FILE = ToDoList/Info.plist;
+				INFOPLIST_FILE = ToDoList/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -399,7 +432,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LFKG3J295;
-				INFOPLIST_FILE = ToDoListTests/Info.plist;
+				INFOPLIST_FILE = ToDoListTests/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,7 +453,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LFKG3J295;
-				INFOPLIST_FILE = ToDoListTests/Info.plist;
+				INFOPLIST_FILE = ToDoListTests/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
