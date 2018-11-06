@@ -12,6 +12,7 @@
 		5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */; };
 		B82B333B21918A1E007FB06B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B333A21918A1E007FB06B /* main.swift */; };
 		B82B333F21918AFF007FB06B /* WiringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD390F02886113C41E2FE /* WiringTest.swift */; };
+		B8A7025221918C630034B11D /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = B8A7025121918C630034B11D /* Makefile */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		B82B33102191886D007FB06B /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82B33242191886E007FB06B /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82B333A21918A1E007FB06B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B8A7025121918C630034B11D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +59,10 @@
 		B82B33072191886D007FB06B = {
 			isa = PBXGroup;
 			children = (
+				B8A7025121918C630034B11D /* Makefile */,
+				B82B33112191886D007FB06B /* Products */,
 				B82B33122191886D007FB06B /* ToDoList */,
 				B82B33272191886E007FB06B /* ToDoListTests */,
-				B82B33112191886D007FB06B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,10 +106,10 @@
 		B82B33342191889A007FB06B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */,
+				5B6AD4932909A9BAF2E57516 /* Assets.xcassets */,
 				5B6AD6FB7690707120910247 /* Info.plist */,
 				5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */,
-				5B6AD4932909A9BAF2E57516 /* Assets.xcassets */,
-				5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */,
 				B82B333A21918A1E007FB06B /* main.swift */,
 			);
 			path = Application;
@@ -230,8 +233,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */,
 				5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */,
+				5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +252,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B82B333B21918A1E007FB06B /* main.swift in Sources */,
 				5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */,
+				B82B333B21918A1E007FB06B /* main.swift in Sources */,
+				B8A7025221918C630034B11D /* Makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
