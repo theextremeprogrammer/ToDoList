@@ -13,6 +13,17 @@
 		B82B333B21918A1E007FB06B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B333A21918A1E007FB06B /* main.swift */; };
 		B82B333F21918AFF007FB06B /* WiringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD390F02886113C41E2FE /* WiringTest.swift */; };
 		B8A7025221918C630034B11D /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = B8A7025121918C630034B11D /* Makefile */; };
+		B8A7025521918D8E0034B11D /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = B8A7025421918D8E0034B11D /* Cartfile */; };
+		B8A7025721918DC60034B11D /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = B8A7025621918DC60034B11D /* Cartfile.private */; };
+		B8A7025C2191908A0034B11D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A702592191908A0034B11D /* Result.framework */; };
+		B8A7025D2191908A0034B11D /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025A2191908A0034B11D /* BrightFutures.framework */; };
+		B8A7025E2191908A0034B11D /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025B2191908A0034B11D /* PureLayout.framework */; };
+		B8A70263219190EE0034B11D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A70260219190EE0034B11D /* Quick.framework */; };
+		B8A70264219190EE0034B11D /* Succinct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A70261219190EE0034B11D /* Succinct.framework */; };
+		B8A70265219190EE0034B11D /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A70262219190EE0034B11D /* Nimble.framework */; };
+		B8A702672191911A0034B11D /* Nimble.framework in Carthage: Copy Files */ = {isa = PBXBuildFile; fileRef = B8A70262219190EE0034B11D /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8A702682191911A0034B11D /* Quick.framework in Carthage: Copy Files */ = {isa = PBXBuildFile; fileRef = B8A70260219190EE0034B11D /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8A702692191911A0034B11D /* Succinct.framework in Carthage: Copy Files */ = {isa = PBXBuildFile; fileRef = B8A70261219190EE0034B11D /* Succinct.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +36,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		B8A70266219190FB0034B11D /* Carthage: Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B8A702672191911A0034B11D /* Nimble.framework in Carthage: Copy Files */,
+				B8A702682191911A0034B11D /* Quick.framework in Carthage: Copy Files */,
+				B8A702692191911A0034B11D /* Succinct.framework in Carthage: Copy Files */,
+			);
+			name = "Carthage: Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5B6AD390F02886113C41E2FE /* WiringTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WiringTest.swift; sourceTree = "<group>"; };
 		5B6AD42E111941A0DCBD6BE4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +63,14 @@
 		B82B33242191886E007FB06B /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82B333A21918A1E007FB06B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B8A7025121918C630034B11D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		B8A7025421918D8E0034B11D /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
+		B8A7025621918DC60034B11D /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
+		B8A702592191908A0034B11D /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		B8A7025A2191908A0034B11D /* BrightFutures.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BrightFutures.framework; path = Carthage/Build/iOS/BrightFutures.framework; sourceTree = "<group>"; };
+		B8A7025B2191908A0034B11D /* PureLayout.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout.framework; path = Carthage/Build/iOS/PureLayout.framework; sourceTree = "<group>"; };
+		B8A70260219190EE0034B11D /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		B8A70261219190EE0034B11D /* Succinct.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Succinct.framework; path = Carthage/Build/iOS/Succinct.framework; sourceTree = "<group>"; };
+		B8A70262219190EE0034B11D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +78,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A7025D2191908A0034B11D /* BrightFutures.framework in Frameworks */,
+				B8A7025E2191908A0034B11D /* PureLayout.framework in Frameworks */,
+				B8A7025C2191908A0034B11D /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +88,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8A70265219190EE0034B11D /* Nimble.framework in Frameworks */,
+				B8A70263219190EE0034B11D /* Quick.framework in Frameworks */,
+				B8A70264219190EE0034B11D /* Succinct.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,10 +100,13 @@
 		B82B33072191886D007FB06B = {
 			isa = PBXGroup;
 			children = (
+				B8A7025421918D8E0034B11D /* Cartfile */,
+				B8A70258219190890034B11D /* Frameworks */,
 				B8A7025121918C630034B11D /* Makefile */,
 				B82B33112191886D007FB06B /* Products */,
 				B82B33122191886D007FB06B /* ToDoList */,
 				B82B33272191886E007FB06B /* ToDoListTests */,
+				B8A7025621918DC60034B11D /* Cartfile.private */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,7 +124,6 @@
 			children = (
 				B82B33342191889A007FB06B /* Application */,
 				B82B33352191889A007FB06B /* Components */,
-				B82B33362191889A007FB06B /* Frameworks */,
 				B82B33332191889A007FB06B /* UI */,
 			);
 			path = ToDoList;
@@ -122,13 +165,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		B82B33362191889A007FB06B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 		B82B33372191891A007FB06B /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +188,19 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		B8A70258219190890034B11D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8A7025A2191908A0034B11D /* BrightFutures.framework */,
+				B8A70262219190EE0034B11D /* Nimble.framework */,
+				B8A7025B2191908A0034B11D /* PureLayout.framework */,
+				B8A70260219190EE0034B11D /* Quick.framework */,
+				B8A702592191908A0034B11D /* Result.framework */,
+				B8A70261219190EE0034B11D /* Succinct.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -162,6 +211,7 @@
 				B82B330C2191886D007FB06B /* Sources */,
 				B82B330D2191886D007FB06B /* Frameworks */,
 				B82B330E2191886D007FB06B /* Resources */,
+				B8A7025F219190940034B11D /* Carthage: Run Script */,
 			);
 			buildRules = (
 			);
@@ -179,6 +229,7 @@
 				B82B33202191886E007FB06B /* Sources */,
 				B82B33212191886E007FB06B /* Frameworks */,
 				B82B33222191886E007FB06B /* Resources */,
+				B8A70266219190FB0034B11D /* Carthage: Copy Files */,
 			);
 			buildRules = (
 			);
@@ -234,6 +285,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */,
+				B8A7025521918D8E0034B11D /* Cartfile in Resources */,
+				B8A7025721918DC60034B11D /* Cartfile.private in Resources */,
 				5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +299,30 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B8A7025F219190940034B11D /* Carthage: Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/PureLayout.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/BrightFutures.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
+			);
+			name = "Carthage: Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B82B330C2191886D007FB06B /* Sources */ = {
@@ -399,6 +476,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LFKG3J295;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ToDoList/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -417,6 +498,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LFKG3J295;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ToDoList/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -436,6 +521,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LFKG3J295;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ToDoListTests/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -457,6 +546,10 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4LFKG3J295;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ToDoListTests/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
