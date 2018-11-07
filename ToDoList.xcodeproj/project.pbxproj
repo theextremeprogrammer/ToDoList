@@ -12,9 +12,6 @@
 		5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */; };
 		B82B333B21918A1E007FB06B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B333A21918A1E007FB06B /* main.swift */; };
 		B82B333F21918AFF007FB06B /* WiringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD390F02886113C41E2FE /* WiringTest.swift */; };
-		B8A7025221918C630034B11D /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = B8A7025121918C630034B11D /* Makefile */; };
-		B8A7025521918D8E0034B11D /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = B8A7025421918D8E0034B11D /* Cartfile */; };
-		B8A7025721918DC60034B11D /* Cartfile.private in Resources */ = {isa = PBXBuildFile; fileRef = B8A7025621918DC60034B11D /* Cartfile.private */; };
 		B8A7025C2191908A0034B11D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A702592191908A0034B11D /* Result.framework */; };
 		B8A7025D2191908A0034B11D /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025A2191908A0034B11D /* BrightFutures.framework */; };
 		B8A7025E2191908A0034B11D /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025B2191908A0034B11D /* PureLayout.framework */; };
@@ -101,12 +98,12 @@
 			isa = PBXGroup;
 			children = (
 				B8A7025421918D8E0034B11D /* Cartfile */,
+				B8A7025621918DC60034B11D /* Cartfile.private */,
 				B8A70258219190890034B11D /* Frameworks */,
 				B8A7025121918C630034B11D /* Makefile */,
 				B82B33112191886D007FB06B /* Products */,
 				B82B33122191886D007FB06B /* ToDoList */,
 				B82B33272191886E007FB06B /* ToDoListTests */,
-				B8A7025621918DC60034B11D /* Cartfile.private */,
 			);
 			sourceTree = "<group>";
 		};
@@ -285,8 +282,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */,
-				B8A7025521918D8E0034B11D /* Cartfile in Resources */,
-				B8A7025721918DC60034B11D /* Cartfile.private in Resources */,
 				5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -331,7 +326,6 @@
 			files = (
 				5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */,
 				B82B333B21918A1E007FB06B /* main.swift in Sources */,
-				B8A7025221918C630034B11D /* Makefile in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
