@@ -14,20 +14,19 @@ class NetworkToDoListRepositorySpec: QuickSpec {
             }
             
             it("returns a future with hard-coded to do items") {
-                let successExpectation = self.expectation(description: "")
                 var toDoItems: [ToDoItem]? = nil
 
                 
-                let getAllFuture = toDoListRepo.getAll()
-
-
-                getAllFuture.onSuccess { returnedToDoItems in
-                    toDoItems = returnedToDoItems
-                    successExpectation.fulfill()
+                SimpleXCTestExpectation.execute(testObject: self) { successExpectation in
+                    let getAllFuture = toDoListRepo.getAll()
+                    
+                    getAllFuture.onSuccess { returnedToDoItems in
+                        toDoItems = returnedToDoItems
+                        successExpectation.fulfill()
+                    }
                 }
 
-                self.waitForExpectations(timeout: 1.0, handler: nil)
-
+                
                 expect(toDoItems?.count).to(equal(2))
                 expect(toDoItems?.first?.title).to(equal("Get groceries"))
                 expect(toDoItems?.last?.title).to(equal("Pick up dry cleaning"))
