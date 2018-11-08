@@ -3,7 +3,7 @@ import PureLayout
 
 class ToDoListViewController: UIViewController {
     // MARK: - Injected Properties
-    private var toDoListRepo: ToDoListRepository?
+    private var toDoListRepo: ToDoListRepository
     
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
@@ -13,7 +13,7 @@ class ToDoListViewController: UIViewController {
     private var tableView: UITableView!
 
     // MARK: - Initializers
-    init(toDoListRepo: ToDoListRepository? = nil) {
+    init(toDoListRepo: ToDoListRepository) {
         self.toDoListRepo = toDoListRepo
         
         super.init(nibName: nil, bundle: nil)
@@ -35,7 +35,7 @@ class ToDoListViewController: UIViewController {
         addSubviews()
         configureSubviews()
         
-        toDoListRepo?
+        toDoListRepo
             .getAll()
             .onSuccess { toDoItems in
                 self.toDoItems = toDoItems

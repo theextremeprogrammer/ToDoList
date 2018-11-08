@@ -7,7 +7,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        let rootViewController = ToDoListViewController()
+        let toDoListRepo = NetworkToDoListRepository()
+        let rootViewController = ToDoListViewController(toDoListRepo: toDoListRepo)
         
         window = UIWindow()
         window?.rootViewController = rootViewController
