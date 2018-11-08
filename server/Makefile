@@ -4,5 +4,8 @@ tests units:
 integrationtests:
 	@./gradlew clean build integrationtest -x test
 
+alltests:
+	@./gradlew clean build test integrationtest
+
 start:
 	@./gradlew bootrun
