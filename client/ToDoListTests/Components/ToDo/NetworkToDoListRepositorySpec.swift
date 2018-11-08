@@ -17,13 +17,13 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                 var toDoItems: [ToDoItem]? = nil
 
                 
-                SimpleXCTestExpectation.execute(testObject: self) { successExpectation in
-                    let getAllFuture = toDoListRepo.getAll()
-                    
-                    getAllFuture.onSuccess { returnedToDoItems in
-                        toDoItems = returnedToDoItems
-                        successExpectation.fulfill()
-                    }
+                SimpleXCTestExpectation.execute(testObject: self) { testExpectation in
+                    toDoListRepo
+                        .getAll()
+                        .onSuccess { returnedToDoItems in
+                            toDoItems = returnedToDoItems
+                            testExpectation.fulfill()
+                        }
                 }
 
                 
