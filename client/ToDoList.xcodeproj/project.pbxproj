@@ -21,6 +21,8 @@
 		B8A702672191911A0034B11D /* Nimble.framework in Carthage: Copy Files */ = {isa = PBXBuildFile; fileRef = B8A70262219190EE0034B11D /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B8A702682191911A0034B11D /* Quick.framework in Carthage: Copy Files */ = {isa = PBXBuildFile; fileRef = B8A70260219190EE0034B11D /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B8A702692191911A0034B11D /* Succinct.framework in Carthage: Copy Files */ = {isa = PBXBuildFile; fileRef = B8A70261219190EE0034B11D /* Succinct.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B8CCC73021940DB1001E4DB9 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */; };
+		B8CCC73421940F87001E4DB9 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC73321940F87001E4DB9 /* ToDoListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		B8A70260219190EE0034B11D /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		B8A70261219190EE0034B11D /* Succinct.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Succinct.framework; path = Carthage/Build/iOS/Succinct.framework; sourceTree = "<group>"; };
 		B8A70262219190EE0034B11D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
+		B8CCC73321940F87001E4DB9 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				B82B33342191889A007FB06B /* Application */,
-				B82B33352191889A007FB06B /* Components */,
-				B82B33332191889A007FB06B /* UI */,
+				B8CCC73221940F47001E4DB9 /* UI */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 		B82B33372191891A007FB06B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */,
 				5B6AD42E111941A0DCBD6BE4 /* Info.plist */,
 			);
 			path = Application;
@@ -196,6 +200,14 @@
 				B8A70261219190EE0034B11D /* Succinct.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B8CCC73221940F47001E4DB9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B8CCC73321940F87001E4DB9 /* ToDoListViewController.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,6 +338,7 @@
 			files = (
 				5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */,
 				B82B333B21918A1E007FB06B /* main.swift in Sources */,
+				B8CCC73421940F87001E4DB9 /* ToDoListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8CCC73021940DB1001E4DB9 /* AppDelegateSpec.swift in Sources */,
 				B82B333F21918AFF007FB06B /* WiringTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

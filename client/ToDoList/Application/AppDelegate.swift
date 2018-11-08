@@ -7,11 +7,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = UIColor.cyan.withAlphaComponent(0.3)
+        let rootViewController = ToDoListViewController()
         
         window = UIWindow()
-        window?.rootViewController = viewController
+        window?.rootViewController = rootViewController
         window?.makeKeyAndVisible()
         
         return true
