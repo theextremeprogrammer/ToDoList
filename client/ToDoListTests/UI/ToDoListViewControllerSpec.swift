@@ -1,6 +1,7 @@
 import Quick
 import Nimble
 import Succinct
+import BrightFutures
 @testable import ToDoList
 
 class ToDoListTableViewControllerSpec: QuickSpec {
@@ -15,8 +16,22 @@ class ToDoListTableViewControllerSpec: QuickSpec {
             }
             
             it("displays the title of several to do list items") {
-                let toDoListTableViewController = ToDoListViewController()
+                let getAllPromise = Promise<[ToDoItem], RepoError>()
+                
+                let stubToDoListRepository = StubToDoListRepository()
+                stubToDoListRepository.getAll_returnValue = getAllPromise.future
+                
+                let toDoListTableViewController = ToDoListViewController(
+                    toDoListRepo: stubToDoListRepository
+                )
                 toDoListTableViewController.loadViewControllerForUnitTest()
+                
+                
+                getAllPromise.success([
+                    ToDoItem(title: "Get groceries"),
+                    ToDoItem(title: "Pick up dry cleaning")
+                ])
+                RunLoop.advance()
                 
                 
                 expect(toDoListTableViewController.hasLabel(withExactText: "Get groceries")).to(beTrue())

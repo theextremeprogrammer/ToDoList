@@ -2,20 +2,20 @@ import UIKit
 import PureLayout
 
 class ToDoListViewController: UIViewController {
+    // MARK: - Injected Properties
+    private var toDoListRepo: ToDoListRepository?
+    
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
-    private let toDoItems: [ToDoItem]
+    private var toDoItems: [ToDoItem] = []
 
     // MARK: - View Elements
     private var tableView: UITableView!
 
     // MARK: - Initializers
-    init() {
-        toDoItems = [
-            ToDoItem(title: "Get groceries"),
-            ToDoItem(title: "Pick up dry cleaning")
-        ]
-
+    init(toDoListRepo: ToDoListRepository? = nil) {
+        self.toDoListRepo = toDoListRepo
+        
         super.init(nibName: nil, bundle: nil)
 
         view.backgroundColor = UIColor.white
@@ -34,6 +34,12 @@ class ToDoListViewController: UIViewController {
         configureNavigationBar()
         addSubviews()
         configureSubviews()
+        
+        toDoListRepo?
+            .getAll()
+            .onSuccess { toDoItems in
+                self.toDoItems = toDoItems
+            }
     }
 
     override func updateViewConstraints() {

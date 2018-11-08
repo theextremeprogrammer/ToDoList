@@ -10,6 +10,10 @@
 		5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AD4932909A9BAF2E57516 /* Assets.xcassets */; };
 		5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */; };
 		5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */; };
+		B80FCC1C219417D00021CF3F /* NetworkToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC1B219417D00021CF3F /* NetworkToDoListRepository.swift */; };
+		B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC1F219418340021CF3F /* StubToDoListRepository.swift */; };
+		B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC2221941FAD0021CF3F /* Runloop+Advance.swift */; };
+		B80FCC252194201A0021CF3F /* RepoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC242194201A0021CF3F /* RepoError.swift */; };
 		B82B333B21918A1E007FB06B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B333A21918A1E007FB06B /* main.swift */; };
 		B85F4542219411AC00C5AB33 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F4541219411AB00C5AB33 /* ToDoItem.swift */; };
 		B85F4543219411C200C5AB33 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC73321940F87001E4DB9 /* ToDoListViewController.swift */; };
@@ -58,6 +62,10 @@
 		5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B6AD6FB7690707120910247 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B80FCC1B219417D00021CF3F /* NetworkToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkToDoListRepository.swift; sourceTree = "<group>"; };
+		B80FCC1F219418340021CF3F /* StubToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubToDoListRepository.swift; sourceTree = "<group>"; };
+		B80FCC2221941FAD0021CF3F /* Runloop+Advance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runloop+Advance.swift"; sourceTree = "<group>"; };
+		B80FCC242194201A0021CF3F /* RepoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoError.swift; sourceTree = "<group>"; };
 		B82B33102191886D007FB06B /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82B33242191886E007FB06B /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82B333A21918A1E007FB06B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -100,6 +108,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B80FCC1D2194181E0021CF3F /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				B80FCC2121941F9D0021CF3F /* Asynchronous Testing */,
+				B80FCC1E2194182C0021CF3F /* ToDo */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B80FCC1E2194182C0021CF3F /* ToDo */ = {
+			isa = PBXGroup;
+			children = (
+				B80FCC1F219418340021CF3F /* StubToDoListRepository.swift */,
+			);
+			path = ToDo;
+			sourceTree = "<group>";
+		};
+		B80FCC2121941F9D0021CF3F /* Asynchronous Testing */ = {
+			isa = PBXGroup;
+			children = (
+				B80FCC2221941FAD0021CF3F /* Runloop+Advance.swift */,
+			);
+			path = "Asynchronous Testing";
+			sourceTree = "<group>";
+		};
 		B82B33072191886D007FB06B = {
 			isa = PBXGroup;
 			children = (
@@ -136,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				B82B33372191891A007FB06B /* Application */,
+				B80FCC1D2194181E0021CF3F /* Components */,
 				B82B33392191891A007FB06B /* UI */,
 			);
 			path = ToDoListTests;
@@ -181,6 +215,8 @@
 		B85F4540219411AB00C5AB33 /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				B80FCC1B219417D00021CF3F /* NetworkToDoListRepository.swift */,
+				B80FCC242194201A0021CF3F /* RepoError.swift */,
 				B85F4541219411AB00C5AB33 /* ToDoItem.swift */,
 			);
 			path = ToDo;
@@ -335,6 +371,8 @@
 			files = (
 				5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */,
 				B82B333B21918A1E007FB06B /* main.swift in Sources */,
+				B80FCC1C219417D00021CF3F /* NetworkToDoListRepository.swift in Sources */,
+				B80FCC252194201A0021CF3F /* RepoError.swift in Sources */,
 				B85F4542219411AC00C5AB33 /* ToDoItem.swift in Sources */,
 				B85F4543219411C200C5AB33 /* ToDoListViewController.swift in Sources */,
 			);
@@ -345,6 +383,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8CCC73021940DB1001E4DB9 /* AppDelegateSpec.swift in Sources */,
+				B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */,
+				B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */,
 				B8E8B130219407B20099500C /* ToDoListViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
