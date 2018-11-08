@@ -27,6 +27,9 @@ repositories {
 	mavenCentral()
 }
 
+/// Adds sourceSets for a separate integration test suite.
+/// This allows us to separate our unit tests from our integration tests.
+/// Guidance taken from the following blog: https://bit.ly/2PgKIJK
 sourceSets {
 	integrationTest {
 		java {
@@ -38,11 +41,14 @@ sourceSets {
 	}
 }
 
+/// By extending the integration test compile and runtime, we can re-leverage all of the already defined test dependencies.
+/// IMPORTANT: We need to extend the compile from "testImplementation" (Kotlin) instead of "testCompile" (Java).
 configurations {
 	integrationTestCompile.extendsFrom testImplementation
 	integrationTestRuntime.extendsFrom testRuntime
 }
 
+/// Integration test dependencies can be added as "integrationTestImplementation" as needed.
 dependencies {
 	implementation('org.springframework.boot:spring-boot-starter-web')
 	implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
@@ -67,6 +73,7 @@ compileTestKotlin {
 	}
 }
 
+/// Added to support Kotlin for integration tests.
 compileIntegrationTestKotlin {
 	kotlinOptions {
 		freeCompilerArgs = ["-Xjsr305=strict"]
@@ -74,18 +81,21 @@ compileIntegrationTestKotlin {
 	}
 }
 
-test {
-	testLogging {
-		events "passed", "skipped", "failed"
-	}
-}
-
+/// New task created for executing integration tests.
 task integrationTest(type: Test) {
 	testClassesDirs = sourceSets.integrationTest.output.classesDirs
 	classpath = sourceSets.integrationTest.runtimeClasspath
 	outputs.upToDateWhen { false }
 }
 
+/// Output the results of tests as they are executed (command line).
+test {
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
+}
+
+/// Output the results of tests as they are executed (command line).
 integrationTest {
 	testLogging {
 		events "passed", "skipped", "failed"
