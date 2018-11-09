@@ -17,7 +17,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                 var toDoItems: [ToDoItem]? = nil
 
                 
-                SimpleXCTestExpectation.execute(testObject: self) { testExpectation in
+                SimpleXCTestExpectation.execute(testCase: self) { testExpectation in
                     toDoListRepo
                         .getAll()
                         .onSuccess { returnedToDoItems in
