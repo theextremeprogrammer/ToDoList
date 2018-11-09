@@ -11,12 +11,16 @@ struct NetworkHttp: Http {
     let networkSession: NetworkSession
 
     func get(url urlString: String) -> Future<Data, HttpError>? {
+        let requestPromise = Promise<Data, HttpError>()
+        
         let url = URL(string: urlString)!
         let urlRequest = URLRequest(url: url)
         let _ = networkSession.dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
-            // TODO: Implementation
+            if let data = maybeData {
+                requestPromise.success(data)
+            }
         }
         
-        return nil
+        return requestPromise.future
     }
 }
