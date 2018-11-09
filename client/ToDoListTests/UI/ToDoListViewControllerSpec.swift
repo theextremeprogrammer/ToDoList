@@ -31,11 +31,10 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                     ToDoItem(title: "Get groceries"),
                     ToDoItem(title: "Pick up dry cleaning")
                 ])
-                RunLoop.advance()
                 
                 
-                expect(toDoListTableViewController.hasLabel(withExactText: "Get groceries")).to(beTrue())
-                expect(toDoListTableViewController.hasLabel(withExactText: "Pick up dry cleaning")).to(beTrue())
+                expect(toDoListTableViewController.hasLabel(withExactText: "Get groceries")).toEventually(beTrue())
+                expect(toDoListTableViewController.hasLabel(withExactText: "Pick up dry cleaning")).toEventually(beTrue())
             }
         }
     }
