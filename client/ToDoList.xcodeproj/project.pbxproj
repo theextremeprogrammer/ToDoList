@@ -22,6 +22,7 @@
 		B87136162195812500D9C489 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136152195812500D9C489 /* Http.swift */; };
 		B87136182195812A00D9C489 /* NetworkHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136172195812A00D9C489 /* NetworkHttp.swift */; };
 		B871361A2195850800D9C489 /* SpyNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136192195850800D9C489 /* SpyNetworkSession.swift */; };
+		B871361C2195870500D9C489 /* FakeNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B871361B2195870500D9C489 /* FakeNetworkSession.swift */; };
 		B8A7025C2191908A0034B11D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A702592191908A0034B11D /* Result.framework */; };
 		B8A7025D2191908A0034B11D /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025A2191908A0034B11D /* BrightFutures.framework */; };
 		B8A7025E2191908A0034B11D /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025B2191908A0034B11D /* PureLayout.framework */; };
@@ -81,6 +82,7 @@
 		B87136152195812500D9C489 /* Http.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		B87136172195812A00D9C489 /* NetworkHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttp.swift; sourceTree = "<group>"; };
 		B87136192195850800D9C489 /* SpyNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNetworkSession.swift; sourceTree = "<group>"; };
+		B871361B2195870500D9C489 /* FakeNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetworkSession.swift; sourceTree = "<group>"; };
 		B8A7025121918C630034B11D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		B8A7025421918D8E0034B11D /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		B8A7025621918DC60034B11D /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
@@ -123,8 +125,8 @@
 		B80FCC1D2194181E0021CF3F /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B8C70D60219573D9001AB367 /* Http */,
 				B80FCC2121941F9D0021CF3F /* Asynchronous Testing */,
+				B8C70D60219573D9001AB367 /* Http */,
 				B80FCC1E2194182C0021CF3F /* ToDo */,
 			);
 			path = Components;
@@ -254,6 +256,7 @@
 		B8C70D60219573D9001AB367 /* Http */ = {
 			isa = PBXGroup;
 			children = (
+				B871361B2195870500D9C489 /* FakeNetworkSession.swift */,
 				B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */,
 				B87136192195850800D9C489 /* SpyNetworkSession.swift */,
 			);
@@ -404,13 +407,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */,
+				B87136162195812500D9C489 /* Http.swift in Sources */,
 				B82B333B21918A1E007FB06B /* main.swift in Sources */,
+				B87136182195812A00D9C489 /* NetworkHttp.swift in Sources */,
 				B80FCC1C219417D00021CF3F /* NetworkToDoListRepository.swift in Sources */,
 				B80FCC252194201A0021CF3F /* RepoError.swift in Sources */,
 				B85F4542219411AC00C5AB33 /* ToDoItem.swift in Sources */,
 				B85F4543219411C200C5AB33 /* ToDoListViewController.swift in Sources */,
-				B87136182195812A00D9C489 /* NetworkHttp.swift in Sources */,
-				B87136162195812500D9C489 /* Http.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,11 +422,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8CCC73021940DB1001E4DB9 /* AppDelegateSpec.swift in Sources */,
-				B80FCC27219421860021CF3F /* NetworkToDoListRepositorySpec.swift in Sources */,
+				B871361C2195870500D9C489 /* FakeNetworkSession.swift in Sources */,
 				B8C70D63219573EA001AB367 /* NetworkHttpSpec.swift in Sources */,
+				B80FCC27219421860021CF3F /* NetworkToDoListRepositorySpec.swift in Sources */,
 				B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */,
-				B871361A2195850800D9C489 /* SpyNetworkSession.swift in Sources */,
 				B8239C8D2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift in Sources */,
+				B871361A2195850800D9C489 /* SpyNetworkSession.swift in Sources */,
 				B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */,
 				B8E8B130219407B20099500C /* ToDoListViewControllerSpec.swift in Sources */,
 			);

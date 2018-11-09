@@ -1,4 +1,5 @@
 import Foundation
+import BrightFutures
 
 protocol NetworkSession {
     func dataTask(
@@ -9,11 +10,13 @@ protocol NetworkSession {
 struct NetworkHttp: Http {
     let networkSession: NetworkSession
 
-    func get(url urlString: String) {
+    func get(url urlString: String) -> Future<Data, HttpError>? {
         let url = URL(string: urlString)!
         let urlRequest = URLRequest(url: url)
         let _ = networkSession.dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
             // TODO: Implementation
         }
+        
+        return nil
     }
 }
