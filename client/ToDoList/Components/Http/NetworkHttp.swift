@@ -9,7 +9,11 @@ protocol NetworkSession {
 struct NetworkHttp: Http {
     let networkSession: NetworkSession
 
-    func get(url: String) {
-        // TODO: Implementation
+    func get(url urlString: String) {
+        let url = URL(string: urlString)!
+        let urlRequest = URLRequest(url: url)
+        let _ = networkSession.dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
+            // TODO: Implementation
+        }
     }
 }
