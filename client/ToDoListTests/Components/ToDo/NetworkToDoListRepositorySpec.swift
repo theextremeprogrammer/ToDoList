@@ -8,9 +8,18 @@ class NetworkToDoListRepositorySpec: QuickSpec {
     override func spec() {
         describe("the network to do list repository") {
             var toDoListRepo: NetworkToDoListRepository!
+            var spyHttp: SpyHttp!
 
             beforeEach {
-                toDoListRepo = NetworkToDoListRepository()
+                spyHttp = SpyHttp()
+                toDoListRepo = NetworkToDoListRepository(http: spyHttp)
+            }
+            
+            it("hits the expected endpoint") {
+                let _ = toDoListRepo.getAll()
+                
+                
+                expect(spyHttp.get_argument_url).to(equal("http://localhost:8080/todolist"))
             }
             
             it("returns a future with hard-coded to do items") {
