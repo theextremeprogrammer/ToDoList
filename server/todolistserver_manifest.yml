@@ -1,0 +1,10 @@
+applications:
+- name: todolistserver
+  buildpacks:
+  - https://github.com/cloudfoundry/java-buildpack.git
+  disk_quota: 1G
+  instances: 1
+  memory: 1G
+  routes:
+  - route: todolistserver.cfapps.io
+  stack: cflinuxfs2

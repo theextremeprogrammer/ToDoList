@@ -9,3 +9,6 @@ alltests:
 
 start:
 	@./gradlew bootrun
+
+deploy:
+	@cf push todolistserver -p ./build/libs/todolistapi-0.0.1-SNAPSHOT.jar
