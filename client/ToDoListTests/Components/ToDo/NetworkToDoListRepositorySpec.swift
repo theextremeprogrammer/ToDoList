@@ -23,9 +23,11 @@ class NetworkToDoListRepositorySpec: QuickSpec {
             }
             
             it("returns a future with hard-coded to do items") {
-                var toDoItems: [ToDoItem]? = nil
+                let promise = Promise<Data, HttpError>()
+                spyHttp.get_returnValue = promise.future
 
-                
+
+                var toDoItems: [ToDoItem]? = nil
                 SimpleXCTestExpectation.execute(testCase: self) { testExpectation in
                     toDoListRepo
                         .getAll()
@@ -33,12 +35,30 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                             toDoItems = returnedToDoItems
                             testExpectation.fulfill()
                         }
+
+                    let jsonResponse = "[" +
+                        "  {" +
+                        "    \"id\": 1," +
+                        "    \"title\": \"Get groceries\"," +
+                        "    \"completed\": false" +
+                        "  }," +
+                        "  {" +
+                        "    \"id\": 2," +
+                        "    \"title\": \"Pick up dry cleaning\"," +
+                        "    \"completed\": true" +
+                        "  }" +
+                    "]"
+                    promise.success(jsonResponse.data(using: .utf8)!)
                 }
 
-                
+
                 expect(toDoItems?.count).to(equal(2))
+                expect(toDoItems?.first?.id).to(equal(1))
                 expect(toDoItems?.first?.title).to(equal("Get groceries"))
+                expect(toDoItems?.first?.completed).to(equal(false))
+                expect(toDoItems?.last?.id).to(equal(2))
                 expect(toDoItems?.last?.title).to(equal("Pick up dry cleaning"))
+                expect(toDoItems?.last?.completed).to(equal(true))
             }
         }
     }

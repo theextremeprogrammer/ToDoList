@@ -1,3 +1,4 @@
+import Foundation
 import BrightFutures
 
 protocol ToDoListRepository {
@@ -13,15 +14,18 @@ struct NetworkToDoListRepository: ToDoListRepository {
     }
     
     func getAll() -> Future<[ToDoItem], RepoError> {
-        let _ = http?.get(url: "http://localhost:8080/todolist")
+        // Our http component returns a future so one way to implement this is to simply use the BrightFutures map() implementation to convert the result of one future to the result of another future. However, since an error could also occur, we also need to map the error from the HttpError type to the RepoError type. Since there is no test for this yet (we can't compile the code until we return something), a temporary value of "undefined" is returned.
         
-        return Future { getAllToDoListItemsFutureComplete in
-            getAllToDoListItemsFutureComplete(
-                .success([
-                    ToDoItem(title: "Get groceries"),
-                    ToDoItem(title: "Pick up dry cleaning")
-                ])
-            )
-        }
+        // Since our Http object here is optional this implementation allows our Repo tests to pass - however the AppDelegate test fails because we are not passing in an Http object. 
+        return http!
+            .get(url: "http://localhost:8080/todolist")!
+            .map { data in
+                let decoder = JSONDecoder()
+                let toDoItems = try! decoder.decode([ToDoItem].self, from: data)
+                return toDoItems
+            }
+            .mapError { httpError in
+                return RepoError.undefined
+            }
     }
 }

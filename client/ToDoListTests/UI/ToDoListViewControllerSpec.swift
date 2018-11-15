@@ -28,8 +28,8 @@ class ToDoListTableViewControllerSpec: QuickSpec {
             
             it("displays the title of several to do list items") {
                 getAllPromise.success([
-                    ToDoItem(title: "Get groceries"),
-                    ToDoItem(title: "Pick up dry cleaning")
+                    ToDoItem(id: 1, title: "Get groceries", completed: false),
+                    ToDoItem(id: 2, title: "Pick up dry cleaning", completed: false),
                 ])
                 
                 
