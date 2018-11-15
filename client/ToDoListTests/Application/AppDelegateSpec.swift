@@ -7,7 +7,9 @@ class AppDelegateSpec: QuickSpec {
     override func spec() {
         describe("the appliation delegate") {
             it("displays the to do list view conotroller upon launch") {
-                let appDelegate = AppDelegate()
+                let appDelegate = AppDelegate(http: SpyHttp())
+                
+                
                 let _ = appDelegate.application(
                     UIApplication.shared,
                     didFinishLaunchingWithOptions: nil
