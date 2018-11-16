@@ -7,6 +7,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var http: Http
     
     // MARK: - Initialization
+    convenience override init() {
+        let http = NetworkHttp(networkSession: URLSession.shared)
+        
+        self.init(http: http)
+    }
+    
     init(http: Http) {
         self.http = http
     }

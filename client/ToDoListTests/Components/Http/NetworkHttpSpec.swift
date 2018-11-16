@@ -32,7 +32,7 @@ class NetworkHttpSpec: QuickSpec {
                 let maybeResponseFuture = networkHttp.get(url: "http://www.google.com")
                 
                 var actualData: Data?
-                maybeResponseFuture?.onSuccess { data in
+                maybeResponseFuture.onSuccess { data in
                     actualData = data
                 }
 
