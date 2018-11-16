@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         let toDoListRepo = NetworkToDoListRepository(http: http)
         let rootViewController = ToDoListViewController(
-            toDoListRepo: toDoListRepo
+            toDoListRepo: toDoListRepo,
+            reloader: DefaultReloader()
         )
         
         window = UIWindow()

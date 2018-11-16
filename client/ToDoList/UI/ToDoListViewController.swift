@@ -4,7 +4,7 @@ import PureLayout
 class ToDoListViewController: UIViewController {
     // MARK: - Injected Properties
     private var toDoListRepo: ToDoListRepository
-    private var reloader: Reloader?
+    private var reloader: Reloader
     
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
@@ -16,7 +16,7 @@ class ToDoListViewController: UIViewController {
     // MARK: - Initializers
     init(
         toDoListRepo: ToDoListRepository,
-        reloader: Reloader? = nil
+        reloader: Reloader
     ) {
         self.toDoListRepo = toDoListRepo
         self.reloader = reloader
@@ -44,7 +44,7 @@ class ToDoListViewController: UIViewController {
             .getAll()
             .onSuccess { toDoItems in
                 self.toDoItems = toDoItems
-                self.reloader?.reload(reloadable: self.tableView)
+                self.reloader.reload(reloadable: self.tableView)
             }
     }
 
