@@ -8,6 +8,8 @@ class ToDoListTableViewControllerSpec: QuickSpec {
     override func spec() {
         describe("to do list table view controller") {
             var toDoListTableViewController: ToDoListViewController!
+            
+            var spyReloader: SpyReloader!
             var getAllPromise: Promise<[ToDoItem], RepoError>!
 
             beforeEach {
@@ -16,8 +18,11 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                 let stubToDoListRepository = StubToDoListRepository()
                 stubToDoListRepository.getAll_returnValue = getAllPromise.future
                 
+                spyReloader = SpyReloader()
+                
                 toDoListTableViewController = ToDoListViewController(
-                    toDoListRepo: stubToDoListRepository
+                    toDoListRepo: stubToDoListRepository,
+                    reloader: spyReloader
                 )
                 toDoListTableViewController.loadViewControllerForUnitTest()
             }
@@ -35,6 +40,13 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                 
                 expect(toDoListTableViewController.hasLabel(withExactText: "Get groceries")).toEventually(beTrue())
                 expect(toDoListTableViewController.hasLabel(withExactText: "Pick up dry cleaning")).toEventually(beTrue())
+            }
+            
+            it("reloads the tableview's data once the repository returns data") {
+                getAllPromise.success([])
+
+                
+                expect(spyReloader.reload_argument_reloadable).toEventually(beAKindOf(UITableView.self))
             }
         }
     }

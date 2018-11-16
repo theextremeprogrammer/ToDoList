@@ -23,7 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
         let toDoListRepo = NetworkToDoListRepository(http: http)
-        let rootViewController = ToDoListViewController(toDoListRepo: toDoListRepo)
+        let rootViewController = ToDoListViewController(
+            toDoListRepo: toDoListRepo
+        )
         
         window = UIWindow()
         window?.rootViewController = rootViewController
