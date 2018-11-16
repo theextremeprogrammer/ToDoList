@@ -23,6 +23,7 @@ struct NetworkHttp: Http {
                     requestPromise.success(data)
                 }
             }
+            .resume()
         
         return requestPromise.future
     }

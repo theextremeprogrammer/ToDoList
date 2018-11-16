@@ -9,6 +9,6 @@ class SpyNetworkSession: NetworkSession {
         completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
     {
         dataTask_argument_request = request
-        return URLSessionDataTask()
+        return SpySessionDataTask()
     }
 }

@@ -6,6 +6,7 @@ class NetworkHttpSpec: QuickSpec {
     override func spec() {
         describe("http get requests") {
             it("makes a request to the correct endpoint") {
+                // This test uses the SpyNetworkSession since we are only spying on the data sent to it.
                 let spyNetworkSession = SpyNetworkSession()
                 let networkHttp = NetworkHttp(networkSession: spyNetworkSession)
 
@@ -18,6 +19,7 @@ class NetworkHttpSpec: QuickSpec {
             }
             
             it("resolves the request with response data") {
+                // This test uses the FakeNetworkSession to allow us to set data on the dataTask.
                 let fakeNetworkSession = FakeNetworkSession()
                 let networkHttp = NetworkHttp(networkSession: fakeNetworkSession)
                 
@@ -27,7 +29,7 @@ class NetworkHttpSpec: QuickSpec {
                     maybeResponse: nil,
                     maybeError: nil
                 )
-                
+
                 
                 let maybeResponseFuture = networkHttp.get(url: "http://www.google.com")
                 
@@ -38,6 +40,20 @@ class NetworkHttpSpec: QuickSpec {
 
                 
                 expect(actualData).toEventually(equal(responseData))
+            }
+            
+            it("ensures that newly initialized network data tasks call resume() to initiate the request") {
+                let fakeNetworkSession = FakeNetworkSession()
+                let networkHttp = NetworkHttp(networkSession: fakeNetworkSession)
+                
+                let spySessionDataTask = SpySessionDataTask()
+                fakeNetworkSession.dataTask_returnValue = spySessionDataTask
+                
+                
+                let _ = networkHttp.get(url: "http://www.google.com")
+                
+
+                expect(spySessionDataTask.resume_wasCalled).to(beTrue())
             }
         }
     }

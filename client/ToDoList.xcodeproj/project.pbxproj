@@ -10,6 +10,7 @@
 		5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AD4932909A9BAF2E57516 /* Assets.xcassets */; };
 		5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */; };
 		5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */; };
+		B800B8BB219EB89700BAE051 /* SpySessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B800B8BA219EB89700BAE051 /* SpySessionDataTask.swift */; };
 		B80FCC1C219417D00021CF3F /* NetworkToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC1B219417D00021CF3F /* NetworkToDoListRepository.swift */; };
 		B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC1F219418340021CF3F /* StubToDoListRepository.swift */; };
 		B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC2221941FAD0021CF3F /* Runloop+Advance.swift */; };
@@ -70,6 +71,7 @@
 		5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B6AD6FB7690707120910247 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B800B8BA219EB89700BAE051 /* SpySessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpySessionDataTask.swift; sourceTree = "<group>"; };
 		B80FCC1B219417D00021CF3F /* NetworkToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkToDoListRepository.swift; sourceTree = "<group>"; };
 		B80FCC1F219418340021CF3F /* StubToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubToDoListRepository.swift; sourceTree = "<group>"; };
 		B80FCC2221941FAD0021CF3F /* Runloop+Advance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runloop+Advance.swift"; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */,
 				B82180BB219C192A00780BA7 /* SpyHttp.swift */,
 				B87136192195850800D9C489 /* SpyNetworkSession.swift */,
+				B800B8BA219EB89700BAE051 /* SpySessionDataTask.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				B8239C8D2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift in Sources */,
 				B82180BC219C192A00780BA7 /* SpyHttp.swift in Sources */,
 				B871361A2195850800D9C489 /* SpyNetworkSession.swift in Sources */,
+				B800B8BB219EB89700BAE051 /* SpySessionDataTask.swift in Sources */,
 				B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */,
 				B8E8B130219407B20099500C /* ToDoListViewControllerSpec.swift in Sources */,
 			);
