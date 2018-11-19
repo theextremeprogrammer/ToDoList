@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AD4932909A9BAF2E57516 /* Assets.xcassets */; };
 		5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */; };
+		5B6ADA1D066A93FF4AA87736 /* UITableView+Reloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ADB51355E846F6D2E7F99 /* UITableView+Reloadable.swift */; };
+		5B6ADD8130CC868C1F89113B /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD2AC48120B63E3C9E067 /* ToDoListViewController.swift */; };
 		5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */; };
 		B800B8BB219EB89700BAE051 /* SpySessionDataTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B800B8BA219EB89700BAE051 /* SpySessionDataTask.swift */; };
 		B800B8BF219EC1A300BAE051 /* DefaultReloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B800B8BE219EC1A300BAE051 /* DefaultReloader.swift */; };
 		B800B8C3219EC1FB00BAE051 /* SpyReloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B800B8C2219EC1FB00BAE051 /* SpyReloader.swift */; };
-		B800B8C6219EC25700BAE051 /* UITableView+Reloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B800B8C5219EC25700BAE051 /* UITableView+Reloadable.swift */; };
 		B80FCC1C219417D00021CF3F /* NetworkToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC1B219417D00021CF3F /* NetworkToDoListRepository.swift */; };
 		B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC1F219418340021CF3F /* StubToDoListRepository.swift */; };
 		B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC2221941FAD0021CF3F /* Runloop+Advance.swift */; };
@@ -25,7 +26,6 @@
 		B8536B01219EC43500BE7026 /* DefaultReloaderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8536B00219EC43500BE7026 /* DefaultReloaderSpec.swift */; };
 		B8536B03219EC4CB00BE7026 /* SpyReloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8536B02219EC4CB00BE7026 /* SpyReloadable.swift */; };
 		B85F4542219411AC00C5AB33 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F4541219411AB00C5AB33 /* ToDoItem.swift */; };
-		B85F4543219411C200C5AB33 /* ToDoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC73321940F87001E4DB9 /* ToDoListViewController.swift */; };
 		B87136162195812500D9C489 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136152195812500D9C489 /* Http.swift */; };
 		B87136182195812A00D9C489 /* NetworkHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136172195812A00D9C489 /* NetworkHttp.swift */; };
 		B871361A2195850800D9C489 /* SpyNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136192195850800D9C489 /* SpyNetworkSession.swift */; };
@@ -71,15 +71,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5B6AD2AC48120B63E3C9E067 /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		5B6AD42E111941A0DCBD6BE4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5B6AD4932909A9BAF2E57516 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B6AD6FB7690707120910247 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B6ADB51355E846F6D2E7F99 /* UITableView+Reloadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reloadable.swift"; sourceTree = "<group>"; };
 		B800B8BA219EB89700BAE051 /* SpySessionDataTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpySessionDataTask.swift; sourceTree = "<group>"; };
 		B800B8BE219EC1A300BAE051 /* DefaultReloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultReloader.swift; sourceTree = "<group>"; };
 		B800B8C2219EC1FB00BAE051 /* SpyReloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyReloader.swift; sourceTree = "<group>"; };
-		B800B8C5219EC25700BAE051 /* UITableView+Reloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Reloadable.swift"; sourceTree = "<group>"; };
 		B80FCC1B219417D00021CF3F /* NetworkToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkToDoListRepository.swift; sourceTree = "<group>"; };
 		B80FCC1F219418340021CF3F /* StubToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StubToDoListRepository.swift; sourceTree = "<group>"; };
 		B80FCC2221941FAD0021CF3F /* Runloop+Advance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runloop+Advance.swift"; sourceTree = "<group>"; };
@@ -108,7 +109,6 @@
 		B8A70262219190EE0034B11D /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttpSpec.swift; sourceTree = "<group>"; };
 		B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
-		B8CCC73321940F87001E4DB9 /* ToDoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		B8E8B12F219407B20099500C /* ToDoListViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -152,6 +152,22 @@
 				B800B8C2219EC1FB00BAE051 /* SpyReloader.swift */,
 			);
 			path = Reloading;
+			sourceTree = "<group>";
+		};
+		B801A57B21A25B2B00A98DE0 /* ToDoList */ = {
+			isa = PBXGroup;
+			children = (
+				5B6AD2AC48120B63E3C9E067 /* ToDoListViewController.swift */,
+			);
+			path = ToDoList;
+			sourceTree = "<group>";
+		};
+		B801A57D21A25B8200A98DE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B6ADB51355E846F6D2E7F99 /* UITableView+Reloadable.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B80FCC1D2194181E0021CF3F /* Components */ = {
@@ -311,8 +327,8 @@
 		B8CCC73221940F47001E4DB9 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B8CCC73321940F87001E4DB9 /* ToDoListViewController.swift */,
-				B800B8C5219EC25700BAE051 /* UITableView+Reloadable.swift */,
+				B801A57D21A25B8200A98DE0 /* Extensions */,
+				B801A57B21A25B2B00A98DE0 /* ToDoList */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -451,8 +467,8 @@
 				B80FCC1C219417D00021CF3F /* NetworkToDoListRepository.swift in Sources */,
 				B80FCC252194201A0021CF3F /* RepoError.swift in Sources */,
 				B85F4542219411AC00C5AB33 /* ToDoItem.swift in Sources */,
-				B85F4543219411C200C5AB33 /* ToDoListViewController.swift in Sources */,
-				B800B8C6219EC25700BAE051 /* UITableView+Reloadable.swift in Sources */,
+				5B6ADD8130CC868C1F89113B /* ToDoListViewController.swift in Sources */,
+				5B6ADA1D066A93FF4AA87736 /* UITableView+Reloadable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
