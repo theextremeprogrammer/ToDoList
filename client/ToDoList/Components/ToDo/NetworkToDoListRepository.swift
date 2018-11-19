@@ -2,13 +2,13 @@ import Foundation
 import BrightFutures
 
 // As a general practice, unless there are multiple objects which are implementing a
-//      single protocol, I tend to keep the protocol definition in the same file as the
+//      single protocol, the protocol definition is maintained in the same file as the
 //      implementation that uses it.
 //
-// Originally I preferred to split out the protocol and implementation definitions - however
-//      I found that when trying to access method definitions of a protocol Xcode would
-//      always navigate to the protocol definition and not the implementation. By co-locating
-//      these in the same file it makes it a bit easier to get around.
+// While the protocol and implementation definitions can be split into different files,
+//      when accessing method definitions of an object (for a protocol), Xcode will
+//      always navigate to the protocol definition and not the implementation. By
+//      co-locating these in the same file it makes it a bit easier to get around.
 protocol ToDoListRepository {
     func getAll() -> Future<[ToDoItem], RepoError>
 }

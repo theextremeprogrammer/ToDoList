@@ -91,8 +91,9 @@ fileprivate extension ToDoListViewController {
 
 // MARK: - UITableViewDataSource
 extension ToDoListViewController: UITableViewDataSource {
-    // While this method implementation is optional, similar to how I do not appreciate
-    //      Spring's "auto-configuration", I prefer to make this explicit.
+    // While this method implementation is optional, similar to how Spring's
+    //      "auto-configuration" can be difficult to understand, making this explicit
+    //      may help those developers who are not familiar with using a UITableView.
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
