@@ -78,13 +78,13 @@ fileprivate extension ToDoListViewController {
         tableView.backgroundColor = UIColor.clear
         tableView.dataSource = self
         
-        // When registering the types of cells for a UITableView, as a general practice I
-        //      prefer to use String(describing: <classname>.self) in order to avoid any
+        // When registering the types of cells for a UITableView, as a general practice
+        //      String(describing: <classname>.self) is used in order to avoid any
         //      possible fat-fingering of names. This keeps the cell identifier in sync
         //      with the call class name as well.
         tableView.register(
-            UITableViewCell.self,
-            forCellReuseIdentifier: String(describing: UITableViewCell.self)
+            ToDoItemTableViewCell.self,
+            forCellReuseIdentifier: String(describing: ToDoItemTableViewCell.self)
         )
     }
 }
@@ -105,9 +105,13 @@ extension ToDoListViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: UITableViewCell.self), for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: ToDoItemTableViewCell.self), for: indexPath) as? ToDoItemTableViewCell else {
+            return UITableViewCell()
+        }
 
-        cell.textLabel?.text = toDoItems[indexPath.row].title
+        // In order to keep our view controller / UITableViewDataSource clean we allow the
+        //      cell to configure itself however it needs.
+        cell.configure(toDoItem: toDoItems[indexPath.row])
 
         return cell
     }

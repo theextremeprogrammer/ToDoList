@@ -26,6 +26,7 @@
 		B8536B01219EC43500BE7026 /* DefaultReloaderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8536B00219EC43500BE7026 /* DefaultReloaderSpec.swift */; };
 		B8536B03219EC4CB00BE7026 /* SpyReloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8536B02219EC4CB00BE7026 /* SpyReloadable.swift */; };
 		B85F4542219411AC00C5AB33 /* ToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85F4541219411AB00C5AB33 /* ToDoItem.swift */; };
+		B871022F21A2615200B34891 /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B871022E21A2615200B34891 /* ToDoItemTableViewCell.swift */; };
 		B87136162195812500D9C489 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136152195812500D9C489 /* Http.swift */; };
 		B87136182195812A00D9C489 /* NetworkHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136172195812A00D9C489 /* NetworkHttp.swift */; };
 		B871361A2195850800D9C489 /* SpyNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136192195850800D9C489 /* SpyNetworkSession.swift */; };
@@ -94,6 +95,7 @@
 		B8536B00219EC43500BE7026 /* DefaultReloaderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultReloaderSpec.swift; sourceTree = "<group>"; };
 		B8536B02219EC4CB00BE7026 /* SpyReloadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyReloadable.swift; sourceTree = "<group>"; };
 		B85F4541219411AB00C5AB33 /* ToDoItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItem.swift; sourceTree = "<group>"; };
+		B871022E21A2615200B34891 /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
 		B87136152195812500D9C489 /* Http.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		B87136172195812A00D9C489 /* NetworkHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttp.swift; sourceTree = "<group>"; };
 		B87136192195850800D9C489 /* SpyNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNetworkSession.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		B801A57B21A25B2B00A98DE0 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				B871022E21A2615200B34891 /* ToDoItemTableViewCell.swift */,
 				5B6AD2AC48120B63E3C9E067 /* ToDoListViewController.swift */,
 			);
 			path = ToDoList;
@@ -467,6 +470,7 @@
 				B80FCC1C219417D00021CF3F /* NetworkToDoListRepository.swift in Sources */,
 				B80FCC252194201A0021CF3F /* RepoError.swift in Sources */,
 				B85F4542219411AC00C5AB33 /* ToDoItem.swift in Sources */,
+				B871022F21A2615200B34891 /* ToDoItemTableViewCell.swift in Sources */,
 				5B6ADD8130CC868C1F89113B /* ToDoListViewController.swift in Sources */,
 				5B6ADA1D066A93FF4AA87736 /* UITableView+Reloadable.swift in Sources */,
 			);
