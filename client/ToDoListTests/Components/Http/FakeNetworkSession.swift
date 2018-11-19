@@ -13,7 +13,10 @@ class FakeNetworkSession: NetworkSession {
             nil
         )
         
-        // It would be nice to return a URLSessionDataTask here but in doing so a "-resume cannot be sent to abstract instance of class NSURLSessionDataTask" error message is thrown. Therefore we need to return a SpySessionDataTask here to avoid that error.
+        // It would be nice to return a URLSessionDataTask here but in doing so a "-resume
+        //      cannot be sent to abstract instance of class NSURLSessionDataTask" error
+        //      message is thrown. Therefore we need to return a SpySessionDataTask here
+        //      to avoid that error.
         return dataTask_returnValue ?? SpySessionDataTask()
     }
 }

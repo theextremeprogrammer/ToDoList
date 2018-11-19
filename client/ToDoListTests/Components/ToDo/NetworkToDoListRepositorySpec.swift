@@ -36,18 +36,22 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                             testExpectation.fulfill()
                         }
 
-                    let jsonResponse = "[" +
-                        "  {" +
-                        "    \"id\": 1," +
-                        "    \"title\": \"Get groceries\"," +
-                        "    \"completed\": false" +
-                        "  }," +
-                        "  {" +
-                        "    \"id\": 2," +
-                        "    \"title\": \"Pick up dry cleaning\"," +
-                        "    \"completed\": true" +
-                        "  }" +
-                    "]"
+                    // JSON is hard to format as a string so it can be easily manipulated.
+                    //      Note: it's possible to configure this in another IDE, such as
+                    //      IntelliJ, and then copy/paste it into Xcode or AppCode. 
+                    let jsonResponse = "" +
+                        "[" +
+                            "  {" +
+                            "    \"id\": 1," +
+                            "    \"title\": \"Get groceries\"," +
+                            "    \"completed\": false" +
+                            "  }," +
+                            "  {" +
+                            "    \"id\": 2," +
+                            "    \"title\": \"Pick up dry cleaning\"," +
+                            "    \"completed\": true" +
+                            "  }" +
+                        "]"
                     promise.success(jsonResponse.data(using: .utf8)!)
                 }
 

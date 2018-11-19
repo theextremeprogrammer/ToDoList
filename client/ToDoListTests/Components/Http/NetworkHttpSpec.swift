@@ -14,8 +14,8 @@ class NetworkHttpSpec: QuickSpec {
                 let _ = networkHttp.get(url: "http://www.google.com")
 
 
-                expect(spyNetworkSession.dataTask_argument_request?.url?.absoluteString)
-                    .to(equal("http://www.google.com"))
+                let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
+                expect(actualUrlString).to(equal("http://www.google.com"))
             }
             
             it("resolves the request with response data") {
