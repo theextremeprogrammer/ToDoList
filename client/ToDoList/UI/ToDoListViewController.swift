@@ -23,7 +23,6 @@ class ToDoListViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
 
-        view.backgroundColor = UIColor.white
         view.setNeedsUpdateConstraints()
     }
     
@@ -74,21 +73,33 @@ fileprivate extension ToDoListViewController {
     }
 
     func configureSubviews() {
+        view.backgroundColor = UIColor.white
+
+        tableView.backgroundColor = UIColor.clear
         tableView.dataSource = self
+        
+        // When registering the types of cells for a UITableView, as a general practice I
+        //      prefer to use String(describing: <classname>.self) in order to avoid any
+        //      possible fat-fingering of names. This keeps the cell identifier in sync
+        //      with the call class name as well.
         tableView.register(
             UITableViewCell.self,
             forCellReuseIdentifier: String(describing: UITableViewCell.self)
         )
-        tableView.backgroundColor = UIColor.clear
     }
 }
 
 // MARK: - UITableViewDataSource
 extension ToDoListViewController: UITableViewDataSource {
+    // While this method implementation is optional, similar to how I do not appreciate
+    //      Spring's "auto-configuration", I prefer to make this explicit.
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
+    // There are various benefits and drawbacks of using a UITableView. This is the quickest
+    //      way to get up and running with a list, but as with everything you should weight
+    //      the pros and cons based on your needs and choose the appropriate implementation.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return toDoItems.count
     }
