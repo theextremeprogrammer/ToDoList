@@ -1,5 +1,7 @@
 # To Do List iOS Client App + Kotlin Spring Server
 
+[![Build Status](https://travis-ci.org/derekleerock/ToDoList.svg?branch=master)](https://travis-ci.org/derekleerock/ToDoList)
+
 The world clearly doesn't need another to-do list app - however I wanted to build a simple iOS app to illustrate how I have been approaching test-driving iOS development lately.
 
 The purpose of this app is to showcase how to test-drive out various typical aspects of an iOS app client with a Kotlin Spring back-end.
