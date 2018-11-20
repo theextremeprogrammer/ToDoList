@@ -1,4 +1,4 @@
-# To Do List iOS App
+# To Do List iOS Client App + Kotlin Spring Server
 
 The world clearly doesn't need another to-do list app - however I wanted to build a simple iOS app to illustrate how I have been approaching test-driving iOS development lately.
 
