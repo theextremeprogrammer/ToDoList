@@ -1,13 +1,9 @@
 ---
 # iOS Cache
 cache:
-  directories:
-    - ./client/Carthage
-
-# Kotlin Cache
-cache:
   bundler: true
   directories:
+    - ./client/Carthage
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
