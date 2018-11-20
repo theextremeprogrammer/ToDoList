@@ -1,8 +1,8 @@
 ---
-cache:
+# cache:
   # bundler: true
-  directories:
-    - ./client/Carthage
+  # directories:
+  #   - ./client/Carthage
     # - $HOME/.gradle/caches/
     # - $HOME/.gradle/wrapper/
 
@@ -22,13 +22,14 @@ matrix:
     language: java
     jdk:
       - oraclejdk8
-    before_install:
-      - chmod +x ./server/gradlew
-      - chmod +x ./server/gradle/wrapper/gradle-wrapper.jar
-    install:
-      - cd server
-      - ./gradlew assemble
+    # before_install:
+    #   - chmod +x ./server/gradlew
+    #   - chmod +x ./server/gradle/wrapper/gradle-wrapper.jar
+    # install:
+    #   - cd server
+    #   - ./gradlew assemble
     script:
+      - cd server
       - make alltests
 
     # Kotlin Server IntegraTests
