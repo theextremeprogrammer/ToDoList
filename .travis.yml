@@ -20,7 +20,7 @@ matrix:
   #     - carthage bootstrap --platform iOS --cache-builds
 
   - name: "Kotlin Server Unit Tests"
-    lanaguage: java
+    language: java
     jdk:
       - oraclejdk8
     before_install:
