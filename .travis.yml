@@ -1,22 +1,27 @@
 ---
+# iOS Cache
+cache:
+  directories:
+    - ./client/Carthage
+
+# Kotlin Cache
 cache:
   bundler: true
   directories:
-    - ./client/Carthage
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
 matrix:
   include:
-  # - name: "iOS Client Unit Tests"
-  #   language: swift
-  #   osx_image: xcode10
-  #   xcode_project: ToDoList.xcodeproj
-  #   xcode_scheme: ToDoList
-  #   xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 7
-  #   install:
-  #     - cd client
-  #     - carthage bootstrap --platform iOS --cache-builds
+  - name: "iOS Client Unit Tests"
+    language: swift
+    osx_image: xcode10
+    xcode_project: ToDoList.xcodeproj
+    xcode_scheme: ToDoList
+    xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 7
+    install:
+      - cd client
+      - carthage bootstrap --platform iOS --cache-builds
 
   - name: "Kotlin Server Unit Tests"
     language: java
