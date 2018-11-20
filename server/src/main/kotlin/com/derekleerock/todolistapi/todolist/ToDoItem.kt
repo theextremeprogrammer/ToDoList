@@ -1,4 +1,4 @@
-package io.pivotal.beach.todolistapi.todolist
+package com.derekleerock.todolistapi.todolist
 
 data class ToDoItem(
         val id: Long,

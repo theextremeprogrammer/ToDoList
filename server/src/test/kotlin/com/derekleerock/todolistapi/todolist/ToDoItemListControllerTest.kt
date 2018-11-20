@@ -1,4 +1,4 @@
-package io.pivotal.beach.todolistapi.todolist
+package com.derekleerock.todolistapi.todolist
 
 import org.hamcrest.CoreMatchers.equalTo
 import org.junit.Before

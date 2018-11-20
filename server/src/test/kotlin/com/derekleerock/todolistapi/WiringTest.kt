@@ -1,4 +1,4 @@
-package io.pivotal.beach.todolistapi
+package com.derekleerock.todolistapi
 
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat

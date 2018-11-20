@@ -1,4 +1,4 @@
-package io.pivotal.beach.todolistapi
+package com.derekleerock.todolistapi
 
 import org.junit.Test
 import org.junit.runner.RunWith

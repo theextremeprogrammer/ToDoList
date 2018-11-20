@@ -1,4 +1,4 @@
-package io.pivotal.beach.todolistapi
+package com.derekleerock.todolistapi
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
