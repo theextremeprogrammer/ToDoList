@@ -23,6 +23,10 @@ class ToDoListViewController: UIViewController {
         
         super.init(nibName: nil, bundle: nil)
 
+        // Sadly if we do not call this explicitly then the iOS View Lifecycle method
+        //      updateViewConstraints() will not be invoked. Once we have additional
+        //      view controller needs then this can possibly be extracted into a parent
+        //      view controller class.
         view.setNeedsUpdateConstraints()
     }
     
