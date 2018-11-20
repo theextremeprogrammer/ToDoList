@@ -21,7 +21,7 @@ Ideally my goal is to illustrate at least the following features and functionali
   - [x] iOS Client Unit Test Job
   - [x] Kotlin Unit Test Job
   - [x] Kotlin Integration Test Job
-- [ ] How to automate bumping the build # for your app.
+- [x] How to automate bumping the build # for your app.
 - [ ] How to manage different release types (local development, beta, release).
 
 ### Testing
