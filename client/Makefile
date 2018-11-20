@@ -16,3 +16,6 @@ unit-tests:
 units tests: sort unit-tests
 
 ci: bootstrap unit-tests
+
+bumpbuild:
+	@xcrun agvtool next-version -all
