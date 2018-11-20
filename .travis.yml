@@ -1,5 +1,5 @@
 language: swift
 osx_image: xcode10
-xcode_project: ToDoList.xcodeproj
+xcode_project: ./client/ToDoList.xcodeproj
 xcode_scheme: ToDoListTests
 xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 7
