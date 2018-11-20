@@ -25,11 +25,11 @@ matrix:
     # before_install:
     #   - chmod +x ./server/gradlew
     #   - chmod +x ./server/gradle/wrapper/gradle-wrapper.jar
-    # install:
-    #   - cd server
-    #   - ./gradlew assemble
-    script:
+    install:
       - cd server
-      - make alltests
+      - ./gradle assemble
+    # script:
+    #   - cd server
+    #   - make alltests
 
     # Kotlin Server IntegraTests
