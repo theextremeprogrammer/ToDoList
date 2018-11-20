@@ -25,7 +25,7 @@ matrix:
     #   - chmod +x ./server/gradle/wrapper/gradle-wrapper.jar
     install:
       - cd server
-      - ./gradle assemble
+      - ./gradlew assemble
     # script:
     #   - cd server
     #   - make alltests
