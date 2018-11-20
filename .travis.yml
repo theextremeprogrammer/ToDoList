@@ -1,35 +1,33 @@
 ---
-cache:
+# cache:
   # bundler: true
-  directories:
-    - ./client/Carthage
+  # directories:
+  #   - ./client/Carthage
     # - $HOME/.gradle/caches/
     # - $HOME/.gradle/wrapper/
 
 matrix:
   include:
-  - name: "iOS Client Unit Tests"
-    language: swift
-    osx_image: xcode10
-    xcode_project: ToDoList.xcodeproj
-    xcode_scheme: ToDoList
-    xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 7
-    install:
-      - cd client
-      - carthage bootstrap --platform iOS --cache-builds
-
-  # - name: "Kotlin Server Unit Tests"
-  #   language: java
-  #   jdk:
-  #     - oraclejdk8
-  #   # before_install:
-  #   #   - chmod +x ./server/gradlew
-  #   #   - chmod +x ./server/gradle/wrapper/gradle-wrapper.jar
+  # - name: "iOS Client Unit Tests"
+  #   language: swift
+  #   osx_image: xcode10
+  #   xcode_project: ToDoList.xcodeproj
+  #   xcode_scheme: ToDoList
+  #   xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 7
   #   install:
-  #     - cd server
-  #     - ./gradle assemble
-  #   # script:
-  #   #   - cd server
-  #   #   - make alltests
+  #     - cd client
+  #     - carthage bootstrap --platform iOS --cache-builds
+  - name: "Kotlin Server Unit Tests"
+    language: java
+    jdk: oraclejdk8
+    # before_install:
+    #   - chmod +x ./server/gradlew
+    #   - chmod +x ./server/gradle/wrapper/gradle-wrapper.jar
+    install:
+      - cd server
+      - ./gradle assemble
+    # script:
+    #   - cd server
+    #   - make alltests
 
   # - name: "Kotlin Server Integration Tests"
