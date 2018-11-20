@@ -23,10 +23,10 @@ matrix:
     jdk:
       - oraclejdk8
     before_install:
-      - cd server
-      - chmod +x gradlew
-      - chmod +x gradle/wrapper/gradle-wrapper.jar
+      - chmod +x ./server/gradlew
+      - chmod +x ./server/gradle/wrapper/gradle-wrapper.jar
     install:
+      - cd server
       - ./gradlew assemble
     script:
       - make alltests
