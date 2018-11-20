@@ -1,10 +1,10 @@
 ---
-# cache:
-  # bundler: true
-  # directories:
-  #   - ./client/Carthage
-    # - $HOME/.gradle/caches/
-    # - $HOME/.gradle/wrapper/
+cache:
+  bundler: true
+  directories:
+    - ./client/Carthage
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
 
 matrix:
   include:
@@ -17,17 +17,19 @@ matrix:
   #   install:
   #     - cd client
   #     - carthage bootstrap --platform iOS --cache-builds
-  - name: "Kotlin Server Unit Tests"
+  #
+  # - name: "Kotlin Server Unit Tests"
+  #   language: java
+  #   jdk: oraclejdk8
+  #   install:
+  #     - cd server
+  #     - ./gradlew assemble
+
+  - name: "Kotlin Server Integration Tests"
     language: java
     jdk: oraclejdk8
-    # before_install:
-    #   - chmod +x ./server/gradlew
-    #   - chmod +x ./server/gradle/wrapper/gradle-wrapper.jar
     install:
       - cd server
       - ./gradlew assemble
-    # script:
-    #   - cd server
-    #   - make alltests
-
-  # - name: "Kotlin Server Integration Tests"
+    script:
+      - make integrationtests
