@@ -1,25 +1,25 @@
 matrix:
   include:
-    # - language: swift
-    #   osx_image: xcode10
-    #   xcode_project: ToDoList.xcodeproj
-    #   xcode_scheme: ToDoList
-    #   xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 7
-    #   install:
-    #     - cd client
-    #     - make bootstrap
-    #     cache:
-    #       directories:
-    #         - ./Carthage
+    - language: swift
+      osx_image: xcode10
+      xcode_project: ToDoList.xcodeproj
+      xcode_scheme: ToDoList
+      xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone 7
+      install:
+        - cd client
+        - make bootstrap
+      cache:
+        directories:
+          - ./Carthage
 
     # Kotlin Server Unit Tests
-    - lanaguage: java
-      jdk:
-        - oraclejdk8
-      cache:
-        bundler: true
-        directories:
-          - $HOME/.gradle/caches/
-          - $HOME/.gradle/wrapper/
+    # - lanaguage: java
+    #   jdk:
+    #     - oraclejdk8
+    #   cache:
+    #     bundler: true
+    #     directories:
+    #       - $HOME/.gradle/caches/
+    #       - $HOME/.gradle/wrapper/
 
-    # Kotlin Server Integration Tests
+    # Kotlin Server IntegraTests
