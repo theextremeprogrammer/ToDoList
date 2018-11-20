@@ -17,7 +17,10 @@ Ideally my goal is to illustrate at least the following features and functionali
 - [x] How to arrange your folders and files using an "Application", "Components", and "UI" structure to provide separation of concerns.
 - [x] How to sort your Xcode project file to minimize merge conflicts within the team.
 - [x] How to use a Makefile to automate repetitive tasks and increase discoverability.
-- [ ] CI integration with Travis.
+- [x] CI integration with Travis.
+  - [x] iOS Client Unit Test Job
+  - [x] Kotlin Unit Test Job
+  - [x] Kotlin Integration Test Job
 - [ ] How to automate bumping the build # for your app.
 - [ ] How to manage different release types (local development, beta, release).
 
