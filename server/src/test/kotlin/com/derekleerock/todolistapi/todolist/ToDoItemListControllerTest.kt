@@ -23,8 +23,8 @@ class ToDoItemListControllerTest {
     }
 
     @Test
-    fun getToDoList_returns200() {
-        mockMvc.perform(get("/todolist"))
+    fun getToDoList_returnsOK() {
+        mockMvc.perform(get("/todos"))
                 .andExpect(status().isOk())
     }
 
@@ -33,7 +33,7 @@ class ToDoItemListControllerTest {
         stubToDoListRepo.getAll_returnValue = emptyList()
 
 
-        mockMvc.perform(get("/todolist"))
+        mockMvc.perform(get("/todos"))
                 .andExpect(jsonPath("$.size()", equalTo(0)))
     }
 
@@ -45,7 +45,7 @@ class ToDoItemListControllerTest {
         )
 
 
-        mockMvc.perform(get("/todolist"))
+        mockMvc.perform(get("/todos"))
                 .andExpect(jsonPath("$.size()", equalTo(2)))
     }
 
@@ -56,7 +56,7 @@ class ToDoItemListControllerTest {
         )
 
 
-        mockMvc.perform(get("/todolist"))
+        mockMvc.perform(get("/todos"))
                 .andExpect(jsonPath("$[0].id", equalTo(1)))
                 .andExpect(jsonPath("$[0].title", equalTo("Get groceries")))
                 .andExpect(jsonPath("$[0].completed", equalTo(false)))

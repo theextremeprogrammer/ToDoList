@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/todolist")
+@RequestMapping("/todos")
 class ToDoListController(val toDoListRepo: ToDoListRepo) {
     @GetMapping
     fun getToDoList(): List<ToDoItem>? {

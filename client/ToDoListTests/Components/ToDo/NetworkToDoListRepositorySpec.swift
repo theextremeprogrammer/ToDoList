@@ -19,7 +19,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                 let _ = toDoListRepo.getAll()
                 
                 
-                expect(spyHttp.get_argument_url).to(equal("http://localhost:8080/todolist"))
+                expect(spyHttp.get_argument_url).to(equal("http://localhost:8080/todos"))
             }
             
             it("returns a future with hard-coded to do items") {

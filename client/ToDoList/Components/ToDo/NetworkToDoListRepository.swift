@@ -30,7 +30,7 @@ struct NetworkToDoListRepository: ToDoListRepository {
         //      compile the code until we return something, so this must be added (for
         //      better or for worse).
         return http
-            .get(url: "http://localhost:8080/todolist")
+            .get(url: "http://localhost:8080/todos")
             .map { data in
                 let decoder = JSONDecoder()
                 let toDoItems = try! decoder.decode([ToDoItem].self, from: data)
