@@ -5,6 +5,7 @@ import org.junit.Before
 import org.junit.Test
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
 import org.springframework.test.web.servlet.setup.MockMvcBuilders
@@ -60,5 +61,11 @@ class ToDoItemListControllerTest {
                 .andExpect(jsonPath("$[0].id", equalTo(1)))
                 .andExpect(jsonPath("$[0].title", equalTo("Get groceries")))
                 .andExpect(jsonPath("$[0].completed", equalTo(false)))
+    }
+
+    @Test
+    fun createToDoItem_returnsCreatedStatus() {
+        mockMvc.perform(post("/todos"))
+                .andExpect(status().isCreated)
     }
 }
