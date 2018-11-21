@@ -10,6 +10,6 @@ class LocalToDoListRepo : ToDoListRepo {
     }
 
     override fun create(newToDo: NewToDo): ToDoItem {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return ToDoItem(1, newToDo.title, false)
     }
 }

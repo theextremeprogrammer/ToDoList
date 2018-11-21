@@ -16,4 +16,18 @@ class LocalToDoListRepoTest {
 
         assertThat(toDos.size, `is`(equalTo(0)))
     }
+
+    @Test
+    fun create_returnsCreatedItem() {
+        val localToDoListRepo = LocalToDoListRepo()
+
+
+        val toDoItem = localToDoListRepo.create(
+                NewToDo("Buy groceries")
+        )
+
+
+        val expectedToDoItem = ToDoItem(1, "Buy groceries", false)
+        assertThat(toDoItem, `is`(equalTo(expectedToDoItem)))
+    }
 }
