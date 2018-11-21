@@ -33,6 +33,19 @@ final class NavigationRouterSpec: QuickSpec {
                 let presentedVC = presentedNavVC?.topViewController
                 expect(presentedVC).toEventually(beAKindOf(AddToDoItemViewController.self))
             }
+
+            it("dismisses the presented modal view controller") {
+                instantiateUIWindowForUnitTesting(rootViewController: rootNavController)
+
+                rootNavController.present(UIViewController(), animated: animated)
+
+
+                navRouter.dismissModalVC()
+
+
+                
+                expect(rootNavController.presentedViewController).toEventually(beNil())
+            }
         }
 
         func instantiateUIWindowForUnitTesting(rootViewController: UIViewController) {

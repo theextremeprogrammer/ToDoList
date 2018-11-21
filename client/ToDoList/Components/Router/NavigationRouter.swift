@@ -33,6 +33,6 @@ extension NavigationRouter: Router {
     }
     
     func dismissModalVC() {
-        // TODO: Implementation
+        navigationController.dismiss(animated: animated)
     }
 }
