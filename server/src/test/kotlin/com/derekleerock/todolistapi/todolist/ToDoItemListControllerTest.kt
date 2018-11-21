@@ -1,6 +1,8 @@
 package com.derekleerock.todolistapi.todolist
 
+import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.equalTo
+import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.Matchers.greaterThan
 import org.junit.Before
 import org.junit.Test
@@ -94,5 +96,21 @@ class ToDoItemListControllerTest {
                 .andExpect(jsonPath("$.id", greaterThan(0)))
                 .andExpect(jsonPath("$.title", equalTo("Make turkey reservation")))
                 .andExpect(jsonPath("$.completed", equalTo(false)))
+    }
+
+    @Test
+    fun createToDoItem_passesToDoDataToRepo() {
+        val jsonRequest = "" +
+                "{" +
+                "    \"title\": \"Make turkey reservation\"" +
+                "}"
+
+        mockMvc.perform(post("/todos")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(jsonRequest)
+        )
+
+        val expectedNewToDo = NewToDo("Make turkey reservation")
+        assertThat(stubToDoListRepo.create_argument_newToDo, `is`(equalTo(expectedNewToDo)))
     }
 }

@@ -12,4 +12,8 @@ class DefaultToDoListRepo : ToDoListRepo {
                 ToDoItem(3L, "Buy birthday present for mom", false)
         )
     }
+
+    override fun create(newToDo: NewToDo) {
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    }
 }

@@ -14,6 +14,7 @@ class ToDoListController(val toDoListRepo: ToDoListRepo) {
     @PostMapping
     @ResponseStatus(value = CREATED)
     fun createToDoItem(@RequestBody newToDo: NewToDo): ToDoItem {
+        toDoListRepo.create(newToDo)
         return ToDoItem(1, newToDo.title, false)
     }
 }
