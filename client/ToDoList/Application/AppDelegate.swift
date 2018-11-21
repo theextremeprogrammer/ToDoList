@@ -32,9 +32,13 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
             toDoListRepo: toDoListRepo,
             reloader: DefaultReloader()
         )
-        
+
+        let navigationController = UINavigationController(
+            rootViewController: rootViewController
+        )
+
         window = UIWindow()
-        window?.rootViewController = rootViewController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
         return true

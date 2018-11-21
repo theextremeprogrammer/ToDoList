@@ -6,18 +6,27 @@ import Succinct
 class AppDelegateSpec: QuickSpec {
     override func spec() {
         describe("the appliation delegate") {
-            it("displays the to do list view conotroller upon launch") {
-                let appDelegate = AppDelegate(http: SpyHttp())
+            describe("when the application launches") {
+                beforeEach {
+                    let appDelegate = AppDelegate(http: SpyHttp())
+                    
+                    
+                    let _ = appDelegate.application(
+                        UIApplication.shared,
+                        didFinishLaunchingWithOptions: nil
+                    )
+                }
+
+                it("uses a navigation controller") {
+                    let rootViewController = UIApplication.shared.keyWindow?.rootViewController
+                    expect(rootViewController).toEventually(beAKindOf(UINavigationController.self))
+                }
                 
-                
-                let _ = appDelegate.application(
-                    UIApplication.shared,
-                    didFinishLaunchingWithOptions: nil
-                )
-                
-                
-                let rootViewController = UIApplication.shared.keyWindow?.rootViewController
-                expect(rootViewController).to(beAKindOf(ToDoListViewController.self))
+                it("displays the to do list view controller") {
+                    let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController
+                    let topViewController = navigationController?.topViewController
+                    expect(topViewController).toEventually(beAKindOf(ToDoListViewController.self))
+                }
             }
         }
     }
