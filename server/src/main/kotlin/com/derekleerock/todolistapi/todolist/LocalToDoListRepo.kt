@@ -11,7 +11,8 @@ class LocalToDoListRepo : ToDoListRepo {
     }
 
     override fun create(newToDo: NewToDo): ToDoItem {
-        val toDoItem = ToDoItem(1, newToDo.title, false)
+        val nextId = toDoItems.size + 1L
+        val toDoItem = ToDoItem(nextId, newToDo.title, false)
 
         toDoItems.add(toDoItem)
 

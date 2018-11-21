@@ -44,4 +44,14 @@ class LocalToDoListRepoTest {
         assertThat(toDos.size, `is`(equalTo(1)))
         assertThat(toDos.first(), `is`(equalTo(ToDoItem(1, "Buy groceries", false))))
     }
+
+    @Test
+    fun create_incrementsIdAutomatically_whenCreatingNewToDoItems() {
+        localToDoListRepo.create(NewToDo("First ToDo"))
+        localToDoListRepo.create(NewToDo("Second ToDo"))
+
+
+        val lastToDo = localToDoListRepo.getAll().last()
+        assertThat(lastToDo.id, `is`(equalTo(2L)))
+    }
 }
