@@ -4,11 +4,11 @@ sort:
 
 # Check out and build the project's dependencies.
 bootstrap:
-	@carthage bootstrap --platform iOS --no-use-binaries
+	@carthage bootstrap --platform iOS --no-use-binaries --cache-builds
 
 # Update and rebuild the project's dependencies.
 update:
-	@carthage update --platform iOS --no-use-binaries
+	@carthage update --platform iOS --no-use-binaries --cache-builds
 
 unit-tests:
 	@/usr/bin/time xcodebuild -project ToDoList.xcodeproj -scheme "ToDoList" -destination "platform=iOS Simulator,OS=12.0,name=iPhone 8" build test
