@@ -1,3 +1,33 @@
+import UIKit
+
 protocol Router {
     func showAddToDoItemViewController()
+}
+
+final class NavigationRouter {
+    let navigationController: UINavigationController
+    let animated: Bool
+    
+    init(navigationController: UINavigationController,
+         animated: Bool
+    ) {
+        self.navigationController = navigationController
+        self.animated = animated
+    }
+}
+
+extension NavigationRouter: Router {
+    func showAddToDoItemViewController() {
+        let addToDoItemVC = AddToDoItemViewController()
+        
+        let parentNavController = UINavigationController(
+            rootViewController: addToDoItemVC
+        )
+        
+        navigationController.present(
+            parentNavController,
+            animated: animated,
+            completion: nil
+        )
+    }
 }
