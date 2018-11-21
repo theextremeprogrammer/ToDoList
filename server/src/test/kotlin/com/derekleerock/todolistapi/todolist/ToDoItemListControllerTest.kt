@@ -84,6 +84,8 @@ class ToDoItemListControllerTest {
 
     @Test
     fun createToDoItem_returnsExpectedJSON() {
+        stubToDoListRepo.create_returnValue = ToDoItem(10, "Make turkey reservation", false)
+
         val jsonRequest = "" +
                 "{" +
                 "    \"title\": \"Make turkey reservation\"" +
@@ -93,7 +95,7 @@ class ToDoItemListControllerTest {
                 .contentType(MediaType.APPLICATION_JSON_UTF8)
                 .content(jsonRequest)
         )
-                .andExpect(jsonPath("$.id", greaterThan(0)))
+                .andExpect(jsonPath("$.id", equalTo(10)))
                 .andExpect(jsonPath("$.title", equalTo("Make turkey reservation")))
                 .andExpect(jsonPath("$.completed", equalTo(false)))
     }

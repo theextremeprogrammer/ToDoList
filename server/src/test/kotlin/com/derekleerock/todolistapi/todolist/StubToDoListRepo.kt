@@ -10,7 +10,10 @@ class StubToDoListRepo : ToDoListRepo {
 
     var create_argument_newToDo: NewToDo? = null
         private set
-    override fun create(newToDo: NewToDo) {
+    var create_returnValue: ToDoItem = ToDoItemFixture.empty()
+
+    override fun create(newToDo: NewToDo): ToDoItem {
         create_argument_newToDo = newToDo
+        return create_returnValue
     }
 }
