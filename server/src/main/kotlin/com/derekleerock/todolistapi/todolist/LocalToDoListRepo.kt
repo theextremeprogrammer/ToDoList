@@ -4,7 +4,7 @@ import org.springframework.stereotype.Repository
 import java.util.Arrays.asList
 
 @Repository
-class DefaultToDoListRepo : ToDoListRepo {
+class LocalToDoListRepo : ToDoListRepo {
     override fun getAll(): List<ToDoItem> {
         return asList(
                 ToDoItem(1L, "Pick up dry cleaning", false),
