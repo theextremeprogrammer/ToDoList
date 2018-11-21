@@ -4,6 +4,7 @@ import PureLayout
 class ToDoListViewController: UIViewController {
     // MARK: - Injected Properties
     private var toDoListRepo: ToDoListRepository
+    private var router: Router?
     private var reloader: Reloader
     
     // MARK: - Properties
@@ -16,9 +17,11 @@ class ToDoListViewController: UIViewController {
     // MARK: - Initializers
     init(
         toDoListRepo: ToDoListRepository,
+        router: Router? = nil,
         reloader: Reloader
     ) {
         self.toDoListRepo = toDoListRepo
+        self.router = router
         self.reloader = reloader
         
         super.init(nibName: nil, bundle: nil)
@@ -78,6 +81,12 @@ fileprivate extension ToDoListViewController {
 
     func configureSubviews() {
         view.backgroundColor = UIColor.white
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(didTapAddBarButtonItem)
+        )
 
         tableView.backgroundColor = UIColor.clear
         tableView.dataSource = self
@@ -90,6 +99,13 @@ fileprivate extension ToDoListViewController {
             ToDoItemTableViewCell.self,
             forCellReuseIdentifier: String(describing: ToDoItemTableViewCell.self)
         )
+    }
+}
+
+// MARK: - Actions
+fileprivate extension ToDoListViewController {
+    @objc func didTapAddBarButtonItem(_ sender: UIBarButtonItem) {
+        router?.showAddToDoItemViewController()
     }
 }
 
