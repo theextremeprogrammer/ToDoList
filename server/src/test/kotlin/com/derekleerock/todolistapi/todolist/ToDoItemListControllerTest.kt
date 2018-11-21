@@ -1,8 +1,10 @@
 package com.derekleerock.todolistapi.todolist
 
 import org.hamcrest.CoreMatchers.equalTo
+import org.hamcrest.Matchers.greaterThan
 import org.junit.Before
 import org.junit.Test
+import org.springframework.http.MediaType
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
@@ -65,7 +67,32 @@ class ToDoItemListControllerTest {
 
     @Test
     fun createToDoItem_returnsCreatedStatus() {
-        mockMvc.perform(post("/todos"))
+        val jsonRequest = "" +
+                "{" +
+                "    \"title\": \"Make turkey reservation\"" +
+                "}"
+
+
+        mockMvc.perform(post("/todos")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(jsonRequest)
+        )
                 .andExpect(status().isCreated)
+    }
+
+    @Test
+    fun createToDoItem_returnsExpectedJSON() {
+        val jsonRequest = "" +
+                "{" +
+                "    \"title\": \"Make turkey reservation\"" +
+                "}"
+
+        mockMvc.perform(post("/todos")
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(jsonRequest)
+        )
+                .andExpect(jsonPath("$.id", greaterThan(0)))
+                .andExpect(jsonPath("$.title", equalTo("Make turkey reservation")))
+                .andExpect(jsonPath("$.completed", equalTo(false)))
     }
 }
