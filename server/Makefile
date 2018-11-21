@@ -12,3 +12,6 @@ start:
 
 deploy:
 	@cf push todolistserver -p ./build/libs/todolistapi-0.0.1-SNAPSHOT.jar
+
+localsampledata:
+	@./bin/loadSampleData.sh
