@@ -3,7 +3,6 @@ package com.derekleerock.todolistapi.todolist
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.Matchers.greaterThan
 import org.junit.Before
 import org.junit.Test
 import org.springframework.http.MediaType
