@@ -2,6 +2,7 @@ import UIKit
 
 protocol Router {
     func showAddToDoItemViewController()
+    func dismissModalVC()
 }
 
 final class NavigationRouter {
@@ -29,5 +30,9 @@ extension NavigationRouter: Router {
             animated: animated,
             completion: nil
         )
+    }
+    
+    func dismissModalVC() {
+        // TODO: Implementation
     }
 }

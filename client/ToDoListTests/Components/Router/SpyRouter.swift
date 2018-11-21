@@ -5,4 +5,9 @@ class SpyRouter: Router {
     func showAddToDoItemViewController() {
         showAddToDoItemViewController_wasCalled = true
     }
+    
+    private(set) var dismissModalVC_wasCalled: Bool = false
+    func dismissModalVC() {
+        dismissModalVC_wasCalled = true
+    }
 }

@@ -279,8 +279,8 @@
 		B82B33392191891A007FB06B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				B8E8B12F219407B20099500C /* ToDoListViewControllerSpec.swift */,
 				B88F5E8021A542DA0074ADBE /* AddToDoItemViewControllerSpec.swift */,
+				B8E8B12F219407B20099500C /* ToDoListViewControllerSpec.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -521,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B88F5E8121A542DA0074ADBE /* AddToDoItemViewControllerSpec.swift in Sources */,
 				B8CCC73021940DB1001E4DB9 /* AppDelegateSpec.swift in Sources */,
 				B8536B01219EC43500BE7026 /* DefaultReloaderSpec.swift in Sources */,
 				B871361C2195870500D9C489 /* FakeNetworkSession.swift in Sources */,
@@ -534,7 +535,6 @@
 				B8536B03219EC4CB00BE7026 /* SpyReloadable.swift in Sources */,
 				B800B8C3219EC1FB00BAE051 /* SpyReloader.swift in Sources */,
 				B88F5E7621A53A760074ADBE /* SpyRouter.swift in Sources */,
-				B88F5E8121A542DA0074ADBE /* AddToDoItemViewControllerSpec.swift in Sources */,
 				B800B8BB219EB89700BAE051 /* SpySessionDataTask.swift in Sources */,
 				B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */,
 				B8E8B130219407B20099500C /* ToDoListViewControllerSpec.swift in Sources */,
