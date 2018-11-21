@@ -3,14 +3,19 @@ package com.derekleerock.todolistapi.todolist
 import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.CoreMatchers.equalTo
 import org.hamcrest.MatcherAssert.assertThat
+import org.junit.Before
 import org.junit.Test
 
 class LocalToDoListRepoTest {
+    lateinit var localToDoListRepo: LocalToDoListRepo
+
+    @Before
+    fun setUp() {
+        localToDoListRepo = LocalToDoListRepo()
+    }
+
     @Test
     fun getAll_returnsEmptyList_whenNoItems() {
-        val localToDoListRepo = LocalToDoListRepo()
-
-
         val toDos = localToDoListRepo.getAll()
 
 
@@ -19,9 +24,6 @@ class LocalToDoListRepoTest {
 
     @Test
     fun create_returnsCreatedItem() {
-        val localToDoListRepo = LocalToDoListRepo()
-
-
         val toDoItem = localToDoListRepo.create(
                 NewToDo("Buy groceries")
         )
@@ -33,9 +35,6 @@ class LocalToDoListRepoTest {
 
     @Test
     fun getAll_returnsItem_whenCreatingSingleItem() {
-        val localToDoListRepo = LocalToDoListRepo()
-
-
         localToDoListRepo.create(
                 NewToDo("Buy groceries")
         )
