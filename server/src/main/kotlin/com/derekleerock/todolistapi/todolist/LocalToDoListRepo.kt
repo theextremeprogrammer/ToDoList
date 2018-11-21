@@ -1,15 +1,20 @@
 package com.derekleerock.todolistapi.todolist
 
 import org.springframework.stereotype.Repository
-import java.util.Arrays.asList
 
 @Repository
 class LocalToDoListRepo : ToDoListRepo {
+    private var toDoItems: MutableList<ToDoItem> = mutableListOf()
+
     override fun getAll(): List<ToDoItem> {
-        return emptyList()
+        return toDoItems
     }
 
     override fun create(newToDo: NewToDo): ToDoItem {
-        return ToDoItem(1, newToDo.title, false)
+        val toDoItem = ToDoItem(1, newToDo.title, false)
+
+        toDoItems.add(toDoItem)
+
+        return toDoItem
     }
 }
