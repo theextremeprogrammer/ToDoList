@@ -11,7 +11,7 @@ I typically don't write many, of any, comments in code these days. However I bro
 This code is the result of several years of TDD'ing iOS apps, reading books on testing and engineering topics, and input and influence from a number of people who have taught me so many things.
 
 ## iOS Client Functionality
-Ideally my goal is to illustrate at least the following features and functionality, complete with tests:
+Ideally my goal is to illustrate at least the following features and functionality, completely test-driven:
 
 ### Project Organization / Automation / Discoverability
 - [x] How to arrange your folders and files using an "Application", "Components", and "UI" structure to provide separation of concerns.
@@ -47,18 +47,34 @@ Ideally my goal is to illustrate at least the following features and functionali
 ### Navigation
 - [ ] Using the Router pattern to push a new view controller onto the stack.
 - [ ] Popping a view controller off of the stack.
-- [ ] Displaying a modal view controller.
+- [x] Displaying a modal view controller.
+- [x] Dismissing a modal view controller.
 
 ### UI
+- [x] How to make an Http call to retrieve data from a repository.
 - [x] How to test-drive reloading a UITableView or UICollectionView.
 - [x] How to use PureLayout to lay out the view hierarchy without using Storyboards.
 - [ ] How to access images using an enum for compile-time safety when working with images.
 - [ ] How to style UI components using pre-defined enum styles.
 
-## Kotlin Spring Server
-- [x] Using unit-tests to test-drive controller endpoints.
+## Kotlin Spring Server Functionality
+
+### REST API Endpoints
+- [ ] Using unit-tests to test-drive controller endpoints.
+  - [x] GET Endpoint - List of ToDoItems
+  - [x] POST Endpoint - Create a new ToDoItem
+  - [ ] PUT Endpoint - Update an existing ToDoItem
+  - [ ] DELETE Endpoint - Delete an existing ToDoItem
+
+### Testing
 - [x] How to break out your integration tests from your unit tests so they can be run separately.
-- [x] How to implement the Repository pattern for retrieving data.
+
+### Repository
+- [ ] How to implement the Repository pattern for an in-memory store.
+  - [x] Get list of ToDoItems
+  - [x] Create a new ToDoItem
+  - [ ] Update an existing ToDoItem
+  - [ ] Delete an existing ToDoItem
 
 ## License
 ToDoList is licensed under the MIT License. Please see the [`LICENSE`](https://github.com/derekleerock/ToDoList/blob/master/LICENSE) file.
