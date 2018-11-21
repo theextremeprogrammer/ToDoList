@@ -35,6 +35,7 @@
 		B88F5E7921A53A940074ADBE /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F5E7821A53A940074ADBE /* NavigationRouter.swift */; };
 		B88F5E7B21A540060074ADBE /* NavigationRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F5E7A21A540060074ADBE /* NavigationRouterSpec.swift */; };
 		B88F5E7F21A541A50074ADBE /* AddToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F5E7E21A541A50074ADBE /* AddToDoItemViewController.swift */; };
+		B88F5E8121A542DA0074ADBE /* AddToDoItemViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F5E8021A542DA0074ADBE /* AddToDoItemViewControllerSpec.swift */; };
 		B8A7025C2191908A0034B11D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A702592191908A0034B11D /* Result.framework */; };
 		B8A7025D2191908A0034B11D /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025A2191908A0034B11D /* BrightFutures.framework */; };
 		B8A7025E2191908A0034B11D /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025B2191908A0034B11D /* PureLayout.framework */; };
@@ -108,6 +109,7 @@
 		B88F5E7821A53A940074ADBE /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		B88F5E7A21A540060074ADBE /* NavigationRouterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouterSpec.swift; sourceTree = "<group>"; };
 		B88F5E7E21A541A50074ADBE /* AddToDoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoItemViewController.swift; sourceTree = "<group>"; };
+		B88F5E8021A542DA0074ADBE /* AddToDoItemViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoItemViewControllerSpec.swift; sourceTree = "<group>"; };
 		B8A7025121918C630034B11D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		B8A7025421918D8E0034B11D /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		B8A7025621918DC60034B11D /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				B8E8B12F219407B20099500C /* ToDoListViewControllerSpec.swift */,
+				B88F5E8021A542DA0074ADBE /* AddToDoItemViewControllerSpec.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				B8536B03219EC4CB00BE7026 /* SpyReloadable.swift in Sources */,
 				B800B8C3219EC1FB00BAE051 /* SpyReloader.swift in Sources */,
 				B88F5E7621A53A760074ADBE /* SpyRouter.swift in Sources */,
+				B88F5E8121A542DA0074ADBE /* AddToDoItemViewControllerSpec.swift in Sources */,
 				B800B8BB219EB89700BAE051 /* SpySessionDataTask.swift in Sources */,
 				B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */,
 				B8E8B130219407B20099500C /* ToDoListViewControllerSpec.swift in Sources */,
