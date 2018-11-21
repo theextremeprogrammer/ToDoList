@@ -5,6 +5,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Injected Dependencies
     var http: Http
+    var router: Router?
     
     // MARK: - Initialization
     
@@ -17,8 +18,11 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // This initializer can be called from tests for the purpose of testing the app delegate.
-    init(http: Http) {
+    init(http: Http,
+         router: Router? = nil
+    ) {
         self.http = http
+        self.router = router
     }
     
     // MARK: - UIApplicationDelegate
@@ -26,6 +30,8 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
+        router?.showToDoListViewController()
+        
         let toDoListRepo = NetworkToDoListRepository(http: http)
 
         let rootViewController = ToDoListViewController(

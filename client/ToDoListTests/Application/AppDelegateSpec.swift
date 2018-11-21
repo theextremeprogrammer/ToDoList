@@ -7,14 +7,25 @@ class AppDelegateSpec: QuickSpec {
     override func spec() {
         describe("the appliation delegate") {
             describe("when the application launches") {
+                var spyRouter: SpyRouter!
+                
                 beforeEach {
-                    let appDelegate = AppDelegate(http: SpyHttp())
+                    spyRouter = SpyRouter()
+                    
+                    let appDelegate = AppDelegate(
+                        http: SpyHttp(),
+                        router: spyRouter
+                    )
                     
                     
                     let _ = appDelegate.application(
                         UIApplication.shared,
                         didFinishLaunchingWithOptions: nil
                     )
+                }
+                
+                it("navigates to the to do list view controller") {
+                    expect(spyRouter.showToDoListViewController_wasCalled).to(beTrue())
                 }
 
                 it("uses a navigation controller") {
