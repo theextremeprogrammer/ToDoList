@@ -82,6 +82,25 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                     
                     expect(spyHttp.post_argument_url).to(equal("http://localhost:8080/todos"))
                 }
+                
+                it("passes the request body in") {
+                    let newToDo = NewToDo(title: "Make restaurant reservation")
+                    
+                    
+                    toDoListRepo.create(newToDo: newToDo)
+                    
+
+                    // Sadly if the JSON here doesn't perfectly match the JSON coming
+                    //      back from the call then this test fails - so we cannot format
+                    //      the JSON inside this string in a more readable way. This means
+                    //      that auto-formatting will break this layout. There must be a
+                    //      better way. 
+                    let expectedJSON = "" +
+                        "{" +
+                          "\"title\":\"Make restaurant reservation\"" +
+                        "}"
+                    expect(spyHttp.post_argument_requestBody).to(equal(expectedJSON))
+                }
             }
         }
     }

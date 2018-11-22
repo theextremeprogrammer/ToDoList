@@ -43,6 +43,17 @@ struct NetworkToDoListRepository: ToDoListRepository {
     }
     
     func create(newToDo: NewToDo) {
-        http.post(url: "http://localhost:8080/todos")
+        // Lots of exclamation points here. For each exclamation point, at some time
+        //      in the future, these should be replaced with appropriate error
+        //      handling for when something goes wrong to ensure that this renders
+        //      properly for the end-user.
+        let encoder = JSONEncoder()
+        let jsonData = try! encoder.encode(newToDo)
+        let jsonBody = String(data: jsonData, encoding: .utf8)!
+        
+        http.post(
+            url: "http://localhost:8080/todos",
+            requestBody: jsonBody
+        )
     }
 }

@@ -31,8 +31,8 @@ struct NetworkHttp: Http {
         
         return requestPromise.future
     }
-    
-    func post(url: String) {
+
+    func post(url: String, requestBody: String) {
         // TODO
     }
 }

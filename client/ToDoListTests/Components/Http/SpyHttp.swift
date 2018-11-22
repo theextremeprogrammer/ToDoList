@@ -24,7 +24,9 @@ class SpyHttp: Http {
     
     
     private(set) var post_argument_url: String? = nil
-    func post(url: String) {
+    private(set) var post_argument_requestBody: String? = nil
+    func post(url: String, requestBody: String) {
         post_argument_url = url
+        post_argument_requestBody = requestBody
     }
 }

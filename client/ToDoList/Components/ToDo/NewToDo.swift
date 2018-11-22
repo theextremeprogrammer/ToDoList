@@ -1,4 +1,4 @@
-struct NewToDo {
+struct NewToDo: Codable {
     let title: String
 }
 
