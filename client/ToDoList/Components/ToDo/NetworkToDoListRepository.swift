@@ -49,11 +49,10 @@ struct NetworkToDoListRepository: ToDoListRepository {
         //      properly for the end-user.
         let encoder = JSONEncoder()
         let jsonData = try! encoder.encode(newToDo)
-        let jsonBody = String(data: jsonData, encoding: .utf8)!
         
         http.post(
             url: "http://localhost:8080/todos",
-            requestBody: jsonBody
+            requestBody: jsonData
         )
     }
 }

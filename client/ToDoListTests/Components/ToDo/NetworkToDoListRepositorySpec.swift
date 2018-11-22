@@ -99,7 +99,8 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                         "{" +
                           "\"title\":\"Make restaurant reservation\"" +
                         "}"
-                    expect(spyHttp.post_argument_requestBody).to(equal(expectedJSON))
+                    let expectedJSONData = expectedJSON.data(using: .utf8)!
+                    expect(spyHttp.post_argument_requestBody).to(equal(expectedJSONData))
                 }
             }
         }

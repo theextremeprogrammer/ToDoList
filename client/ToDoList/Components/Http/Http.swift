@@ -3,7 +3,7 @@ import BrightFutures
 
 protocol Http {
     func get(url: String) -> Future<Data, HttpError>
-    func post(url: String, requestBody: String)
+    func post(url: String, requestBody: Data)
 }
 
 enum HttpError: Error {}

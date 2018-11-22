@@ -65,7 +65,7 @@ class NetworkHttpSpec: QuickSpec {
                 
                 let _ = networkHttp.post(
                     url: "http://www.google.com",
-                    requestBody: ""
+                    requestBody: "".data(using: .utf8)!
                 )
                 
                 
@@ -80,7 +80,7 @@ class NetworkHttpSpec: QuickSpec {
                 
                 let _ = networkHttp.post(
                     url: "http://www.google.com",
-                    requestBody: "some data"
+                    requestBody: "some data".data(using: .utf8)!
                 )
                 
                 

@@ -32,11 +32,11 @@ struct NetworkHttp: Http {
         return requestPromise.future
     }
 
-    func post(url urlString: String, requestBody: String) {
+    func post(url urlString: String, requestBody: Data) {
         let url = URL(string: urlString)!
         var urlRequest = URLRequest(url: url)
         
-        urlRequest.httpBody = requestBody.data(using: .utf8)
+        urlRequest.httpBody = requestBody
         
         let _ = networkSession.dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
         }
