@@ -34,7 +34,9 @@ struct NetworkHttp: Http {
 
     func post(url urlString: String, requestBody: String) {
         let url = URL(string: urlString)!
-        let urlRequest = URLRequest(url: url)
+        var urlRequest = URLRequest(url: url)
+        
+        urlRequest.httpBody = requestBody.data(using: .utf8)
         
         let _ = networkSession.dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
         }

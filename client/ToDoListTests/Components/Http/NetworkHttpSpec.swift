@@ -72,6 +72,21 @@ class NetworkHttpSpec: QuickSpec {
                 let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
                 expect(actualUrlString).to(equal("http://www.google.com"))
             }
+            
+            it("sets the request body") {
+                let spyNetworkSession = SpyNetworkSession()
+                let networkHttp = NetworkHttp(networkSession: spyNetworkSession)
+                
+                
+                let _ = networkHttp.post(
+                    url: "http://www.google.com",
+                    requestBody: "some data"
+                )
+                
+                
+                let actualBodyData = spyNetworkSession.dataTask_argument_request?.httpBody
+                expect(actualBodyData).to(equal("some data".data(using: .utf8)))
+            }
         }
     }
 }
