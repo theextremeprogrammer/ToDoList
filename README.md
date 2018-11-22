@@ -28,7 +28,7 @@ Ideally my goal is to illustrate at least the following features and functionali
 - [x] How to execute your tests without launching the application's AppDelegate class.
 - [x] How to test-drive your app delegate and use dependency injection (DI) from the moment the app starts.
 - [ ] How to roll your own test-doubles using protocols as well as examples of each different kind of test double.
-  - [ ] Dummy
+  - [x] Dummy
   - [x] Spy
   - [ ] Stub
   - [ ] Mock
@@ -39,7 +39,7 @@ Ideally my goal is to illustrate at least the following features and functionali
 ### Networking
 - [ ] How to make various HTTP requests without importing a framework.
   - [x] GET request
-  - [ ] POST request
+  - [x] POST request
   - [ ] PUT request
   - [ ] DELETE request
 - [ ] How to handle errors from HTTP requests
