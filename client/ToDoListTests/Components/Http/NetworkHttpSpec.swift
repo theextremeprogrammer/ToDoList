@@ -58,6 +58,21 @@ class NetworkHttpSpec: QuickSpec {
         }
         
         describe("http post requests") {
+            it("sets the request type to POST") {
+                let spyNetworkSession = SpyNetworkSession()
+                let networkHttp = NetworkHttp(networkSession: spyNetworkSession)
+                
+                
+                let _ = networkHttp.post(
+                    url: "http://www.google.com",
+                    requestBody: "".data(using: .utf8)!
+                )
+                
+                
+                let actualHttpMethod = spyNetworkSession.dataTask_argument_request?.httpMethod
+                expect(actualHttpMethod).to(equal("POST"))
+            }
+            
             it("makes a request to the correct endpoint") {
                 let spyNetworkSession = SpyNetworkSession()
                 let networkHttp = NetworkHttp(networkSession: spyNetworkSession)
