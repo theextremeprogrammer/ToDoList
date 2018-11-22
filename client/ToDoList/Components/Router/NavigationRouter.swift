@@ -12,21 +12,23 @@ final class NavigationRouter {
     let navigationController: UINavigationController
     let animated: Bool
     
+    let toDoListRepo: ToDoListRepository!
+    
     init(navigationController: UINavigationController,
          animated: Bool
     ) {
         self.navigationController = navigationController
         self.animated = animated
+
+        let http = NetworkHttp(networkSession: URLSession.shared)
+        toDoListRepo = NetworkToDoListRepository(
+            http: http
+        )
     }
 }
 
 extension NavigationRouter: Router {
     func showToDoListViewController() {
-        let http = NetworkHttp(networkSession: URLSession.shared)
-        let toDoListRepo = NetworkToDoListRepository(
-            http: http
-        )
-        
         let toDoListViewController = ToDoListViewController(
             toDoListRepo: toDoListRepo,
             router: self,
@@ -40,7 +42,10 @@ extension NavigationRouter: Router {
     }
     
     func showAddToDoItemViewController() {
-        let addToDoItemVC = AddToDoItemViewController(router: self)
+        let addToDoItemVC = AddToDoItemViewController(
+            router: self,
+            toDoListRepository: toDoListRepo
+        )
         
         let parentNavController = UINavigationController(
             rootViewController: addToDoItemVC

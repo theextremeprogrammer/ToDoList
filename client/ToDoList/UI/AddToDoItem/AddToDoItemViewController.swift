@@ -3,7 +3,7 @@ import UIKit
 final class AddToDoItemViewController: UIViewController {
     // MARK: - Injected Properties
     private var router: Router
-    private var toDoListRepo: ToDoListRepository?
+    private var toDoListRepo: ToDoListRepository
     
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
@@ -13,7 +13,7 @@ final class AddToDoItemViewController: UIViewController {
     
     // MARK: - Initialization
     init(router: Router,
-         toDoListRepository: ToDoListRepository? = nil
+         toDoListRepository: ToDoListRepository
     ) {
         self.router = router
         self.toDoListRepo = toDoListRepository
@@ -92,6 +92,6 @@ fileprivate extension AddToDoItemViewController {
     
     @objc func didTapDoneBarButtonItem(_ sender: UIBarButtonItem) {
         let newToDo = NewToDoItem(title: titleTextField.text!)
-        toDoListRepo?.create(newToDo: newToDo)
+        toDoListRepo.create(newToDo: newToDo)
     }
 }
