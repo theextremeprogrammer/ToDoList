@@ -4,7 +4,7 @@ import PureLayout
 class ToDoListViewController: UIViewController {
     // MARK: - Injected Properties
     private var toDoListRepo: ToDoListRepository
-    private var router: Router?
+    private var router: Router
     private var reloader: Reloader
     
     // MARK: - Properties
@@ -17,7 +17,7 @@ class ToDoListViewController: UIViewController {
     // MARK: - Initializers
     init(
         toDoListRepo: ToDoListRepository,
-        router: Router? = nil,
+        router: Router,
         reloader: Reloader
     ) {
         self.toDoListRepo = toDoListRepo
@@ -105,7 +105,7 @@ fileprivate extension ToDoListViewController {
 // MARK: - Actions
 fileprivate extension ToDoListViewController {
     @objc func didTapAddBarButtonItem(_ sender: UIBarButtonItem) {
-        router?.showAddToDoItemViewController()
+        router.showAddToDoItemViewController()
     }
 }
 

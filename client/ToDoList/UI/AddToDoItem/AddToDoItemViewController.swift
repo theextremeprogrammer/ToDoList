@@ -2,10 +2,10 @@ import UIKit
 
 final class AddToDoItemViewController: UIViewController {
     // MARK: - Properties
-    private var router: Router?
+    private var router: Router
     
     // MARK: - Initialization
-    init(router: Router? = nil) {
+    init(router: Router) {
         self.router = router
         
         super.init(nibName: nil, bundle: nil)
@@ -49,6 +49,6 @@ fileprivate extension AddToDoItemViewController {
 
 fileprivate extension AddToDoItemViewController {
     @objc func didTapCancelBarButtonItem(_ sender: UIBarButtonItem) {
-        router?.dismissModalVC()
+        router.dismissModalVC()
     }
 }

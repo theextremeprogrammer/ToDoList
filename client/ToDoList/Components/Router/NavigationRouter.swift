@@ -29,6 +29,7 @@ extension NavigationRouter: Router {
         
         let toDoListViewController = ToDoListViewController(
             toDoListRepo: toDoListRepo,
+            router: self,
             reloader: DefaultReloader()
         )
         
@@ -39,7 +40,7 @@ extension NavigationRouter: Router {
     }
     
     func showAddToDoItemViewController() {
-        let addToDoItemVC = AddToDoItemViewController()
+        let addToDoItemVC = AddToDoItemViewController(router: self)
         
         let parentNavController = UINavigationController(
             rootViewController: addToDoItemVC
