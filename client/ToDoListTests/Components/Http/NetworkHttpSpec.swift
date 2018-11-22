@@ -56,5 +56,22 @@ class NetworkHttpSpec: QuickSpec {
                 expect(spySessionDataTask.resume_wasCalled).to(beTrue())
             }
         }
+        
+        describe("http post requests") {
+            it("makes a request to the correct endpoint") {
+                let spyNetworkSession = SpyNetworkSession()
+                let networkHttp = NetworkHttp(networkSession: spyNetworkSession)
+                
+                
+                let _ = networkHttp.post(
+                    url: "http://www.google.com",
+                    requestBody: ""
+                )
+                
+                
+                let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
+                expect(actualUrlString).to(equal("http://www.google.com"))
+            }
+        }
     }
 }
