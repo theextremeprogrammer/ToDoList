@@ -78,6 +78,11 @@ class NetworkHttpSpec: QuickSpec {
                     expect(actualHttpMethod).to(equal("POST"))
                 }
                 
+                it("sets the content type") {
+                    let actualContentType = spyNetworkSession.dataTask_argument_request?.allHTTPHeaderFields?["Content-Type"]
+                    expect(actualContentType).to(equal("application/json; charset=utf-8"))
+                }
+                
                 it("makes a request to the correct endpoint") {
                     let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
                     expect(actualUrlString).to(equal("http://www.google.com"))

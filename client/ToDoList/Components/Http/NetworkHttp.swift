@@ -39,6 +39,11 @@ struct NetworkHttp: Http {
         urlRequest.httpMethod = "POST"
         urlRequest.httpBody = requestBody
         
+        urlRequest.setValue(
+            "application/json; charset=utf-8",
+            forHTTPHeaderField: "Content-Type"
+        )
+        
         let _ = networkSession
             .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
             }
