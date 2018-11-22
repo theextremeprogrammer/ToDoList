@@ -11,6 +11,7 @@ import BrightFutures
 //      co-locating these in the same file it makes it a bit easier to get around.
 protocol ToDoListRepository {
     func getAll() -> Future<[ToDoItem], RepoError>
+    func create(newToDo: NewToDo)
 }
 
 struct NetworkToDoListRepository: ToDoListRepository {
@@ -39,5 +40,9 @@ struct NetworkToDoListRepository: ToDoListRepository {
             .mapError { httpError in
                 return RepoError.undefined
             }
+    }
+    
+    func create(newToDo: NewToDo) {
+        // TODO
     }
 }

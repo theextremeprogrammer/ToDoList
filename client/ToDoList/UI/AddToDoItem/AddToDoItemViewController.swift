@@ -1,14 +1,26 @@
 import UIKit
 
 final class AddToDoItemViewController: UIViewController {
-    // MARK: - Properties
+    // MARK: - Injected Properties
     private var router: Router
+    private var toDoListRepo: ToDoListRepository?
+    
+    // MARK: - Properties
+    private var didSetupConstraints: Bool = false
+    
+    // MARK: - Views
+    private var titleTextField: UITextField!
     
     // MARK: - Initialization
-    init(router: Router) {
+    init(router: Router,
+         toDoListRepository: ToDoListRepository? = nil
+    ) {
         self.router = router
+        self.toDoListRepo = toDoListRepository
         
         super.init(nibName: nil, bundle: nil)
+        
+        view.setNeedsUpdateConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,33 +36,62 @@ final class AddToDoItemViewController: UIViewController {
         addSubviews()
         configureSubviews()
     }
+    
+    override func updateViewConstraints() {
+        if (!didSetupConstraints) {
+            titleTextField.autoPinEdge(toSuperviewSafeArea: .top, withInset: 15.0)
+            titleTextField.autoPinEdge(toSuperviewEdge: .left, withInset: 15.0)
+            titleTextField.autoPinEdge(toSuperviewEdge: .right, withInset: 15.0)
+
+            didSetupConstraints = true
+        }
+        
+        super.updateViewConstraints()
+    }
 }
 
 // MARK: - View Setup
 fileprivate extension AddToDoItemViewController {
     func initializeViews() {
+        titleTextField = UITextField.newAutoLayout()
     }
     
     func configureNavigationBar() {
         title = "Add To Do Item"
-    }
-    
-    func addSubviews() {
-    }
-    
-    func configureSubviews() {
-        view.backgroundColor = .white
         
+        titleTextField.placeholder = "Edit blog post"
+
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .stop,
             target: self,
             action: #selector(didTapCancelBarButtonItem)
         )
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(didTapDoneBarButtonItem)
+        )
+    }
+    
+    func addSubviews() {
+        view.addSubview(titleTextField)
+    }
+    
+    func configureSubviews() {
+        view.backgroundColor = .white
+        
+        titleTextField.borderStyle = .line
     }
 }
 
 fileprivate extension AddToDoItemViewController {
     @objc func didTapCancelBarButtonItem(_ sender: UIBarButtonItem) {
         router.dismissModalVC()
+    }
+    
+    @objc func didTapDoneBarButtonItem(_ sender: UIBarButtonItem) {
+        let newToDo = NewToDo(title: titleTextField.text!)
+        toDoListRepo?.create(newToDo: newToDo)
     }
 }

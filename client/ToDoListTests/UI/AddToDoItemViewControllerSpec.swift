@@ -9,12 +9,15 @@ class AddToDoItemViewControllerSpec: QuickSpec {
             var addToDoItemVC: AddToDoItemViewController!
             
             var spyRouter: SpyRouter!
+            var spyToDoListRepo: SpyToDoListRepo!
             
             beforeEach {
                 spyRouter = SpyRouter()
+                spyToDoListRepo = SpyToDoListRepo()
                 
                 addToDoItemVC = AddToDoItemViewController(
-                    router: spyRouter
+                    router: spyRouter,
+                    toDoListRepository: spyToDoListRepo
                 )
                 addToDoItemVC.loadViewControllerForUnitTest()
             }
@@ -29,6 +32,20 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                     
                     
                     expect(spyRouter.dismissModalVC_wasCalled).to(beTrue())
+                }
+            }
+            
+            describe("adding a new to do") {
+                it("tells the repo to create the new to do with the title") {
+                    let titleTextField = addToDoItemVC.findTextField(withExactPlaceholderText: "Edit blog post")
+                    titleTextField!.text = "Buy groceries"
+                    
+                    
+                    addToDoItemVC.tapBarButtonItem(withSystemItem: .done)
+                    
+                    
+                    let expectedNewToDo = NewToDo(title: "Buy groceries")
+                    expect(spyToDoListRepo.create_argument_newToDo).to(equal(expectedNewToDo))
                 }
             }
         }

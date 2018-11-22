@@ -8,4 +8,7 @@ class StubToDoListRepository: ToDoListRepository {
         //      something back from it, and if not it's OK for this to complain. 
         return getAll_returnValue!
     }
+
+    func create(newToDo: NewToDo) {
+    }
 }

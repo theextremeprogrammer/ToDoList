@@ -51,6 +51,8 @@
 		B8ED821921A632D6007D5D14 /* ToDoListViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821821A632D6007D5D14 /* ToDoListViewControllerBuilder.swift */; };
 		B8ED821B21A63343007D5D14 /* DummyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821A21A63343007D5D14 /* DummyRouter.swift */; };
 		B8ED821D21A63393007D5D14 /* DummyReloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821C21A63393007D5D14 /* DummyReloader.swift */; };
+		B8ED821F21A63E73007D5D14 /* NewToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821E21A63E73007D5D14 /* NewToDo.swift */; };
+		B8ED822121A63EA5007D5D14 /* SpyToDoListRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED822021A63EA5007D5D14 /* SpyToDoListRepo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +130,8 @@
 		B8ED821821A632D6007D5D14 /* ToDoListViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerBuilder.swift; sourceTree = "<group>"; };
 		B8ED821A21A63343007D5D14 /* DummyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRouter.swift; sourceTree = "<group>"; };
 		B8ED821C21A63393007D5D14 /* DummyReloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyReloader.swift; sourceTree = "<group>"; };
+		B8ED821E21A63E73007D5D14 /* NewToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDo.swift; sourceTree = "<group>"; };
+		B8ED822021A63EA5007D5D14 /* SpyToDoListRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyToDoListRepo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				B80FCC26219421860021CF3F /* NetworkToDoListRepositorySpec.swift */,
+				B8ED822021A63EA5007D5D14 /* SpyToDoListRepo.swift */,
 				B80FCC1F219418340021CF3F /* StubToDoListRepository.swift */,
 			);
 			path = ToDo;
@@ -308,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				B80FCC1B219417D00021CF3F /* NetworkToDoListRepository.swift */,
+				B8ED821E21A63E73007D5D14 /* NewToDo.swift */,
 				B80FCC242194201A0021CF3F /* RepoError.swift */,
 				B85F4541219411AB00C5AB33 /* ToDoItem.swift */,
 			);
@@ -518,6 +524,7 @@
 				B88F5E7921A53A940074ADBE /* NavigationRouter.swift in Sources */,
 				B87136182195812A00D9C489 /* NetworkHttp.swift in Sources */,
 				B80FCC1C219417D00021CF3F /* NetworkToDoListRepository.swift in Sources */,
+				B8ED821F21A63E73007D5D14 /* NewToDo.swift in Sources */,
 				B80FCC252194201A0021CF3F /* RepoError.swift in Sources */,
 				B85F4542219411AC00C5AB33 /* ToDoItem.swift in Sources */,
 				B871022F21A2615200B34891 /* ToDoItemTableViewCell.swift in Sources */,
@@ -547,6 +554,7 @@
 				B800B8C3219EC1FB00BAE051 /* SpyReloader.swift in Sources */,
 				B88F5E7621A53A760074ADBE /* SpyRouter.swift in Sources */,
 				B800B8BB219EB89700BAE051 /* SpySessionDataTask.swift in Sources */,
+				B8ED822121A63EA5007D5D14 /* SpyToDoListRepo.swift in Sources */,
 				B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */,
 				B8ED821921A632D6007D5D14 /* ToDoListViewControllerBuilder.swift in Sources */,
 				B8E8B130219407B20099500C /* ToDoListViewControllerSpec.swift in Sources */,
