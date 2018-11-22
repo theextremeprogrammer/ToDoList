@@ -39,8 +39,10 @@ fileprivate extension AddToDoItemViewController {
     }
     
     func configureSubviews() {
+        view.backgroundColor = .white
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(
-            barButtonSystemItem: .cancel,
+            barButtonSystemItem: .stop,
             target: self,
             action: #selector(didTapCancelBarButtonItem)
         )

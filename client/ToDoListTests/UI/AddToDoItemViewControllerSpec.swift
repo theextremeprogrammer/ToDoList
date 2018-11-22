@@ -25,7 +25,7 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                 }
                 
                 it("dismisses the view controller when tapping the 'x' bar button item") {
-                    addToDoItemVC.tapBarButtonItem(withSystemItem: .cancel)
+                    addToDoItemVC.tapBarButtonItem(withSystemItem: .stop)
                     
                     
                     expect(spyRouter.dismissModalVC_wasCalled).to(beTrue())
