@@ -39,7 +39,9 @@ struct NetworkHttp: Http {
         urlRequest.httpMethod = "POST"
         urlRequest.httpBody = requestBody
         
-        let _ = networkSession.dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
-        }
+        let _ = networkSession
+            .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
+            }
+            .resume()
     }
 }

@@ -9,11 +9,11 @@ class NetworkHttpSpec: QuickSpec {
                 // This test uses the SpyNetworkSession since we are only spying on the data sent to it.
                 let spyNetworkSession = SpyNetworkSession()
                 let networkHttp = NetworkHttp(networkSession: spyNetworkSession)
-
-
+                
+                
                 let _ = networkHttp.get(url: "http://www.google.com")
-
-
+                
+                
                 let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
                 expect(actualUrlString).to(equal("http://www.google.com"))
             }
@@ -29,7 +29,7 @@ class NetworkHttpSpec: QuickSpec {
                     maybeResponse: nil,
                     maybeError: nil
                 )
-
+                
                 
                 let maybeResponseFuture = networkHttp.get(url: "http://www.google.com")
                 
@@ -37,7 +37,7 @@ class NetworkHttpSpec: QuickSpec {
                 maybeResponseFuture.onSuccess { data in
                     actualData = data
                 }
-
+                
                 
                 expect(actualData).toEventually(equal(responseData))
             }
@@ -52,7 +52,7 @@ class NetworkHttpSpec: QuickSpec {
                 
                 let _ = networkHttp.get(url: "http://www.google.com")
                 
-
+                
                 expect(spySessionDataTask.resume_wasCalled).to(beTrue())
             }
         }
@@ -60,31 +60,50 @@ class NetworkHttpSpec: QuickSpec {
         describe("http post requests") {
             var spyNetworkSession: SpyNetworkSession!
             var networkHttp: NetworkHttp!
-
-            beforeEach {
-                spyNetworkSession = SpyNetworkSession()
-                networkHttp = NetworkHttp(networkSession: spyNetworkSession)
+            
+            describe("the post request") {
+                beforeEach {
+                    spyNetworkSession = SpyNetworkSession()
+                    networkHttp = NetworkHttp(networkSession: spyNetworkSession)
+                    
+                    
+                    let _ = networkHttp.post(
+                        url: "http://www.google.com",
+                        requestBody: "some data".data(using: .utf8)!
+                    )
+                }
+                
+                it("sets the request type to POST") {
+                    let actualHttpMethod = spyNetworkSession.dataTask_argument_request?.httpMethod
+                    expect(actualHttpMethod).to(equal("POST"))
+                }
+                
+                it("makes a request to the correct endpoint") {
+                    let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
+                    expect(actualUrlString).to(equal("http://www.google.com"))
+                }
+                
+                it("sets the request body") {
+                    let actualBodyData = spyNetworkSession.dataTask_argument_request?.httpBody
+                    expect(actualBodyData).to(equal("some data".data(using: .utf8)))
+                }
+            }
+            
+            it("ensures that newly initialized network data tasks call resume() to initiate the request") {
+                let fakeNetworkSession = FakeNetworkSession()
+                let networkHttp = NetworkHttp(networkSession: fakeNetworkSession)
+                
+                let spySessionDataTask = SpySessionDataTask()
+                fakeNetworkSession.dataTask_returnValue = spySessionDataTask
                 
                 
                 let _ = networkHttp.post(
                     url: "http://www.google.com",
                     requestBody: "some data".data(using: .utf8)!
                 )
-            }
-            
-            it("sets the request type to POST") {
-                let actualHttpMethod = spyNetworkSession.dataTask_argument_request?.httpMethod
-                expect(actualHttpMethod).to(equal("POST"))
-            }
-            
-            it("makes a request to the correct endpoint") {
-                let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
-                expect(actualUrlString).to(equal("http://www.google.com"))
-            }
-            
-            it("sets the request body") {
-                let actualBodyData = spyNetworkSession.dataTask_argument_request?.httpBody
-                expect(actualBodyData).to(equal("some data".data(using: .utf8)))
+                
+                
+                expect(spySessionDataTask.resume_wasCalled).to(beTrue())
             }
         }
     }
