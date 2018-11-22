@@ -11,11 +11,7 @@ class AppDelegateSpec: QuickSpec {
                 
                 beforeEach {
                     spyRouter = SpyRouter()
-                    
-                    let appDelegate = AppDelegate(
-                        http: SpyHttp(),
-                        router: spyRouter
-                    )
+                    let appDelegate = AppDelegate(router: spyRouter)
                     
                     
                     let _ = appDelegate.application(
@@ -26,17 +22,6 @@ class AppDelegateSpec: QuickSpec {
                 
                 it("navigates to the to do list view controller") {
                     expect(spyRouter.showToDoListViewController_wasCalled).to(beTrue())
-                }
-
-                it("uses a navigation controller") {
-                    let rootViewController = UIApplication.shared.keyWindow?.rootViewController
-                    expect(rootViewController).toEventually(beAKindOf(UINavigationController.self))
-                }
-                
-                it("displays the to do list view controller") {
-                    let navigationController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController
-                    let topViewController = navigationController?.topViewController
-                    expect(topViewController).toEventually(beAKindOf(ToDoListViewController.self))
                 }
             }
         }

@@ -1,6 +1,13 @@
+import UIKit
 @testable import ToDoList
 
 class SpyRouter: Router {
+    var navigationController: UINavigationController {
+        get {
+            return UINavigationController(nibName: nil, bundle: nil)
+        }
+    }
+    
     private(set) var showToDoListViewController_wasCalled: Bool = false
     func showToDoListViewController() {
         showToDoListViewController_wasCalled = true

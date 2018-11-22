@@ -22,6 +22,14 @@ final class NavigationRouterSpec: QuickSpec {
         }
 
         describe("navigation") {
+            it("shows the to do list view controller") {
+                navRouter.showToDoListViewController()
+                
+                
+                let topVC = rootNavController.topViewController
+                expect(topVC).toEventually(beAKindOf(ToDoListViewController.self))
+            }
+
             it("shows the add to do item view controller as a modal") {
                 instantiateUIWindowForUnitTesting(rootViewController: rootNavController)
 

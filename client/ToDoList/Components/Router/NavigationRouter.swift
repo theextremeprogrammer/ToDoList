@@ -1,6 +1,8 @@
 import UIKit
 
 protocol Router {
+    var navigationController: UINavigationController { get }
+
     func showToDoListViewController()
     func showAddToDoItemViewController()
     func dismissModalVC()
@@ -20,7 +22,20 @@ final class NavigationRouter {
 
 extension NavigationRouter: Router {
     func showToDoListViewController() {
-        // TODO
+        let http = NetworkHttp(networkSession: URLSession.shared)
+        let toDoListRepo = NetworkToDoListRepository(
+            http: http
+        )
+        
+        let toDoListViewController = ToDoListViewController(
+            toDoListRepo: toDoListRepo,
+            reloader: DefaultReloader()
+        )
+        
+        navigationController.setViewControllers(
+            [toDoListViewController],
+            animated: animated
+        )
     }
     
     func showAddToDoItemViewController() {
