@@ -48,6 +48,9 @@
 		B8C70D63219573EA001AB367 /* NetworkHttpSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */; };
 		B8CCC73021940DB1001E4DB9 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */; };
 		B8E8B130219407B20099500C /* ToDoListViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E8B12F219407B20099500C /* ToDoListViewControllerSpec.swift */; };
+		B8ED821921A632D6007D5D14 /* ToDoListViewControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821821A632D6007D5D14 /* ToDoListViewControllerBuilder.swift */; };
+		B8ED821B21A63343007D5D14 /* DummyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821A21A63343007D5D14 /* DummyRouter.swift */; };
+		B8ED821D21A63393007D5D14 /* DummyReloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821C21A63393007D5D14 /* DummyReloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +125,9 @@
 		B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttpSpec.swift; sourceTree = "<group>"; };
 		B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		B8E8B12F219407B20099500C /* ToDoListViewControllerSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerSpec.swift; sourceTree = "<group>"; };
+		B8ED821821A632D6007D5D14 /* ToDoListViewControllerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerBuilder.swift; sourceTree = "<group>"; };
+		B8ED821A21A63343007D5D14 /* DummyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRouter.swift; sourceTree = "<group>"; };
+		B8ED821C21A63393007D5D14 /* DummyReloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyReloader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B8536B00219EC43500BE7026 /* DefaultReloaderSpec.swift */,
+				B8ED821C21A63393007D5D14 /* DummyReloader.swift */,
 				B8536B02219EC4CB00BE7026 /* SpyReloadable.swift */,
 				B800B8C2219EC1FB00BAE051 /* SpyReloader.swift */,
 			);
@@ -280,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				B88F5E8021A542DA0074ADBE /* AddToDoItemViewControllerSpec.swift */,
+				B8ED821821A632D6007D5D14 /* ToDoListViewControllerBuilder.swift */,
 				B8E8B12F219407B20099500C /* ToDoListViewControllerSpec.swift */,
 			);
 			path = UI;
@@ -309,6 +317,7 @@
 		B88F5E7421A53A720074ADBE /* Router */ = {
 			isa = PBXGroup;
 			children = (
+				B8ED821A21A63343007D5D14 /* DummyRouter.swift */,
 				B88F5E7A21A540060074ADBE /* NavigationRouterSpec.swift */,
 				B88F5E7521A53A760074ADBE /* SpyRouter.swift */,
 			);
@@ -524,6 +533,8 @@
 				B88F5E8121A542DA0074ADBE /* AddToDoItemViewControllerSpec.swift in Sources */,
 				B8CCC73021940DB1001E4DB9 /* AppDelegateSpec.swift in Sources */,
 				B8536B01219EC43500BE7026 /* DefaultReloaderSpec.swift in Sources */,
+				B8ED821D21A63393007D5D14 /* DummyReloader.swift in Sources */,
+				B8ED821B21A63343007D5D14 /* DummyRouter.swift in Sources */,
 				B871361C2195870500D9C489 /* FakeNetworkSession.swift in Sources */,
 				B88F5E7B21A540060074ADBE /* NavigationRouterSpec.swift in Sources */,
 				B8C70D63219573EA001AB367 /* NetworkHttpSpec.swift in Sources */,
@@ -537,6 +548,7 @@
 				B88F5E7621A53A760074ADBE /* SpyRouter.swift in Sources */,
 				B800B8BB219EB89700BAE051 /* SpySessionDataTask.swift in Sources */,
 				B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */,
+				B8ED821921A632D6007D5D14 /* ToDoListViewControllerBuilder.swift in Sources */,
 				B8E8B130219407B20099500C /* ToDoListViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

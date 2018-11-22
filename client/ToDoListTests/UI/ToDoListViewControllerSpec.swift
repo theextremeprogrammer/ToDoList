@@ -13,24 +13,23 @@ class ToDoListTableViewControllerSpec: QuickSpec {
             var spyReloader: SpyReloader!
             var getAllPromise: Promise<[ToDoItem], RepoError>!
             
-            beforeEach {
-                getAllPromise = Promise<[ToDoItem], RepoError>()
-                
-                let stubToDoListRepository = StubToDoListRepository()
-                stubToDoListRepository.getAll_returnValue = getAllPromise.future
-                
-                spyRouter = SpyRouter()
-                spyReloader = SpyReloader()
-                
-                toDoListTableViewController = ToDoListViewController(
-                    toDoListRepo: stubToDoListRepository,
-                    router: spyRouter,
-                    reloader: spyReloader
-                )
-                toDoListTableViewController.loadViewControllerForUnitTest()
-            }
-            
             describe("displaying the list of to do items") {
+                beforeEach {
+                    getAllPromise = Promise<[ToDoItem], RepoError>()
+                    
+                    let stubToDoListRepository = StubToDoListRepository()
+                    stubToDoListRepository.getAll_returnValue = getAllPromise.future
+                    
+                    spyReloader = SpyReloader()
+                    
+                    toDoListTableViewController = ToDoListViewControllerBuilder()
+                        .withToDoListRepo(stubToDoListRepository)
+                        .withReloader(spyReloader)
+                        .build()
+                    
+                    toDoListTableViewController.loadViewControllerForUnitTest()
+                }
+                
                 it("displays a title in the navigation bar") {
                     expect(toDoListTableViewController.title).to(equal("To Do List"))
                 }
@@ -55,6 +54,20 @@ class ToDoListTableViewControllerSpec: QuickSpec {
             }
             
             describe("adding a new to do item") {
+                beforeEach {
+                    let stubToDoListRepository = StubToDoListRepository()
+                    stubToDoListRepository.getAll_returnValue = Future()
+
+                    spyRouter = SpyRouter()
+                    
+                    toDoListTableViewController = ToDoListViewControllerBuilder()
+                        .withToDoListRepo(stubToDoListRepository)
+                        .withRouter(spyRouter)
+                        .build()
+                    
+                    toDoListTableViewController.loadViewControllerForUnitTest()
+                }
+
                 it("navigates to the create to do item modal view controller when tapping the plus '+' button") {
                     toDoListTableViewController.tapBarButtonItem(withSystemItem: .add)
                     
