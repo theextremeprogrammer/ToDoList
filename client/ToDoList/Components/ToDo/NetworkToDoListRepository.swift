@@ -43,6 +43,6 @@ struct NetworkToDoListRepository: ToDoListRepository {
     }
     
     func create(newToDo: NewToDo) {
-        // TODO
+        http.post(url: "http://localhost:8080/todos")
     }
 }

@@ -20,4 +20,11 @@ class SpyHttp: Http {
         // Return the configured return value that the test expects to be sent back.
         return get_returnValue
     }
+    
+    
+    
+    private(set) var post_argument_url: String? = nil
+    func post(url: String) {
+        post_argument_url = url
+    }
 }
