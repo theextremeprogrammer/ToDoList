@@ -9,6 +9,6 @@ class StubToDoListRepository: ToDoListRepository {
         return getAll_returnValue!
     }
 
-    func create(newToDo: NewToDo) {
+    func create(newToDo: NewToDoItem) {
     }
 }

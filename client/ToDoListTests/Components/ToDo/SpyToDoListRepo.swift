@@ -6,8 +6,8 @@ final class SpyToDoListRepo: ToDoListRepository {
         return Future()
     }
     
-    private(set) var create_argument_newToDo: NewToDo? = nil
-    func create(newToDo: NewToDo) {
+    private(set) var create_argument_newToDo: NewToDoItem? = nil
+    func create(newToDo: NewToDoItem) {
         create_argument_newToDo = newToDo
     }
 }

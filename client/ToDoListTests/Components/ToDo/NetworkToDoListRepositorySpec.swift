@@ -74,7 +74,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                 }
                 
                 it("hits the expected endpoint") {
-                    let newToDo = NewToDo(title: "Make restaurant reservation")
+                    let newToDo = NewToDoItem(title: "Make restaurant reservation")
                     
                     
                     toDoListRepo.create(newToDo: newToDo)
@@ -84,7 +84,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                 }
                 
                 it("passes the request body in") {
-                    let newToDo = NewToDo(title: "Make restaurant reservation")
+                    let newToDo = NewToDoItem(title: "Make restaurant reservation")
                     
                     
                     toDoListRepo.create(newToDo: newToDo)

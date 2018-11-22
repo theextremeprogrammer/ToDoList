@@ -11,7 +11,7 @@ import BrightFutures
 //      co-locating these in the same file it makes it a bit easier to get around.
 protocol ToDoListRepository {
     func getAll() -> Future<[ToDoItem], RepoError>
-    func create(newToDo: NewToDo)
+    func create(newToDo: NewToDoItem)
 }
 
 struct NetworkToDoListRepository: ToDoListRepository {
@@ -42,7 +42,7 @@ struct NetworkToDoListRepository: ToDoListRepository {
             }
     }
     
-    func create(newToDo: NewToDo) {
+    func create(newToDo: NewToDoItem) {
         // Lots of exclamation points here. For each exclamation point, at some time
         //      in the future, these should be replaced with appropriate error
         //      handling for when something goes wrong to ensure that this renders

@@ -44,7 +44,7 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                     addToDoItemVC.tapBarButtonItem(withSystemItem: .done)
                     
                     
-                    let expectedNewToDo = NewToDo(title: "Buy groceries")
+                    let expectedNewToDo = NewToDoItem(title: "Buy groceries")
                     expect(spyToDoListRepo.create_argument_newToDo).to(equal(expectedNewToDo))
                 }
             }

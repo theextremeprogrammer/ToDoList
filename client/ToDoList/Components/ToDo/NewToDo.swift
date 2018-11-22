@@ -1,9 +1,9 @@
-struct NewToDo: Codable {
+struct NewToDoItem: Codable {
     let title: String
 }
 
-extension NewToDo: Equatable {}
+extension NewToDoItem: Equatable {}
 
-func ==(lhs: NewToDo, rhs: NewToDo) -> Bool {
+func ==(lhs: NewToDoItem, rhs: NewToDoItem) -> Bool {
     return lhs.title == rhs.title
 }
