@@ -91,7 +91,10 @@ fileprivate extension AddToDoItemViewController {
     }
     
     @objc func didTapDoneBarButtonItem(_ sender: UIBarButtonItem) {
-        let newToDo = NewToDoItem(title: titleTextField.text!)
+        let newToDo = NewToDoItemBuilder()
+            .withTitle(titleTextField.text!)
+            .build()
+
         toDoListRepo.create(newToDo: newToDo)
     }
 }

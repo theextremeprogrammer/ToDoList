@@ -36,9 +36,13 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                 
                 it("displays the title of several to do list items") {
                     getAllPromise.success([
-                        ToDoItem(id: 1, title: "Get groceries", completed: false),
-                        ToDoItem(id: 2, title: "Pick up dry cleaning", completed: false),
-                        ])
+                        ToDoItemBuilder()
+                            .withTitle("Get groceries")
+                            .build(),
+                        ToDoItemBuilder()
+                            .withTitle("Pick up dry cleaning")
+                            .build()
+                    ])
                     
                     
                     expect(toDoListTableViewController.hasLabel(withExactText: "Get groceries")).toEventually(beTrue())
