@@ -10,7 +10,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
             var toDoListRepo: NetworkToDoListRepository!
             var spyHttp: SpyHttp!
             
-            describe("get all to do list items") {
+            describe("getting all to do list items") {
                 beforeEach {
                     spyHttp = SpyHttp()
                     toDoListRepo = NetworkToDoListRepository(http: spyHttp)
@@ -23,47 +23,49 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                     expect(spyHttp.get_argument_url).to(equal("http://localhost:8080/todos"))
                 }
                 
-                it("returns a future with hard-coded to do items") {
-                    let promise = Promise<Data, HttpError>()
-                    spyHttp.get_returnValue = promise.future
-                    
-                    
-                    var toDoItems: [ToDoItem]? = nil
-                    SimpleXCTestExpectation.execute(testCase: self) { testExpectation in
-                        toDoListRepo
-                            .getAll()
-                            .onSuccess { returnedToDoItems in
-                                toDoItems = returnedToDoItems
-                                testExpectation.fulfill()
+                context("when the request is successful") {
+                    it("returns a future to do items from the http response") {
+                        let promise = Promise<Data, HttpError>()
+                        spyHttp.get_returnValue = promise.future
+                        
+                        
+                        var toDoItems: [ToDoItem]? = nil
+                        SimpleXCTestExpectation.execute(testCase: self) { testExpectation in
+                            toDoListRepo
+                                .getAll()
+                                .onSuccess { returnedToDoItems in
+                                    toDoItems = returnedToDoItems
+                                    testExpectation.fulfill()
+                                }
+                            
+                            // JSON is hard to format as a string so it can be easily manipulated.
+                            //      Note: it's possible to configure this in another IDE, such as
+                            //      IntelliJ, and then copy/paste it into Xcode or AppCode.
+                            let jsonResponse = "" +
+                                "[" +
+                                "  {" +
+                                "    \"id\": 1," +
+                                "    \"title\": \"Get groceries\"," +
+                                "    \"completed\": false" +
+                                "  }," +
+                                "  {" +
+                                "    \"id\": 2," +
+                                "    \"title\": \"Pick up dry cleaning\"," +
+                                "    \"completed\": true" +
+                                "  }" +
+                            "]"
+                            promise.success(jsonResponse.data(using: .utf8)!)
                         }
                         
-                        // JSON is hard to format as a string so it can be easily manipulated.
-                        //      Note: it's possible to configure this in another IDE, such as
-                        //      IntelliJ, and then copy/paste it into Xcode or AppCode.
-                        let jsonResponse = "" +
-                            "[" +
-                            "  {" +
-                            "    \"id\": 1," +
-                            "    \"title\": \"Get groceries\"," +
-                            "    \"completed\": false" +
-                            "  }," +
-                            "  {" +
-                            "    \"id\": 2," +
-                            "    \"title\": \"Pick up dry cleaning\"," +
-                            "    \"completed\": true" +
-                            "  }" +
-                        "]"
-                        promise.success(jsonResponse.data(using: .utf8)!)
+                        
+                        expect(toDoItems?.count).to(equal(2))
+                        expect(toDoItems?.first?.id).to(equal(1))
+                        expect(toDoItems?.first?.title).to(equal("Get groceries"))
+                        expect(toDoItems?.first?.completed).to(equal(false))
+                        expect(toDoItems?.last?.id).to(equal(2))
+                        expect(toDoItems?.last?.title).to(equal("Pick up dry cleaning"))
+                        expect(toDoItems?.last?.completed).to(equal(true))
                     }
-                    
-                    
-                    expect(toDoItems?.count).to(equal(2))
-                    expect(toDoItems?.first?.id).to(equal(1))
-                    expect(toDoItems?.first?.title).to(equal("Get groceries"))
-                    expect(toDoItems?.first?.completed).to(equal(false))
-                    expect(toDoItems?.last?.id).to(equal(2))
-                    expect(toDoItems?.last?.title).to(equal("Pick up dry cleaning"))
-                    expect(toDoItems?.last?.completed).to(equal(true))
                 }
             }
             
@@ -83,7 +85,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                     expect(spyHttp.post_argument_url).to(equal("http://localhost:8080/todos"))
                 }
                 
-                it("passes the request body in") {
+                it("passes the request body to the http request for the new to do item") {
                     let newToDo = NewToDoItem(title: "Make restaurant reservation")
                     
                     
