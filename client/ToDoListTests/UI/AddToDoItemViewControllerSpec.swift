@@ -15,10 +15,10 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                 beforeEach {
                     spyRouter = SpyRouter()
                     
-                    addToDoItemVC = AddToDoItemViewController(
-                        router: spyRouter,
-                        toDoListRepository: DummyToDoListRepository()
-                    )
+                    addToDoItemVC = AddToDoItemViewControllerBuilder()
+                        .withRouter(spyRouter)
+                        .withRoDoListRepo(DummyToDoListRepository())
+                        .build()
                     addToDoItemVC.loadViewControllerForUnitTest()
                 }
                 
@@ -33,15 +33,15 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                     expect(spyRouter.dismissModalVC_wasCalled).to(beTrue())
                 }
             }
-            
+
             describe("adding a new to do") {
                 it("tells the repo to create the new to do with the title") {
                     let spyToDoListRepo = SpyToDoListRepo()
                     
-                    addToDoItemVC = AddToDoItemViewController(
-                        router: SpyRouter(),
-                        toDoListRepository: spyToDoListRepo
-                    )
+                    addToDoItemVC = AddToDoItemViewControllerBuilder()
+                        .withRouter(SpyRouter())
+                        .withRoDoListRepo(spyToDoListRepo)
+                        .build()
                     addToDoItemVC.loadViewControllerForUnitTest()
                     
                     let titleTextField = addToDoItemVC.findTextField(withExactPlaceholderText: "Edit blog post")
@@ -67,10 +67,10 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                         let stubToDoListRepo = StubToDoListRepository()
                         stubToDoListRepo.create_returnValue = promise.future
                         
-                        addToDoItemVC = AddToDoItemViewController(
-                            router: spyRouter,
-                            toDoListRepository: stubToDoListRepo
-                        )
+                        addToDoItemVC = AddToDoItemViewControllerBuilder()
+                            .withRouter(spyRouter)
+                            .withRoDoListRepo(stubToDoListRepo)
+                            .build()
                         addToDoItemVC.loadViewControllerForUnitTest()
 
                         let titleTextField = addToDoItemVC.findTextField(withExactPlaceholderText: "Edit blog post")
@@ -98,10 +98,10 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                         let stubToDoListRepo = StubToDoListRepository()
                         stubToDoListRepo.create_returnValue = promise.future
                         
-                        addToDoItemVC = AddToDoItemViewController(
-                            router: spyRouter,
-                            toDoListRepository: stubToDoListRepo
-                        )
+                        addToDoItemVC = AddToDoItemViewControllerBuilder()
+                            .withRouter(spyRouter)
+                            .withRoDoListRepo(stubToDoListRepo)
+                            .build()
                         addToDoItemVC.loadViewControllerForUnitTest()
                         
                         let titleTextField = addToDoItemVC.findTextField(withExactPlaceholderText: "Edit blog post")
@@ -109,9 +109,9 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                         
                         
                         addToDoItemVC.tapBarButtonItem(withSystemItem: .done)
+                        
+                        
                         promise.failure(RepoError.undefined)
-                        
-                        
                         expect(spyRouter.dismissModalVC_wasCalled).to(beFalse())
                     }
                 }
