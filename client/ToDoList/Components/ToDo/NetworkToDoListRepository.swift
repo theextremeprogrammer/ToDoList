@@ -50,7 +50,7 @@ struct NetworkToDoListRepository: ToDoListRepository {
         let encoder = JSONEncoder()
         let jsonData = try! encoder.encode(newToDo)
         
-        http.post(
+        let _ = http.post(
             url: "http://localhost:8080/todos",
             requestBody: jsonData
         )

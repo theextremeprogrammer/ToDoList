@@ -32,7 +32,9 @@ struct NetworkHttp: Http {
         return requestPromise.future
     }
 
-    func post(url urlString: String, requestBody: Data) {
+    func post(url urlString: String, requestBody: Data) -> Future<Data, HttpError> {
+        let requestPromise = Promise<Data, HttpError>()
+        
         let url = URL(string: urlString)!
         var urlRequest = URLRequest(url: url)
         
@@ -46,7 +48,12 @@ struct NetworkHttp: Http {
         
         let _ = networkSession
             .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
+                if let data = maybeData {
+                    requestPromise.success(data)
+                }
             }
             .resume()
+        
+        return requestPromise.future
     }
 }

@@ -390,8 +390,8 @@
 			isa = PBXGroup;
 			children = (
 				B88F5E7D21A5419F0074ADBE /* AddToDoItem */,
-				B801A57D21A25B8200A98DE0 /* UITableView */,
 				B801A57B21A25B2B00A98DE0 /* ToDoList */,
+				B801A57D21A25B8200A98DE0 /* UITableView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
