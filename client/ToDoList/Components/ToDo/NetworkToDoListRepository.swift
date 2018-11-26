@@ -11,7 +11,7 @@ import BrightFutures
 //      co-locating these in the same file it makes it a bit easier to get around.
 protocol ToDoListRepository {
     func getAll() -> Future<[ToDoItem], RepoError>
-    func create(newToDo: NewToDoItem)
+    func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError>
 }
 
 struct NetworkToDoListRepository: ToDoListRepository {
@@ -42,7 +42,7 @@ struct NetworkToDoListRepository: ToDoListRepository {
             }
     }
     
-    func create(newToDo: NewToDoItem) {
+    func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError> {
         // Lots of exclamation points here. For each exclamation point, at some time
         //      in the future, these should be replaced with appropriate error
         //      handling for when something goes wrong to ensure that this renders
@@ -50,9 +50,18 @@ struct NetworkToDoListRepository: ToDoListRepository {
         let encoder = JSONEncoder()
         let jsonData = try! encoder.encode(newToDo)
         
-        let _ = http.post(
-            url: "http://localhost:8080/todos",
-            requestBody: jsonData
-        )
+        return http
+            .post(
+                url: "http://localhost:8080/todos",
+                requestBody: jsonData
+            )
+            .map { data in
+                let decoder = JSONDecoder()
+                let toDoItem = try! decoder.decode(ToDoItem.self, from: data)
+                return toDoItem
+            }
+            .mapError { httpError in
+                return RepoError.undefined
+            }
     }
 }

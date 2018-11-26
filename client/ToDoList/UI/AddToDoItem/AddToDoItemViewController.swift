@@ -95,6 +95,6 @@ fileprivate extension AddToDoItemViewController {
             .withTitle(titleTextField.text!)
             .build()
 
-        toDoListRepo.create(newToDo: newToDo)
+        let _ = toDoListRepo.create(newToDo: newToDo)
     }
 }

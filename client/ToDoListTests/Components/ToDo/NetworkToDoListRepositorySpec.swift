@@ -15,20 +15,20 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                     spyHttp = SpyHttp()
                     toDoListRepo = NetworkToDoListRepository(http: spyHttp)
                 }
-                
+
                 it("hits the expected endpoint") {
                     let _ = toDoListRepo.getAll()
-                    
-                    
+
+
                     expect(spyHttp.get_argument_url).to(equal("http://localhost:8080/todos"))
                 }
-                
+
                 context("when the request is successful") {
-                    it("returns a future to do items from the http response") {
+                    it("returns a future with to do items from the http response") {
                         let promise = Promise<Data, HttpError>()
                         spyHttp.get_returnValue = promise.future
-                        
-                        
+
+
                         var toDoItems: [ToDoItem]? = nil
                         SimpleXCTestExpectation.execute(testCase: self) { testExpectation in
                             toDoListRepo
@@ -37,7 +37,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                                     toDoItems = returnedToDoItems
                                     testExpectation.fulfill()
                                 }
-                            
+
                             // JSON is hard to format as a string so it can be easily manipulated.
                             //      Note: it's possible to configure this in another IDE, such as
                             //      IntelliJ, and then copy/paste it into Xcode or AppCode.
@@ -56,8 +56,8 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                             "]"
                             promise.success(jsonResponse.data(using: .utf8)!)
                         }
-                        
-                        
+
+
                         expect(toDoItems?.count).to(equal(2))
                         expect(toDoItems?.first?.id).to(equal(1))
                         expect(toDoItems?.first?.title).to(equal("Get groceries"))
@@ -79,34 +79,72 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                     let newToDo = NewToDoItemBuilder()
                         .withTitle("Make restaurant reservation")
                         .build()
-                    
-                    
-                    toDoListRepo.create(newToDo: newToDo)
 
-                    
+
+                    let _ = toDoListRepo.create(newToDo: newToDo)
+
+
                     expect(spyHttp.post_argument_url).to(equal("http://localhost:8080/todos"))
                 }
-                
+
                 it("passes the request body to the http request for the new to do item") {
                     let newToDo = NewToDoItemBuilder()
                         .withTitle("Make restaurant reservation")
                         .build()
 
-                    
-                    toDoListRepo.create(newToDo: newToDo)
-                    
+
+                    let _ = toDoListRepo.create(newToDo: newToDo)
+
 
                     // Sadly if the JSON here doesn't perfectly match the JSON coming
                     //      back from the call then this test fails - so we cannot format
                     //      the JSON inside this string in a more readable way. This means
                     //      that auto-formatting will break this layout. There must be a
-                    //      better way. 
+                    //      better way.
                     let expectedJSON = "" +
                         "{" +
                           "\"title\":\"Make restaurant reservation\"" +
                         "}"
                     let expectedJSONData = expectedJSON.data(using: .utf8)!
                     expect(spyHttp.post_argument_requestBody).to(equal(expectedJSONData))
+                }
+                
+                context("when the request is successful") {
+                    it("returns a future with the to do item from the response") {
+                        let promise = Promise<Data, HttpError>()
+                        spyHttp.post_returnValue = promise.future
+
+                        let newToDo = NewToDoItemBuilder()
+                            .withTitle("Make restaurant reservation")
+                            .build()
+
+
+                        var returnedToDoItem: ToDoItem? = nil
+                        SimpleXCTestExpectation.execute(testCase: self) { testExpectation in
+                            toDoListRepo
+                                .create(newToDo: newToDo)
+                                .onSuccess { toDoItem in
+                                    returnedToDoItem = toDoItem
+                                    testExpectation.fulfill()
+                                }
+
+                            let jsonResponse = "" +
+                                "{" +
+                                "  \"id\": 99," +
+                                "  \"title\": \"Make restaurant reservation\"," +
+                                "  \"completed\": false" +
+                                "}"
+                            promise.success(jsonResponse.data(using: .utf8)!)
+                        }
+
+
+                        let expectedToDoItem = ToDoItemBuilder()
+                            .withId(99)
+                            .withTitle("Make restaurant reservation")
+                            .withCompleted(false)
+                            .build()
+                        expect(returnedToDoItem).to(equal(expectedToDoItem))
+                    }
                 }
             }
         }
