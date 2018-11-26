@@ -95,8 +95,10 @@ fileprivate extension AddToDoItemViewController {
             .withTitle(titleTextField.text!)
             .build()
 
-        let _ = toDoListRepo.create(newToDo: newToDo)
-        
-        router.dismissModalVC()
+        let _ = toDoListRepo
+            .create(newToDo: newToDo)
+            .onSuccess { _ in
+                self.router.dismissModalVC()
+            }
     }
 }

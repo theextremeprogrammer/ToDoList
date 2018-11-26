@@ -85,7 +85,34 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                             .build()
                         promise.success(toDoItem)
                         
-                        expect(spyRouter.dismissModalVC_wasCalled).to(beTrue())
+                        expect(spyRouter.dismissModalVC_wasCalled).toEventually(beTrue())
+                    }
+                }
+                
+                context("when the request fails") {
+                    it("does not dismiss the view controller") {
+                        let promise = Promise<ToDoItem, RepoError>()
+                        
+                        let spyRouter = SpyRouter()
+                        
+                        let stubToDoListRepo = StubToDoListRepository()
+                        stubToDoListRepo.create_returnValue = promise.future
+                        
+                        addToDoItemVC = AddToDoItemViewController(
+                            router: spyRouter,
+                            toDoListRepository: stubToDoListRepo
+                        )
+                        addToDoItemVC.loadViewControllerForUnitTest()
+                        
+                        let titleTextField = addToDoItemVC.findTextField(withExactPlaceholderText: "Edit blog post")
+                        titleTextField!.text = "Buy groceries"
+                        
+                        
+                        addToDoItemVC.tapBarButtonItem(withSystemItem: .done)
+                        promise.failure(RepoError.undefined)
+                        
+                        
+                        expect(spyRouter.dismissModalVC_wasCalled).to(beFalse())
                     }
                 }
             }
