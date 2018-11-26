@@ -9,7 +9,7 @@ final class AddToDoItemViewControllerBuilder {
         return self
     }
 
-    func withRoDoListRepo(_ toDoListRepo: ToDoListRepository) -> AddToDoItemViewControllerBuilder {
+    func withToDoListRepo(_ toDoListRepo: ToDoListRepository) -> AddToDoItemViewControllerBuilder {
         self.toDoListRepo = toDoListRepo
         return self
     }

@@ -17,7 +17,7 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                     
                     addToDoItemVC = AddToDoItemViewControllerBuilder()
                         .withRouter(spyRouter)
-                        .withRoDoListRepo(DummyToDoListRepository())
+                        .withToDoListRepo(DummyToDoListRepository())
                         .build()
                     addToDoItemVC.loadViewControllerForUnitTest()
                 }
@@ -40,7 +40,7 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                     
                     addToDoItemVC = AddToDoItemViewControllerBuilder()
                         .withRouter(SpyRouter())
-                        .withRoDoListRepo(spyToDoListRepo)
+                        .withToDoListRepo(spyToDoListRepo)
                         .build()
                     addToDoItemVC.loadViewControllerForUnitTest()
                     
@@ -69,7 +69,7 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                         
                         addToDoItemVC = AddToDoItemViewControllerBuilder()
                             .withRouter(spyRouter)
-                            .withRoDoListRepo(stubToDoListRepo)
+                            .withToDoListRepo(stubToDoListRepo)
                             .build()
                         addToDoItemVC.loadViewControllerForUnitTest()
 
@@ -100,7 +100,7 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                         
                         addToDoItemVC = AddToDoItemViewControllerBuilder()
                             .withRouter(spyRouter)
-                            .withRoDoListRepo(stubToDoListRepo)
+                            .withToDoListRepo(stubToDoListRepo)
                             .build()
                         addToDoItemVC.loadViewControllerForUnitTest()
                         
