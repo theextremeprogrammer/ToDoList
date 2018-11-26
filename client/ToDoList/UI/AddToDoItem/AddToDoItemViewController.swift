@@ -96,5 +96,7 @@ fileprivate extension AddToDoItemViewController {
             .build()
 
         let _ = toDoListRepo.create(newToDo: newToDo)
+        
+        router.dismissModalVC()
     }
 }

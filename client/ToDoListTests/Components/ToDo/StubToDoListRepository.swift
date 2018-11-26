@@ -9,7 +9,10 @@ class StubToDoListRepository: ToDoListRepository {
         return getAll_returnValue!
     }
 
+    
+    
+    var create_returnValue: Future<ToDoItem, RepoError>? = nil
     func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError> {
-        return Future()
+        return create_returnValue!
     }
 }

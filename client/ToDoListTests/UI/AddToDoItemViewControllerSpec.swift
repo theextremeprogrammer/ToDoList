@@ -35,31 +35,58 @@ class AddToDoItemViewControllerSpec: QuickSpec {
             }
             
             describe("adding a new to do") {
-                var spyToDoListRepo: SpyToDoListRepo!
-                
-                beforeEach {
-                    spyToDoListRepo = SpyToDoListRepo()
+                it("tells the repo to create the new to do with the title") {
+                    let spyToDoListRepo = SpyToDoListRepo()
                     
                     addToDoItemVC = AddToDoItemViewController(
-                        router: DummyRouter(),
+                        router: SpyRouter(),
                         toDoListRepository: spyToDoListRepo
                     )
                     addToDoItemVC.loadViewControllerForUnitTest()
-                }
-                
-                it("tells the repo to create the new to do with the title") {
+                    
                     let titleTextField = addToDoItemVC.findTextField(withExactPlaceholderText: "Edit blog post")
                     titleTextField!.text = "Buy groceries"
-
-
+                    
+                    
                     addToDoItemVC.tapBarButtonItem(withSystemItem: .done)
-
-
+                    
+                    
                     let expectedNewToDo = NewToDoItemBuilder()
                         .withTitle("Buy groceries")
                         .build()
-
+                    
                     expect(spyToDoListRepo.create_argument_newToDo).to(equal(expectedNewToDo))
+                }
+                
+                context("when the request is successful") {
+                    it("dismisses the modal view controller ") {
+                        let promise = Promise<ToDoItem, RepoError>()
+
+                        let spyRouter = SpyRouter()
+                        
+                        let stubToDoListRepo = StubToDoListRepository()
+                        stubToDoListRepo.create_returnValue = promise.future
+                        
+                        addToDoItemVC = AddToDoItemViewController(
+                            router: spyRouter,
+                            toDoListRepository: stubToDoListRepo
+                        )
+                        addToDoItemVC.loadViewControllerForUnitTest()
+
+                        let titleTextField = addToDoItemVC.findTextField(withExactPlaceholderText: "Edit blog post")
+                        titleTextField!.text = "Buy groceries"
+                        
+                        
+                        addToDoItemVC.tapBarButtonItem(withSystemItem: .done)
+
+                        
+                        let toDoItem = ToDoItemBuilder()
+                            .withTitle("Buy groceries")
+                            .build()
+                        promise.success(toDoItem)
+                        
+                        expect(spyRouter.dismissModalVC_wasCalled).to(beTrue())
+                    }
                 }
             }
         }
