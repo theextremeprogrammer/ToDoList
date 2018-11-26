@@ -190,12 +190,12 @@
 			path = ToDoList;
 			sourceTree = "<group>";
 		};
-		B801A57D21A25B8200A98DE0 /* Extensions */ = {
+		B801A57D21A25B8200A98DE0 /* UITableView */ = {
 			isa = PBXGroup;
 			children = (
 				5B6ADB51355E846F6D2E7F99 /* UITableView+Reloadable.swift */,
 			);
-			path = Extensions;
+			path = UITableView;
 			sourceTree = "<group>";
 		};
 		B80FCC1D2194181E0021CF3F /* Components */ = {
@@ -390,7 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				B88F5E7D21A5419F0074ADBE /* AddToDoItem */,
-				B801A57D21A25B8200A98DE0 /* Extensions */,
+				B801A57D21A25B8200A98DE0 /* UITableView */,
 				B801A57B21A25B2B00A98DE0 /* ToDoList */,
 			);
 			path = UI;
