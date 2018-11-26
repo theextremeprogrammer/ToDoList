@@ -1,6 +1,7 @@
 import Quick
 import Nimble
 import Succinct
+import BrightFutures
 @testable import ToDoList
 
 class AddToDoItemViewControllerSpec: QuickSpec {
@@ -8,21 +9,19 @@ class AddToDoItemViewControllerSpec: QuickSpec {
         describe("the add to do item view controller") {
             var addToDoItemVC: AddToDoItemViewController!
             
-            var spyRouter: SpyRouter!
-            var spyToDoListRepo: SpyToDoListRepo!
-            
-            beforeEach {
-                spyRouter = SpyRouter()
-                spyToDoListRepo = SpyToDoListRepo()
-                
-                addToDoItemVC = AddToDoItemViewController(
-                    router: spyRouter,
-                    toDoListRepository: spyToDoListRepo
-                )
-                addToDoItemVC.loadViewControllerForUnitTest()
-            }
-            
             describe("the visual layout") {
+                var spyRouter: SpyRouter!
+                
+                beforeEach {
+                    spyRouter = SpyRouter()
+                    
+                    addToDoItemVC = AddToDoItemViewController(
+                        router: spyRouter,
+                        toDoListRepository: DummyToDoListRepository()
+                    )
+                    addToDoItemVC.loadViewControllerForUnitTest()
+                }
+                
                 it("displays a title in the navigation bar") {
                     expect(addToDoItemVC.title).to(equal("Add To Do Item"))
                 }
@@ -36,14 +35,26 @@ class AddToDoItemViewControllerSpec: QuickSpec {
             }
             
             describe("adding a new to do") {
+                var spyToDoListRepo: SpyToDoListRepo!
+                
+                beforeEach {
+                    spyToDoListRepo = SpyToDoListRepo()
+                    
+                    addToDoItemVC = AddToDoItemViewController(
+                        router: DummyRouter(),
+                        toDoListRepository: spyToDoListRepo
+                    )
+                    addToDoItemVC.loadViewControllerForUnitTest()
+                }
+                
                 it("tells the repo to create the new to do with the title") {
                     let titleTextField = addToDoItemVC.findTextField(withExactPlaceholderText: "Edit blog post")
                     titleTextField!.text = "Buy groceries"
-                    
-                    
+
+
                     addToDoItemVC.tapBarButtonItem(withSystemItem: .done)
-                    
-                    
+
+
                     let expectedNewToDo = NewToDoItemBuilder()
                         .withTitle("Buy groceries")
                         .build()
