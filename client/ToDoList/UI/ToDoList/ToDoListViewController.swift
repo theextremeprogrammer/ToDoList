@@ -141,6 +141,7 @@ extension ToDoListViewController: UITableViewDataSource {
 // MARK: - AddToDoItemDelegate
 extension ToDoListViewController: AddToDoItemDelegate {
     func add(toDoItem: ToDoItem) {
-        // TODO: Implementation
+        toDoItems.append(toDoItem)
+        reloader.reload(reloadable: self.tableView)
     }
 }

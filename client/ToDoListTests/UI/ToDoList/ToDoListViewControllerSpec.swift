@@ -63,10 +63,12 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                     stubToDoListRepository.getAll_returnValue = Future()
 
                     spyRouter = SpyRouter()
-                    
+                    spyReloader = SpyReloader()
+
                     toDoListTableViewController = ToDoListViewControllerBuilder()
                         .withToDoListRepo(stubToDoListRepository)
                         .withRouter(spyRouter)
+                        .withReloader(spyReloader)
                         .build()
                     
                     toDoListTableViewController.loadViewControllerForUnitTest()
@@ -77,6 +79,32 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                     
                     
                     expect(spyRouter.showAddToDoItemViewController_argument_delegate).to(be(toDoListTableViewController))
+                }
+                
+                it("adds the new to do item to the list of to do items") {
+                    let anotherToDoItem = ToDoItemBuilder()
+                        .withTitle("Laundry")
+                        .build()
+                    
+                    
+                    // TODO: Research a better way to test this without having to call this
+                    //      method directly from the test.
+                    toDoListTableViewController.add(toDoItem: anotherToDoItem)
+                    
+                    
+                    expect(toDoListTableViewController.hasLabel(withExactText: "Laundry")).to(beTrue())
+                }
+
+                it("adds the new to do item to the list of to do items") {
+                    let anotherToDoItem = ToDoItemBuilder().build()
+                    
+                    
+                    // TODO: Research a better way to test this without having to call this
+                    //      method directly from the test.
+                    toDoListTableViewController.add(toDoItem: anotherToDoItem)
+                    
+                    
+                    expect(spyReloader.reload_argument_reloadable).toEventually(beAKindOf(UITableView.self))
                 }
             }
         }
