@@ -87,6 +87,36 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                         
                         expect(spyRouter.dismissModalVC_wasCalled).toEventually(beTrue())
                     }
+                    
+                    it("notifies the delegate of the newly added to do item") {
+                        let promise = Promise<ToDoItem, RepoError>()
+                        
+                        let spyRouter = SpyRouter()
+                        let stubToDoListRepo = StubToDoListRepository()
+                        stubToDoListRepo.create_returnValue = promise.future
+                        let spyAddToDoItemDelegate = SpyAddToDoItemDelegate()
+
+                        addToDoItemVC = AddToDoItemViewControllerBuilder()
+                            .withRouter(spyRouter)
+                            .withToDoListRepo(stubToDoListRepo)
+                            .withDelegate(spyAddToDoItemDelegate)
+                            .build()
+                        addToDoItemVC.loadViewControllerForUnitTest()
+                        
+                        let titleTextField = addToDoItemVC.findTextField(withExactPlaceholderText: "Edit blog post")
+                        titleTextField!.text = "Buy groceries"
+                        
+                        
+                        addToDoItemVC.tapBarButtonItem(withSystemItem: .done)
+                        
+                        
+                        let toDoItem = ToDoItemBuilder()
+                            .withTitle("Buy groceries")
+                            .build()
+                        promise.success(toDoItem)
+                        
+                        expect(spyAddToDoItemDelegate.add_argument_toDoItem).toEventually(equal(toDoItem))
+                    }
                 }
                 
                 context("when the request fails") {

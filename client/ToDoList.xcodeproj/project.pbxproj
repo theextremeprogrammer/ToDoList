@@ -42,6 +42,7 @@
 		B88F5E7B21A540060074ADBE /* NavigationRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F5E7A21A540060074ADBE /* NavigationRouterSpec.swift */; };
 		B88F5E7F21A541A50074ADBE /* AddToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F5E7E21A541A50074ADBE /* AddToDoItemViewController.swift */; };
 		B8A55CC521ABB97C0046F80A /* DummyToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A55CC421ABB97C0046F80A /* DummyToDoListRepository.swift */; };
+		B8A55CCB21ABEED00046F80A /* SpyAddToDoItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A55CCA21ABEED00046F80A /* SpyAddToDoItemDelegate.swift */; };
 		B8A7025C2191908A0034B11D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A702592191908A0034B11D /* Result.framework */; };
 		B8A7025D2191908A0034B11D /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025A2191908A0034B11D /* BrightFutures.framework */; };
 		B8A7025E2191908A0034B11D /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025B2191908A0034B11D /* PureLayout.framework */; };
@@ -125,6 +126,7 @@
 		B88F5E7A21A540060074ADBE /* NavigationRouterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouterSpec.swift; sourceTree = "<group>"; };
 		B88F5E7E21A541A50074ADBE /* AddToDoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoItemViewController.swift; sourceTree = "<group>"; };
 		B8A55CC421ABB97C0046F80A /* DummyToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyToDoListRepository.swift; sourceTree = "<group>"; };
+		B8A55CCA21ABEED00046F80A /* SpyAddToDoItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyAddToDoItemDelegate.swift; sourceTree = "<group>"; };
 		B8A7025121918C630034B11D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		B8A7025421918D8E0034B11D /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		B8A7025621918DC60034B11D /* Cartfile.private */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.private; sourceTree = "<group>"; };
@@ -361,6 +363,7 @@
 			children = (
 				5B6AD7AB45E2D7A593F79790 /* AddToDoItemViewControllerBuilder.swift */,
 				5B6ADBDE115E29D4BA752BE6 /* AddToDoItemViewControllerSpec.swift */,
+				B8A55CCA21ABEED00046F80A /* SpyAddToDoItemDelegate.swift */,
 			);
 			path = AddToDoItem;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 				B86E72EA21A65EA9006B9AC0 /* NewToDoItemSpec.swift in Sources */,
 				B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */,
 				B8239C8D2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift in Sources */,
+				B8A55CCB21ABEED00046F80A /* SpyAddToDoItemDelegate.swift in Sources */,
 				B82180BC219C192A00780BA7 /* SpyHttp.swift in Sources */,
 				B871361A2195850800D9C489 /* SpyNetworkSession.swift in Sources */,
 				B8536B03219EC4CB00BE7026 /* SpyReloadable.swift in Sources */,

@@ -1,9 +1,14 @@
 import UIKit
 
+protocol AddToDoItemDelegate {
+    func add(toDoItem: ToDoItem)
+}
+
 final class AddToDoItemViewController: UIViewController {
     // MARK: - Injected Properties
     private var router: Router
     private var toDoListRepo: ToDoListRepository
+    private var delegate: AddToDoItemDelegate?
     
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
@@ -13,10 +18,12 @@ final class AddToDoItemViewController: UIViewController {
     
     // MARK: - Initialization
     init(router: Router,
-         toDoListRepository: ToDoListRepository
+         toDoListRepository: ToDoListRepository,
+         delegate: AddToDoItemDelegate? = nil
     ) {
         self.router = router
         self.toDoListRepo = toDoListRepository
+        self.delegate = delegate
         
         super.init(nibName: nil, bundle: nil)
         
@@ -97,7 +104,8 @@ fileprivate extension AddToDoItemViewController {
 
         let _ = toDoListRepo
             .create(newToDo: newToDo)
-            .onSuccess { _ in
+            .onSuccess { toDoItem in
+                self.delegate?.add(toDoItem: toDoItem)
                 self.router.dismissModalVC()
             }
     }
