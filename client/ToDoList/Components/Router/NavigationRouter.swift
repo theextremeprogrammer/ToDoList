@@ -4,7 +4,7 @@ protocol Router {
     var navigationController: UINavigationController { get }
 
     func showToDoListViewController()
-    func showAddToDoItemViewController()
+    func showAddToDoItemViewController(delegate: AddToDoItemDelegate)
     func dismissModalVC()
 }
 
@@ -41,10 +41,11 @@ extension NavigationRouter: Router {
         )
     }
     
-    func showAddToDoItemViewController() {
+    func showAddToDoItemViewController(delegate: AddToDoItemDelegate) {
         let addToDoItemVC = AddToDoItemViewController(
             router: self,
-            toDoListRepository: toDoListRepo
+            toDoListRepository: toDoListRepo,
+            delegate: delegate
         )
         
         let parentNavController = UINavigationController(

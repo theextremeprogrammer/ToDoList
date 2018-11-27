@@ -12,7 +12,7 @@ final class DummyRouter: Router {
         assertionFailure("showToDoListViewController() - not expected to have been called")
     }
     
-    func showAddToDoItemViewController() {
+    func showAddToDoItemViewController(delegate: AddToDoItemDelegate) {
         assertionFailure("showAddToDoItemViewController() - not expected to have been called")
     }
     

@@ -34,7 +34,7 @@ final class NavigationRouterSpec: QuickSpec {
                 instantiateUIWindowForUnitTesting(rootViewController: rootNavController)
 
 
-                navRouter.showAddToDoItemViewController()
+                navRouter.showAddToDoItemViewController(delegate: SpyAddToDoItemDelegate())
 
 
                 let presentedNavVC = rootNavController.presentedViewController as? UINavigationController

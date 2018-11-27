@@ -105,7 +105,7 @@ fileprivate extension ToDoListViewController {
 // MARK: - Actions
 fileprivate extension ToDoListViewController {
     @objc func didTapAddBarButtonItem(_ sender: UIBarButtonItem) {
-        router.showAddToDoItemViewController()
+        router.showAddToDoItemViewController(delegate: self)
     }
 }
 
@@ -135,5 +135,12 @@ extension ToDoListViewController: UITableViewDataSource {
         cell.configure(toDoItem: toDoItems[indexPath.row])
 
         return cell
+    }
+}
+
+// MARK: - AddToDoItemDelegate
+extension ToDoListViewController: AddToDoItemDelegate {
+    func add(toDoItem: ToDoItem) {
+        // TODO: Implementation
     }
 }

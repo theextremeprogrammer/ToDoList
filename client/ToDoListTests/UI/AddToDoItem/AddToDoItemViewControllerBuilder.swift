@@ -3,7 +3,7 @@
 final class AddToDoItemViewControllerBuilder {
     private var router: Router = DummyRouter()
     private var toDoListRepo: ToDoListRepository = DummyToDoListRepository()
-    private var delegate: AddToDoItemDelegate? = nil
+    private var delegate: AddToDoItemDelegate = SpyAddToDoItemDelegate()
 
     func withRouter(_ router: Router) -> AddToDoItemViewControllerBuilder {
         self.router = router

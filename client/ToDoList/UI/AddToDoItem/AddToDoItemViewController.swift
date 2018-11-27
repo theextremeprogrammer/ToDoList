@@ -8,7 +8,7 @@ final class AddToDoItemViewController: UIViewController {
     // MARK: - Injected Properties
     private var router: Router
     private var toDoListRepo: ToDoListRepository
-    private var delegate: AddToDoItemDelegate?
+    private var delegate: AddToDoItemDelegate
     
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
@@ -19,7 +19,7 @@ final class AddToDoItemViewController: UIViewController {
     // MARK: - Initialization
     init(router: Router,
          toDoListRepository: ToDoListRepository,
-         delegate: AddToDoItemDelegate? = nil
+         delegate: AddToDoItemDelegate
     ) {
         self.router = router
         self.toDoListRepo = toDoListRepository
@@ -105,7 +105,7 @@ fileprivate extension AddToDoItemViewController {
         let _ = toDoListRepo
             .create(newToDo: newToDo)
             .onSuccess { toDoItem in
-                self.delegate?.add(toDoItem: toDoItem)
+                self.delegate.add(toDoItem: toDoItem)
                 self.router.dismissModalVC()
             }
     }

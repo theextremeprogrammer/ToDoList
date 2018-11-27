@@ -76,7 +76,7 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                     toDoListTableViewController.tapBarButtonItem(withSystemItem: .add)
                     
                     
-                    expect(spyRouter.showAddToDoItemViewController_wasCalled).to(beTrue())
+                    expect(spyRouter.showAddToDoItemViewController_argument_delegate).to(be(toDoListTableViewController))
                 }
             }
         }
