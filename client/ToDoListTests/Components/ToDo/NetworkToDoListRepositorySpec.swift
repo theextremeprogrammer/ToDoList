@@ -38,22 +38,21 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                                     testExpectation.fulfill()
                                 }
 
-                            // JSON is hard to format as a string so it can be easily manipulated.
-                            //      Note: it's possible to configure this in another IDE, such as
-                            //      IntelliJ, and then copy/paste it into Xcode or AppCode.
-                            let jsonResponse = "" +
-                                "[" +
-                                "  {" +
-                                "    \"id\": 1," +
-                                "    \"title\": \"Get groceries\"," +
-                                "    \"completed\": false" +
-                                "  }," +
-                                "  {" +
-                                "    \"id\": 2," +
-                                "    \"title\": \"Pick up dry cleaning\"," +
-                                "    \"completed\": true" +
-                                "  }" +
-                            "]"
+                            // We can use a multi-string literal 
+                            let jsonResponse = """
+                                [
+                                  { 
+                                    "id": 1, 
+                                    "title": "Get groceries", 
+                                    "completed": false
+                                  },
+                                  {
+                                    "id": 2, 
+                                    "title": "Pick up dry cleaning", 
+                                    "completed": true
+                                  }
+                                ]
+                               """
                             promise.success(jsonResponse.data(using: .utf8)!)
                         }
 
@@ -101,10 +100,9 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                     //      the JSON inside this string in a more readable way. This means
                     //      that auto-formatting will break this layout. There must be a
                     //      better way.
-                    let expectedJSON = "" +
-                        "{" +
-                          "\"title\":\"Make restaurant reservation\"" +
-                        "}"
+                    let expectedJSON = """
+                        {"title":"Make restaurant reservation"}
+                        """
                     let expectedJSONData = expectedJSON.data(using: .utf8)!
                     expect(spyHttp.post_argument_requestBody).to(equal(expectedJSONData))
                 }
@@ -128,12 +126,13 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                                     testExpectation.fulfill()
                                 }
 
-                            let jsonResponse = "" +
-                                "{" +
-                                "  \"id\": 99," +
-                                "  \"title\": \"Make restaurant reservation\"," +
-                                "  \"completed\": false" +
-                                "}"
+                            let jsonResponse = """
+                                {
+                                  "id": 99,
+                                  "title": "Make restaurant reservation",
+                                  "completed": false
+                                }
+                               """
                             promise.success(jsonResponse.data(using: .utf8)!)
                         }
 
