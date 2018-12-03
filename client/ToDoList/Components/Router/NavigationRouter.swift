@@ -21,12 +21,11 @@ final class NavigationRouter {
         self.animated = animated
 
         let http = NetworkHttp(
-            baseUrl: "http://localhost:8080",
+            baseUrl: Configuration.environment.baseURL,
             networkSession: URLSession.shared
         )
-        toDoListRepo = NetworkToDoListRepository(
-            http: http
-        )
+        
+        toDoListRepo = NetworkToDoListRepository(http: http)
     }
 }
 
