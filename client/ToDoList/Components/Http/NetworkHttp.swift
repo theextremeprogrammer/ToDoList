@@ -10,14 +10,16 @@ protocol NetworkSession {
 extension URLSession: NetworkSession {}
 
 struct NetworkHttp: Http {
+    let baseUrl: String?
     let networkSession: NetworkSession
 
-    func get(url urlString: String) -> Future<Data, HttpError> {
+    func get(endpoint: String) -> Future<Data, HttpError> {
         // First create a promise so we can return the future from this method call. We
         //      can then call success() or failure() when we receive a response with
         //      the appropriate data or error that is received.
         let requestPromise = Promise<Data, HttpError>()
         
+        let urlString = (baseUrl ?? "") + endpoint
         let url = URL(string: urlString)!
         let urlRequest = URLRequest(url: url)
         
@@ -32,9 +34,10 @@ struct NetworkHttp: Http {
         return requestPromise.future
     }
 
-    func post(url urlString: String, requestBody: Data) -> Future<Data, HttpError> {
+    func post(endpoint: String, requestBody: Data) -> Future<Data, HttpError> {
         let requestPromise = Promise<Data, HttpError>()
         
+        let urlString = (baseUrl ?? "") + endpoint
         let url = URL(string: urlString)!
         var urlRequest = URLRequest(url: url)
         

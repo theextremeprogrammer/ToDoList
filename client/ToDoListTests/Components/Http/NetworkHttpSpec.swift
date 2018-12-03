@@ -8,25 +8,31 @@ class NetworkHttpSpec: QuickSpec {
             it("makes a request to the correct endpoint") {
                 // This test uses the SpyNetworkSession since we are only spying on the data sent to it.
                 let spyNetworkSession = SpyNetworkSession()
-                let networkHttp = NetworkHttp(networkSession: spyNetworkSession)
+                let networkHttp = NetworkHttp(
+                    baseUrl: "http://www.example.com",
+                    networkSession: spyNetworkSession
+                )
                 
                 
-                let _ = networkHttp.get(url: "http://www.google.com")
+                let _ = networkHttp.get(endpoint: "/endpoint")
                 
                 
                 let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
-                expect(actualUrlString).to(equal("http://www.google.com"))
+                expect(actualUrlString).to(equal("http://www.example.com/endpoint"))
             }
             
             it("ensures that newly initialized network data tasks call resume() to initiate the request") {
                 let fakeNetworkSession = FakeNetworkSession()
-                let networkHttp = NetworkHttp(networkSession: fakeNetworkSession)
+                let networkHttp = NetworkHttp(
+                    baseUrl: "http://www.example.com",
+                    networkSession: fakeNetworkSession
+                )
                 
                 let spySessionDataTask = SpySessionDataTask()
                 fakeNetworkSession.dataTask_returnValue = spySessionDataTask
                 
                 
-                let _ = networkHttp.get(url: "http://www.google.com")
+                let _ = networkHttp.get(endpoint: "")
                 
                 
                 expect(spySessionDataTask.resume_wasCalled).to(beTrue())
@@ -35,8 +41,11 @@ class NetworkHttpSpec: QuickSpec {
             it("returns a future which resolves the request with response data") {
                 // This test uses the FakeNetworkSession to allow us to set data on the dataTask.
                 let fakeNetworkSession = FakeNetworkSession()
-                let networkHttp = NetworkHttp(networkSession: fakeNetworkSession)
-                
+                let networkHttp = NetworkHttp(
+                    baseUrl: "http://www.example.com",
+                    networkSession: fakeNetworkSession
+                )
+
                 let responseData = "GET Response".data(using: String.Encoding.utf8)
                 fakeNetworkSession.dataTask_completionHandler_inputs = (
                     maybeData: responseData,
@@ -45,7 +54,7 @@ class NetworkHttpSpec: QuickSpec {
                 )
                 
                 
-                let maybeResponseFuture = networkHttp.get(url: "http://www.google.com")
+                let maybeResponseFuture = networkHttp.get(endpoint: "http://www.example.com")
                 
                 var actualData: Data?
                 maybeResponseFuture.onSuccess { data in
@@ -64,11 +73,14 @@ class NetworkHttpSpec: QuickSpec {
             describe("the post request") {
                 beforeEach {
                     spyNetworkSession = SpyNetworkSession()
-                    networkHttp = NetworkHttp(networkSession: spyNetworkSession)
+                    networkHttp = NetworkHttp(
+                        baseUrl: "http://www.example.com",
+                        networkSession: spyNetworkSession
+                    )
                     
                     
                     let _ = networkHttp.post(
-                        url: "http://www.google.com",
+                        endpoint: "/endpoint",
                         requestBody: "some data".data(using: .utf8)!
                     )
                 }
@@ -85,7 +97,7 @@ class NetworkHttpSpec: QuickSpec {
                 
                 it("makes a request to the correct endpoint") {
                     let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
-                    expect(actualUrlString).to(equal("http://www.google.com"))
+                    expect(actualUrlString).to(equal("http://www.example.com/endpoint"))
                 }
                 
                 it("sets the request body") {
@@ -96,14 +108,17 @@ class NetworkHttpSpec: QuickSpec {
             
             it("ensures that newly initialized network data tasks call resume() to initiate the request") {
                 let fakeNetworkSession = FakeNetworkSession()
-                let networkHttp = NetworkHttp(networkSession: fakeNetworkSession)
+                let networkHttp = NetworkHttp(
+                    baseUrl: "http://www.example.com",
+                    networkSession: fakeNetworkSession
+                )
                 
                 let spySessionDataTask = SpySessionDataTask()
                 fakeNetworkSession.dataTask_returnValue = spySessionDataTask
                 
                 
                 let _ = networkHttp.post(
-                    url: "http://www.google.com",
+                    endpoint: "http://www.example.com",
                     requestBody: "some data".data(using: .utf8)!
                 )
                 
@@ -114,8 +129,11 @@ class NetworkHttpSpec: QuickSpec {
             it("resolves the request with response data") {
                 // This test uses the FakeNetworkSession to allow us to set data on the dataTask.
                 let fakeNetworkSession = FakeNetworkSession()
-                let networkHttp = NetworkHttp(networkSession: fakeNetworkSession)
-                
+                let networkHttp = NetworkHttp(
+                    baseUrl: "http://www.example.com",
+                    networkSession: fakeNetworkSession
+                )
+
                 let responseData = "POST Response".data(using: String.Encoding.utf8)
                 fakeNetworkSession.dataTask_completionHandler_inputs = (
                     maybeData: responseData,
@@ -125,7 +143,7 @@ class NetworkHttpSpec: QuickSpec {
                 
                 
                 let maybeResponseFuture = networkHttp.post(
-                    url: "http://www.google.com",
+                    endpoint: "http://www.example.com",
                     requestBody: "some data".data(using: .utf8)!
                 )
                 

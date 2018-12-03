@@ -20,7 +20,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                     let _ = toDoListRepo.getAll()
 
 
-                    expect(spyHttp.get_argument_url).to(equal("http://localhost:8080/todos"))
+                    expect(spyHttp.get_argument_endpoint).to(equal("/todos"))
                 }
 
                 context("when the request is successful") {
@@ -83,7 +83,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                     let _ = toDoListRepo.create(newToDo: newToDo)
 
 
-                    expect(spyHttp.post_argument_url).to(equal("http://localhost:8080/todos"))
+                    expect(spyHttp.post_argument_endpoint).to(equal("/todos"))
                 }
 
                 it("passes the request body to the http request for the new to do item") {

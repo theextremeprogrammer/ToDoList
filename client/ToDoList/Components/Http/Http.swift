@@ -2,8 +2,8 @@ import Foundation
 import BrightFutures
 
 protocol Http {
-    func get(url: String) -> Future<Data, HttpError>
-    func post(url: String, requestBody: Data) -> Future<Data, HttpError>
+    func get(endpoint: String) -> Future<Data, HttpError>
+    func post(endpoint: String, requestBody: Data) -> Future<Data, HttpError>
 }
 
 enum HttpError: Error {}

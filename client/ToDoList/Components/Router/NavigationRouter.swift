@@ -20,7 +20,7 @@ final class NavigationRouter {
         self.navigationController = navigationController
         self.animated = animated
 
-        let http = NetworkHttp(networkSession: URLSession.shared)
+        let http = NetworkHttp(baseUrl: nil, networkSession: URLSession.shared)
         toDoListRepo = NetworkToDoListRepository(
             http: http
         )
