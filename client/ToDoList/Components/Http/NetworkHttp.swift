@@ -10,7 +10,7 @@ protocol NetworkSession {
 extension URLSession: NetworkSession {}
 
 struct NetworkHttp: Http {
-    let baseUrl: String?
+    let baseUrl: String
     let networkSession: NetworkSession
 
     func get(endpoint: String) -> Future<Data, HttpError> {
@@ -19,7 +19,7 @@ struct NetworkHttp: Http {
         //      the appropriate data or error that is received.
         let requestPromise = Promise<Data, HttpError>()
         
-        let urlString = (baseUrl ?? "") + endpoint
+        let urlString = baseUrl + endpoint
         let url = URL(string: urlString)!
         let urlRequest = URLRequest(url: url)
         
@@ -37,7 +37,7 @@ struct NetworkHttp: Http {
     func post(endpoint: String, requestBody: Data) -> Future<Data, HttpError> {
         let requestPromise = Promise<Data, HttpError>()
         
-        let urlString = (baseUrl ?? "") + endpoint
+        let urlString = baseUrl + endpoint
         let url = URL(string: urlString)!
         var urlRequest = URLRequest(url: url)
         
