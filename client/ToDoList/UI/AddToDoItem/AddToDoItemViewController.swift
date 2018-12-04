@@ -8,22 +8,20 @@ final class AddToDoItemViewController: UIViewController {
     // MARK: - Injected Properties
     private var router: Router
     private var toDoListRepo: ToDoListRepository
-    private var delegate: AddToDoItemDelegate
     
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
-    
+    var delegate: AddToDoItemDelegate? = nil
+
     // MARK: - Views
     private var titleTextField: UITextField!
     
     // MARK: - Initialization
     init(router: Router,
-         toDoListRepository: ToDoListRepository,
-         delegate: AddToDoItemDelegate
+         toDoListRepository: ToDoListRepository
     ) {
         self.router = router
         self.toDoListRepo = toDoListRepository
-        self.delegate = delegate
         
         super.init(nibName: nil, bundle: nil)
         
@@ -105,7 +103,7 @@ fileprivate extension AddToDoItemViewController {
         let _ = toDoListRepo
             .create(newToDo: newToDo)
             .onSuccess { toDoItem in
-                self.delegate.add(toDoItem: toDoItem)
+                self.delegate?.add(toDoItem: toDoItem)
                 self.router.dismissModalVC()
             }
     }

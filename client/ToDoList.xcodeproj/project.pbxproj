@@ -28,6 +28,7 @@
 		B82180BC219C192A00780BA7 /* SpyHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82180BB219C192A00780BA7 /* SpyHttp.swift */; };
 		B8239C8D2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8239C8C2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift */; };
 		B825839D21B517D7000D0922 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825839C21B517D7000D0922 /* Environment.swift */; };
+		B825839F21B51F8D000D0922 /* FakeToDoListRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825839E21B51F8D000D0922 /* FakeToDoListRepo.swift */; };
 		B82B333B21918A1E007FB06B /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82B333A21918A1E007FB06B /* main.swift */; };
 		B8536B01219EC43500BE7026 /* DefaultReloaderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8536B00219EC43500BE7026 /* DefaultReloaderSpec.swift */; };
 		B8536B03219EC4CB00BE7026 /* SpyReloadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8536B02219EC4CB00BE7026 /* SpyReloadable.swift */; };
@@ -112,6 +113,7 @@
 		B82180BB219C192A00780BA7 /* SpyHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyHttp.swift; sourceTree = "<group>"; };
 		B8239C8C2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAsyncXCTestExpectation.swift; sourceTree = "<group>"; };
 		B825839C21B517D7000D0922 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		B825839E21B51F8D000D0922 /* FakeToDoListRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeToDoListRepo.swift; sourceTree = "<group>"; };
 		B82B33102191886D007FB06B /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82B33242191886E007FB06B /* ToDoListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ToDoListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B82B333A21918A1E007FB06B /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				B8ED822021A63EA5007D5D14 /* SpyToDoListRepo.swift */,
 				B80FCC1F219418340021CF3F /* StubToDoListRepository.swift */,
 				B86E72EB21A65F31006B9AC0 /* ToDoItemSpec.swift */,
+				B825839E21B51F8D000D0922 /* FakeToDoListRepo.swift */,
 			);
 			path = ToDo;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				B88F5E7B21A540060074ADBE /* NavigationRouterSpec.swift in Sources */,
 				B8C70D63219573EA001AB367 /* NetworkHttpSpec.swift in Sources */,
 				B80FCC27219421860021CF3F /* NetworkToDoListRepositorySpec.swift in Sources */,
+				B825839F21B51F8D000D0922 /* FakeToDoListRepo.swift in Sources */,
 				B86E72EA21A65EA9006B9AC0 /* NewToDoItemSpec.swift in Sources */,
 				B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */,
 				B8239C8D2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift in Sources */,

@@ -99,8 +99,8 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                         addToDoItemVC = AddToDoItemViewControllerBuilder()
                             .withRouter(spyRouter)
                             .withToDoListRepo(stubToDoListRepo)
-                            .withDelegate(spyAddToDoItemDelegate)
                             .build()
+                        addToDoItemVC.delegate = spyAddToDoItemDelegate
                         addToDoItemVC.loadViewControllerForUnitTest()
                         
                         let titleTextField = addToDoItemVC.findTextField(withExactPlaceholderText: "Edit blog post")

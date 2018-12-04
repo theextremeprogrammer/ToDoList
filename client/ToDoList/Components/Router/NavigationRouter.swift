@@ -46,9 +46,9 @@ extension NavigationRouter: Router {
     func showAddToDoItemViewController(delegate: AddToDoItemDelegate) {
         let addToDoItemVC = AddToDoItemViewController(
             router: self,
-            toDoListRepository: toDoListRepo,
-            delegate: delegate
+            toDoListRepository: toDoListRepo
         )
+        addToDoItemVC.delegate = delegate
         
         let parentNavController = UINavigationController(
             rootViewController: addToDoItemVC

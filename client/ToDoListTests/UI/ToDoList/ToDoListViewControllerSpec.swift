@@ -57,53 +57,59 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                 }
             }
             
-            describe("adding a new to do item") {
+            describe("navigation") {
                 beforeEach {
                     let stubToDoListRepository = StubToDoListRepository()
                     stubToDoListRepository.getAll_returnValue = Future()
-
+                    
                     spyRouter = SpyRouter()
-                    spyReloader = SpyReloader()
-
+                    
                     toDoListTableViewController = ToDoListViewControllerBuilder()
                         .withToDoListRepo(stubToDoListRepository)
                         .withRouter(spyRouter)
-                        .withReloader(spyReloader)
                         .build()
-                    
                     toDoListTableViewController.loadViewControllerForUnitTest()
                 }
-
+                
                 it("navigates to the create to do item modal view controller when tapping the plus '+' button") {
                     toDoListTableViewController.tapBarButtonItem(withSystemItem: .add)
                     
                     
                     expect(spyRouter.showAddToDoItemViewController_argument_delegate).to(be(toDoListTableViewController))
                 }
-                
-                it("adds the new to do item to the list of to do items") {
-                    let anotherToDoItem = ToDoItemBuilder()
-                        .withTitle("Laundry")
+            }
+
+            describe("adding a new to do item") {
+                beforeEach {
+                    let stubToDoListRepository = StubToDoListRepository()
+                    stubToDoListRepository.getAll_returnValue = Future()
+
+                    spyReloader = SpyReloader()
+
+                    toDoListTableViewController = ToDoListViewControllerBuilder()
+                        .withToDoListRepo(stubToDoListRepository)
+                        .withReloader(spyReloader)
                         .build()
+                    toDoListTableViewController.loadViewControllerForUnitTest()
+
+                    let addVC = AddToDoItemViewController(
+                        router: SpyRouter(),
+                        toDoListRepository: FakeToDoListRepo()
+                    )
+                    addVC.delegate = toDoListTableViewController
+                    
+                    let textField = addVC.findTextField(withExactPlaceholderText: "Edit blog post")
+                    textField?.text = "Laundry"
                     
                     
-                    // TODO: Research a better way to test this without having to call this
-                    //      method directly from the test.
-                    toDoListTableViewController.add(toDoItem: anotherToDoItem)
-                    
-                    
-                    expect(toDoListTableViewController.hasLabel(withExactText: "Laundry")).to(beTrue())
+                    addVC.tapBarButtonItem(withSystemItem: .done)
                 }
 
-                it("adds the new to do item to the list of to do items") {
-                    let anotherToDoItem = ToDoItemBuilder().build()
-                    
-                    
-                    // TODO: Research a better way to test this without having to call this
-                    //      method directly from the test.
-                    toDoListTableViewController.add(toDoItem: anotherToDoItem)
-                    
-                    
+                it("displays the new to do item to the list of to do items after it has been added") {
+                    expect(toDoListTableViewController.hasLabel(withExactText: "Laundry")).toEventually(beTrue())
+                }
+
+                it("reloads the tableview data after the new item has been added") {
                     expect(spyReloader.reload_argument_reloadable).toEventually(beAKindOf(UITableView.self))
                 }
             }
