@@ -22,7 +22,7 @@ Ideally my goal is to illustrate at least the following features and functionali
   - [x] Kotlin Unit Test Job
   - [x] Kotlin Integration Test Job
 - [x] How to automate bumping the build # for your app.
-- [ ] How to manage different release types (local development, beta, release).
+- [x] How to manage different release types (local development, beta, release, etc).
 
 ### Testing
 - [x] How to execute your tests without launching the application's AppDelegate class.
@@ -37,18 +37,18 @@ Ideally my goal is to illustrate at least the following features and functionali
 - [x] How to deserialize JSON data into a model object using the Codable protocol.
 
 ### Networking
-- [ ] How to make various HTTP requests without importing a framework.
+- [ ] How to make HTTP requests without importing a networking framework.
   - [x] GET request
   - [x] POST request
   - [ ] PUT request
   - [ ] DELETE request
-- [ ] How to handle errors from HTTP requests
+- [ ] Examples of how to handle errors from HTTP requests
 
 ### Navigation
-- [ ] Using the Router pattern to push a new view controller onto the stack.
-- [ ] Popping a view controller off of the stack.
 - [x] Displaying a modal view controller.
 - [x] Dismissing a modal view controller.
+- [ ] Using the Router pattern to push a new view controller onto the stack.
+- [ ] Popping a view controller off of the stack.
 
 ### UI
 - [x] How to make an Http call to retrieve data from a repository.
