@@ -1,6 +1,6 @@
 import UIKit
 
-protocol AddToDoItemDelegate {
+protocol AddToDoItemDelegate: class {
     func add(toDoItem: ToDoItem)
 }
 
@@ -11,7 +11,7 @@ final class AddToDoItemViewController: UIViewController {
     
     // MARK: - Properties
     private var didSetupConstraints: Bool = false
-    var delegate: AddToDoItemDelegate? = nil
+    weak var delegate: AddToDoItemDelegate? = nil
 
     // MARK: - Views
     private var titleTextField: UITextField!
