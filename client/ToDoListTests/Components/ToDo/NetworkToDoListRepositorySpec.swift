@@ -25,10 +25,6 @@ class NetworkToDoListRepositorySpec: QuickSpec {
 
                 context("when the request is successful") {
                     it("returns a future with to do items from the http response") {
-                        let promise = Promise<Data, HttpError>()
-                        spyHttp.get_returnValue = promise.future
-
-
                         var toDoItems: [ToDoItem]? = nil
                         SimpleXCTestExpectation.execute(testCase: self) { testExpectation in
                             toDoListRepo
@@ -53,7 +49,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                                   }
                                 ]
                                """
-                            promise.success(jsonResponse.data(using: .utf8)!)
+                            spyHttp.get_returnPromise.success(jsonResponse.data(using: .utf8)!)
                         }
 
 
@@ -109,9 +105,6 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                 
                 context("when the request is successful") {
                     it("returns a future with the to do item from the response") {
-                        let promise = Promise<Data, HttpError>()
-                        spyHttp.post_returnValue = promise.future
-
                         let newToDo = NewToDoItemBuilder()
                             .withTitle("Make restaurant reservation")
                             .build()
@@ -133,7 +126,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                                   "completed": false
                                 }
                                """
-                            promise.success(jsonResponse.data(using: .utf8)!)
+                            spyHttp.post_returnPromise.success(jsonResponse.data(using: .utf8)!)
                         }
 
 
