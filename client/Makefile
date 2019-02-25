@@ -11,7 +11,7 @@ update:
 	@carthage update --platform iOS --no-use-binaries --cache-builds
 
 unit-tests:
-	@/usr/bin/time xcodebuild -project ToDoList.xcodeproj -scheme "ToDoList" -destination "platform=iOS Simulator,OS=12.0,name=iPhone 8" build test
+	@/usr/bin/time xcodebuild -project ToDoList.xcodeproj -scheme "ToDoList" -destination "platform=iOS Simulator,OS=latest,name=iPhone XR" build test
 
 units tests: sort unit-tests
 
