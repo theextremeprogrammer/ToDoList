@@ -60,13 +60,9 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                 
                 context("when the request is successful") {
                     it("dismisses the modal view controller ") {
-                        let promise = Promise<ToDoItem, RepoError>()
-
                         let spyRouter = SpyRouter()
-                        
                         let stubToDoListRepo = StubToDoListRepository()
-                        stubToDoListRepo.create_returnValue = promise.future
-                        
+
                         addToDoItemVC = AddToDoItemViewControllerBuilder()
                             .withRouter(spyRouter)
                             .withToDoListRepo(stubToDoListRepo)
@@ -83,17 +79,14 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                         let toDoItem = ToDoItemBuilder()
                             .withTitle("Buy groceries")
                             .build()
-                        promise.success(toDoItem)
+                        stubToDoListRepo.create_returnPromise.success(toDoItem)
                         
                         expect(spyRouter.dismissModalVC_wasCalled).toEventually(beTrue())
                     }
                     
                     it("notifies the delegate of the newly added to do item") {
-                        let promise = Promise<ToDoItem, RepoError>()
-                        
                         let spyRouter = SpyRouter()
                         let stubToDoListRepo = StubToDoListRepository()
-                        stubToDoListRepo.create_returnValue = promise.future
                         let spyAddToDoItemDelegate = SpyAddToDoItemDelegate()
 
                         addToDoItemVC = AddToDoItemViewControllerBuilder()
@@ -113,7 +106,7 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                         let toDoItem = ToDoItemBuilder()
                             .withTitle("Buy groceries")
                             .build()
-                        promise.success(toDoItem)
+                        stubToDoListRepo.create_returnPromise.success(toDoItem)
                         
                         expect(spyAddToDoItemDelegate.add_argument_toDoItem).toEventually(equal(toDoItem))
                     }
@@ -121,13 +114,9 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                 
                 context("when the request fails") {
                     it("does not dismiss the view controller") {
-                        let promise = Promise<ToDoItem, RepoError>()
-                        
                         let spyRouter = SpyRouter()
-                        
                         let stubToDoListRepo = StubToDoListRepository()
-                        stubToDoListRepo.create_returnValue = promise.future
-                        
+
                         addToDoItemVC = AddToDoItemViewControllerBuilder()
                             .withRouter(spyRouter)
                             .withToDoListRepo(stubToDoListRepo)
@@ -141,7 +130,7 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                         addToDoItemVC.tapBarButtonItem(withSystemItem: .done)
                         
                         
-                        promise.failure(RepoError.undefined)
+                        stubToDoListRepo.create_returnPromise.failure(RepoError.undefined)
                         expect(spyRouter.dismissModalVC_wasCalled).to(beFalse())
                     }
                 }

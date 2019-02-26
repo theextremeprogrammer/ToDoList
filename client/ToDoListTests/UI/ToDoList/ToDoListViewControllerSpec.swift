@@ -9,17 +9,13 @@ class ToDoListTableViewControllerSpec: QuickSpec {
         describe("to do list table view controller") {
             var toDoListTableViewController: ToDoListViewController!
             
+            var stubToDoListRepository: StubToDoListRepository!
             var spyRouter: SpyRouter!
             var spyReloader: SpyReloader!
-            var getAllPromise: Promise<[ToDoItem], RepoError>!
-            
+
             describe("displaying the list of to do items") {
                 beforeEach {
-                    getAllPromise = Promise<[ToDoItem], RepoError>()
-                    
-                    let stubToDoListRepository = StubToDoListRepository()
-                    stubToDoListRepository.getAll_returnValue = getAllPromise.future
-                    
+                    stubToDoListRepository = StubToDoListRepository()
                     spyReloader = SpyReloader()
                     
                     toDoListTableViewController = ToDoListViewControllerBuilder()
@@ -35,7 +31,7 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                 }
                 
                 it("displays the title of several to do list items") {
-                    getAllPromise.success([
+                    stubToDoListRepository.getAll_returnPromise.success([
                         ToDoItemBuilder()
                             .withTitle("Get groceries")
                             .build(),
@@ -50,7 +46,7 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                 }
                 
                 it("reloads the tableview's data once the repository returns data") {
-                    getAllPromise.success([])
+                    stubToDoListRepository.getAll_returnPromise.success([])
                     
                     
                     expect(spyReloader.reload_argument_reloadable).toEventually(beAKindOf(UITableView.self))
@@ -59,9 +55,7 @@ class ToDoListTableViewControllerSpec: QuickSpec {
             
             describe("navigation") {
                 beforeEach {
-                    let stubToDoListRepository = StubToDoListRepository()
-                    stubToDoListRepository.getAll_returnValue = Future()
-                    
+                    stubToDoListRepository = StubToDoListRepository()
                     spyRouter = SpyRouter()
                     
                     toDoListTableViewController = ToDoListViewControllerBuilder()
@@ -81,9 +75,7 @@ class ToDoListTableViewControllerSpec: QuickSpec {
 
             describe("adding a new to do item") {
                 beforeEach {
-                    let stubToDoListRepository = StubToDoListRepository()
-                    stubToDoListRepository.getAll_returnValue = Future()
-
+                    stubToDoListRepository = StubToDoListRepository()
                     spyReloader = SpyReloader()
 
                     toDoListTableViewController = ToDoListViewControllerBuilder()
