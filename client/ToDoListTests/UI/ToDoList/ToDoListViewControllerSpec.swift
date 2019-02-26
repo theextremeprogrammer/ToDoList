@@ -6,9 +6,9 @@ import BrightFutures
 
 class ToDoListTableViewControllerSpec: QuickSpec {
     override func spec() {
+        var toDoListTableViewController: ToDoListViewController!
+
         describe("to do list table view controller") {
-            var toDoListTableViewController: ToDoListViewController!
-            
             var stubToDoListRepository: StubToDoListRepository!
             var spyRouter: SpyRouter!
             var spyReloader: SpyReloader!

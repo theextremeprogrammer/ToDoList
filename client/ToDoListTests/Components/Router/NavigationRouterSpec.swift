@@ -4,9 +4,10 @@ import Nimble
 
 final class NavigationRouterSpec: QuickSpec {
     override func spec() {
+        var navRouter: NavigationRouter!
+
         var window: UIWindow?
         var rootNavController: UINavigationController!
-        var navRouter: NavigationRouter!
         let animated: Bool = false
         
         beforeEach {

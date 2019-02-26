@@ -6,9 +6,9 @@ import BrightFutures
 
 class AddToDoItemViewControllerSpec: QuickSpec {
     override func spec() {
+        var addToDoItemVC: AddToDoItemViewController!
+
         describe("the add to do item view controller") {
-            var addToDoItemVC: AddToDoItemViewController!
-            
             describe("the visual layout") {
                 var spyRouter: SpyRouter!
                 

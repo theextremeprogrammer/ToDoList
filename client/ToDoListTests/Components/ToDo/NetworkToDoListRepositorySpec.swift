@@ -6,8 +6,9 @@ import BrightFutures
 
 class NetworkToDoListRepositorySpec: QuickSpec {
     override func spec() {
+        var toDoListRepo: NetworkToDoListRepository!
+
         describe("the network to do list repository") {
-            var toDoListRepo: NetworkToDoListRepository!
             var spyHttp: SpyHttp!
             
             describe("getting all to do list items") {
