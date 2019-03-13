@@ -1,0 +1,6 @@
+/* Add To Do View Controller */
+"ADDTODOITEM_TITLE" = "Add To Do Item";
+"ADDTODOITEM_NEWTODOTITLEPLACEHOLDER" = "Edit blog post";
+
+/* To Do List View Controller */
+"TODOLIST_TITLE" = "To Do List";

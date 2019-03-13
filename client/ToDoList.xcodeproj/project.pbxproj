@@ -25,6 +25,7 @@
 		B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC2221941FAD0021CF3F /* Runloop+Advance.swift */; };
 		B80FCC252194201A0021CF3F /* RepoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC242194201A0021CF3F /* RepoError.swift */; };
 		B80FCC27219421860021CF3F /* NetworkToDoListRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC26219421860021CF3F /* NetworkToDoListRepositorySpec.swift */; };
+		B814267922393A6100C07D22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B814267B22393A6100C07D22 /* Localizable.strings */; };
 		B82180BC219C192A00780BA7 /* SpyHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82180BB219C192A00780BA7 /* SpyHttp.swift */; };
 		B8239C8D2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8239C8C2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift */; };
 		B825839D21B517D7000D0922 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825839C21B517D7000D0922 /* Environment.swift */; };
@@ -110,6 +111,7 @@
 		B80FCC2221941FAD0021CF3F /* Runloop+Advance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runloop+Advance.swift"; sourceTree = "<group>"; };
 		B80FCC242194201A0021CF3F /* RepoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoError.swift; sourceTree = "<group>"; };
 		B80FCC26219421860021CF3F /* NetworkToDoListRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkToDoListRepositorySpec.swift; sourceTree = "<group>"; };
+		B814267A22393A6100C07D22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B82180BB219C192A00780BA7 /* SpyHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyHttp.swift; sourceTree = "<group>"; };
 		B8239C8C2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAsyncXCTestExpectation.swift; sourceTree = "<group>"; };
 		B825839C21B517D7000D0922 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				5B6AD4932909A9BAF2E57516 /* Assets.xcassets */,
 				5B6AD6FB7690707120910247 /* Info.plist */,
 				5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */,
+				B814267B22393A6100C07D22 /* Localizable.strings */,
 				B82B333A21918A1E007FB06B /* main.swift */,
 			);
 			path = Application;
@@ -523,6 +526,7 @@
 			files = (
 				5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */,
 				5B6ADEFCBDB812E7797EC21B /* LaunchScreen.storyboard in Resources */,
+				B814267922393A6100C07D22 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +630,17 @@
 			targetProxy = B82B33252191886E007FB06B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B814267B22393A6100C07D22 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B814267A22393A6100C07D22 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		B805928721B4F1FF004032C3 /* Staging */ = {
