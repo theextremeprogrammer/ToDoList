@@ -72,7 +72,7 @@ fileprivate extension ToDoListViewController {
     }
 
     func configureNavigationBar() {
-        title = NSLocalizedString("TODOLIST_TITLE", comment: "")
+        title = i18n.ToDoList.title.localized
     }
 
     func addSubviews() {

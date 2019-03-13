@@ -26,6 +26,7 @@
 		B80FCC252194201A0021CF3F /* RepoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC242194201A0021CF3F /* RepoError.swift */; };
 		B80FCC27219421860021CF3F /* NetworkToDoListRepositorySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B80FCC26219421860021CF3F /* NetworkToDoListRepositorySpec.swift */; };
 		B814267922393A6100C07D22 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B814267B22393A6100C07D22 /* Localizable.strings */; };
+		B814267E22393B7000C07D22 /* i18n.swift in Sources */ = {isa = PBXBuildFile; fileRef = B814267D22393B7000C07D22 /* i18n.swift */; };
 		B82180BC219C192A00780BA7 /* SpyHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82180BB219C192A00780BA7 /* SpyHttp.swift */; };
 		B8239C8D2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8239C8C2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift */; };
 		B825839D21B517D7000D0922 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B825839C21B517D7000D0922 /* Environment.swift */; };
@@ -112,6 +113,7 @@
 		B80FCC242194201A0021CF3F /* RepoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoError.swift; sourceTree = "<group>"; };
 		B80FCC26219421860021CF3F /* NetworkToDoListRepositorySpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkToDoListRepositorySpec.swift; sourceTree = "<group>"; };
 		B814267A22393A6100C07D22 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B814267D22393B7000C07D22 /* i18n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = i18n.swift; sourceTree = "<group>"; };
 		B82180BB219C192A00780BA7 /* SpyHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyHttp.swift; sourceTree = "<group>"; };
 		B8239C8C2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleAsyncXCTestExpectation.swift; sourceTree = "<group>"; };
 		B825839C21B517D7000D0922 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -247,6 +249,14 @@
 			path = "Asynchronous Testing";
 			sourceTree = "<group>";
 		};
+		B814267C22393B6600C07D22 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B814267D22393B7000C07D22 /* i18n.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		B825839B21B51790000D0922 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
@@ -334,6 +344,7 @@
 			children = (
 				B825839B21B51790000D0922 /* Environment */,
 				B8C70D61219573E2001AB367 /* Http */,
+				B814267C22393B6600C07D22 /* Localization */,
 				B800B8BC219EC18800BAE051 /* Reloading */,
 				B88F5E7721A53A8D0074ADBE /* Router */,
 				B85F4540219411AB00C5AB33 /* ToDo */,
@@ -574,6 +585,7 @@
 				B800B8BF219EC1A300BAE051 /* DefaultReloader.swift in Sources */,
 				B825839D21B517D7000D0922 /* Environment.swift in Sources */,
 				B87136162195812500D9C489 /* Http.swift in Sources */,
+				B814267E22393B7000C07D22 /* i18n.swift in Sources */,
 				B82B333B21918A1E007FB06B /* main.swift in Sources */,
 				B88F5E7921A53A940074ADBE /* NavigationRouter.swift in Sources */,
 				B87136182195812A00D9C489 /* NetworkHttp.swift in Sources */,
