@@ -4,12 +4,12 @@ final class AddToDoItemViewControllerBuilder {
     private var router: Router = DummyRouter()
     private var toDoListRepo: ToDoListRepository = DummyToDoListRepository()
 
-    func withRouter(_ router: Router) -> AddToDoItemViewControllerBuilder {
+    func withRouter(_ router: Router) -> Self {
         self.router = router
         return self
     }
 
-    func withToDoListRepo(_ toDoListRepo: ToDoListRepository) -> AddToDoItemViewControllerBuilder {
+    func withToDoListRepo(_ toDoListRepo: ToDoListRepository) -> Self {
         self.toDoListRepo = toDoListRepo
         return self
     }
