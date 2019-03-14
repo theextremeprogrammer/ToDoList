@@ -62,9 +62,9 @@ fileprivate extension AddToDoItemViewController {
     }
     
     func configureNavigationBar() {
-        title = i18n.AddToDoItem.title.localized
+        title = i18n.AddToDoItem.title.value
         
-        titleTextField.placeholder = i18n.AddToDoItem.newToDoTitlePlaceholder.localized
+        titleTextField.placeholder = i18n.AddToDoItem.newToDoTitlePlaceholder.value
 
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .stop,
