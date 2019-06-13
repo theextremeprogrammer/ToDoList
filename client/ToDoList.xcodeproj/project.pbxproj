@@ -515,9 +515,11 @@
 				TargetAttributes = {
 					B82B330F2191886D007FB06B = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 					};
 					B82B33232191886E007FB06B = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1020;
 						TestTargetID = B82B330F2191886D007FB06B;
 					};
 				};
@@ -746,7 +748,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunrisingappdev.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -771,7 +773,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunrisingappdev.ToDoListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDoList.app/ToDoList";
 			};
@@ -911,7 +913,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunrisingappdev.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -935,7 +937,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunrisingappdev.ToDoList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -960,7 +962,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunrisingappdev.ToDoListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDoList.app/ToDoList";
 			};
@@ -985,7 +987,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunrisingappdev.ToDoListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ToDoList.app/ToDoList";
 			};
