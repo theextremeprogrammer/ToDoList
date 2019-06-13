@@ -22,14 +22,14 @@ matrix:
 
   - name: "Kotlin Server Unit Tests"
     language: java
-    jdk: oraclejdk8
+    jdk: oraclejdk11
     install:
       - cd server
       - ./gradlew assemble
 
   - name: "Kotlin Server Integration Tests"
     language: java
-    jdk: oraclejdk8
+    jdk: oraclejdk11
     install:
       - cd server
       - ./gradlew assemble
