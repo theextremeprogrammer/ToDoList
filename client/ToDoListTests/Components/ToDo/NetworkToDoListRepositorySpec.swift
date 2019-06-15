@@ -27,12 +27,12 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                 context("when the request is successful") {
                     it("returns a future with to do items from the http response") {
                         var toDoItems: [ToDoItem]? = nil
-                        SimpleXCTestExpectation.execute(testCase: self) { testExpectation in
+                        AsyncExpectation.execute() { expectation in
                             toDoListRepo
                                 .getAll()
                                 .onSuccess { returnedToDoItems in
                                     toDoItems = returnedToDoItems
-                                    testExpectation.fulfill()
+                                    expectation.fulfill()
                                 }
 
                             // We can use a multi-string literal 
@@ -112,12 +112,12 @@ class NetworkToDoListRepositorySpec: QuickSpec {
 
 
                         var returnedToDoItem: ToDoItem? = nil
-                        SimpleXCTestExpectation.execute(testCase: self) { testExpectation in
+                        AsyncExpectation.execute() { expectation in
                             toDoListRepo
                                 .create(newToDo: newToDo)
                                 .onSuccess { toDoItem in
                                     returnedToDoItem = toDoItem
-                                    testExpectation.fulfill()
+                                    expectation.fulfill()
                                 }
 
                             let jsonResponse = """
