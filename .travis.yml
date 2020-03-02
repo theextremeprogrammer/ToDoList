@@ -11,6 +11,7 @@ cache:
 matrix:
   include:
   - name: "iOS Client Unit Tests"
+    os: osx
     language: swift
     osx_image: xcode10.2
     xcode_project: ToDoList.xcodeproj
@@ -21,6 +22,7 @@ matrix:
       - carthage bootstrap --platform iOS --cache-builds
 
   - name: "Kotlin Server Unit Tests"
+    os: osx
     language: java
     jdk: oraclejdk11
     install:
@@ -28,6 +30,7 @@ matrix:
       - ./gradlew assemble
 
   - name: "Kotlin Server Integration Tests"
+    os: osx
     language: java
     jdk: oraclejdk11
     install:
