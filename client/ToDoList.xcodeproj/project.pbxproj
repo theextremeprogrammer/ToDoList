@@ -314,6 +314,7 @@
 		B82B33342191889A007FB06B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				B825839B21B51790000D0922 /* Environment */,
 				5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */,
 				5B6AD4932909A9BAF2E57516 /* Assets.xcassets */,
 				5B6AD6FB7690707120910247 /* Info.plist */,
@@ -345,7 +346,6 @@
 		B85F453F219411AB00C5AB33 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				B825839B21B51790000D0922 /* Environment */,
 				B8C70D61219573E2001AB367 /* Http */,
 				B814267C22393B6600C07D22 /* Localization */,
 				B800B8BC219EC18800BAE051 /* Reloading */,
