@@ -1,12 +1,15 @@
-# Sorts the Xcode project file to helps with minimizing merge conflicts.
+# Sorts the Xcode project folder/file structure. This helps with minimizing merge conflicts in teams.
 sort:
 	@perl ./bin/sortXcodeProject ToDoList.xcodeproj/project.pbxproj
 
-# Check out and build the project's dependencies.
+# Check out and build all project dependencies using Carthage.
+#    --platform iOS      Only build iOS frameworks. No need to waste time building for other platforms like MacOS or tvOS or WatchOS.
+#    --no-use-binaries   Build dependencies locally instead of using a pre-built dependency (if provided)
+#    --cache-builds      Speed up future dependency updates by only building those dependencies whose version has changed.
 bootstrap:
 	@carthage bootstrap --platform iOS --no-use-binaries --cache-builds
 
-# Update and rebuild the project's dependencies.
+# Update and rebuild the project's dependencies using Carthage.
 update:
 	@carthage update --platform iOS --no-use-binaries --cache-builds
 
