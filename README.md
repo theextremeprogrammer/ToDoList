@@ -14,7 +14,7 @@ This code is the result of several years of TDD'ing iOS apps, reading books on t
 Ideally my goal is to illustrate at least the following features and functionality, completely test-driven:
 
 ### Project Organization / Automation / Discoverability
-- [x] How to arrange your folders and files using an "Application", "Components", and "UI" structure to provide separation of concerns.
+- [x] How to arrange your folders and files using an "Application", "Components", and "UI" structure to provide separation of concerns. Inspired by the [App Continuum](https://www.appcontinuum.io/).
 - [x] How to sort your Xcode project file to minimize merge conflicts within the team.
 - [x] How to use a Makefile to automate repetitive tasks and increase discoverability.
 - [x] CI integration with Travis.
@@ -27,10 +27,10 @@ Ideally my goal is to illustrate at least the following features and functionali
 ### Testing
 - [x] How to execute your tests without launching the application's AppDelegate class.
 - [x] How to test-drive your app delegate and use dependency injection (DI) from the moment the app starts.
-- [ ] How to roll your own test-doubles using protocols as well as examples of each different kind of test double.
+- [ ] How to roll your own test-doubles using protocol-oriented programming as well as examples of each different kind of test double.
   - [x] Dummy
   - [x] Spy
-  - [ ] Stub
+  - [x] Stub
   - [ ] Mock
   - [ ] Fake
 - [x] How to implement the Repository pattern using an asynchronous Http call using promises/futures.
@@ -47,7 +47,7 @@ Ideally my goal is to illustrate at least the following features and functionali
 ### Navigation
 - [x] Displaying a modal view controller.
 - [x] Dismissing a modal view controller.
-- [ ] Using the Router pattern to push a new view controller onto the stack.
+- [ ] Using the Router pattern to push a new view controller onto the stack. (Tap cell to navigate to detail VC.)
 - [ ] Popping a view controller off of the stack.
 
 ### UI
@@ -56,6 +56,7 @@ Ideally my goal is to illustrate at least the following features and functionali
 - [x] How to use PureLayout to lay out the view hierarchy without using Storyboards.
 - [ ] How to access images using an enum for compile-time safety when working with images.
 - [ ] How to style UI components using pre-defined enum styles.
+- [ ] How to configure a scrollview for a View Controller using PureLayout.
 
 ## Kotlin Spring Server Functionality
 
