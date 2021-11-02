@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		522DDAF42730E381005660BE /* Result.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522DDAF12730E381005660BE /* Result.xcframework */; };
+		522DDAF52730E381005660BE /* Result.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 522DDAF12730E381005660BE /* Result.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		522DDAF62730E381005660BE /* BrightFutures.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522DDAF22730E381005660BE /* BrightFutures.xcframework */; };
+		522DDAF72730E381005660BE /* BrightFutures.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 522DDAF22730E381005660BE /* BrightFutures.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		522DDAF82730E381005660BE /* PureLayout.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522DDAF32730E381005660BE /* PureLayout.xcframework */; };
+		522DDAF92730E381005660BE /* PureLayout.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 522DDAF32730E381005660BE /* PureLayout.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AD4932909A9BAF2E57516 /* Assets.xcassets */; };
 		5B6AD2493D89E434B2156BD1 /* AddToDoItemViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ADBDE115E29D4BA752BE6 /* AddToDoItemViewControllerSpec.swift */; };
 		5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */; };
@@ -49,9 +55,6 @@
 		B88F5E7F21A541A50074ADBE /* AddToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F5E7E21A541A50074ADBE /* AddToDoItemViewController.swift */; };
 		B8A55CC521ABB97C0046F80A /* DummyToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A55CC421ABB97C0046F80A /* DummyToDoListRepository.swift */; };
 		B8A55CCB21ABEED00046F80A /* SpyAddToDoItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A55CCA21ABEED00046F80A /* SpyAddToDoItemDelegate.swift */; };
-		B8A7025C2191908A0034B11D /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A702592191908A0034B11D /* Result.framework */; };
-		B8A7025D2191908A0034B11D /* BrightFutures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025A2191908A0034B11D /* BrightFutures.framework */; };
-		B8A7025E2191908A0034B11D /* PureLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A7025B2191908A0034B11D /* PureLayout.framework */; };
 		B8A70263219190EE0034B11D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A70260219190EE0034B11D /* Quick.framework */; };
 		B8A70264219190EE0034B11D /* Succinct.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A70261219190EE0034B11D /* Succinct.framework */; };
 		B8A70265219190EE0034B11D /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A70262219190EE0034B11D /* Nimble.framework */; };
@@ -77,6 +80,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		522DDAFA2730E381005660BE /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				522DDAF72730E381005660BE /* BrightFutures.xcframework in Embed Frameworks */,
+				522DDAF52730E381005660BE /* Result.xcframework in Embed Frameworks */,
+				522DDAF92730E381005660BE /* PureLayout.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B8A70266219190FB0034B11D /* Carthage: Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,6 +109,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		522DDAF02730E190005660BE /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		522DDAF12730E381005660BE /* Result.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Result.xcframework; path = Carthage/Build/Result.xcframework; sourceTree = "<group>"; };
+		522DDAF22730E381005660BE /* BrightFutures.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = BrightFutures.xcframework; path = Carthage/Build/BrightFutures.xcframework; sourceTree = "<group>"; };
+		522DDAF32730E381005660BE /* PureLayout.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = PureLayout.xcframework; path = Carthage/Build/PureLayout.xcframework; sourceTree = "<group>"; };
 		5B6AD0B838BB1D31AC119DC5 /* ToDoListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerSpec.swift; sourceTree = "<group>"; };
 		5B6AD2AC48120B63E3C9E067 /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		5B6AD42E111941A0DCBD6BE4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -161,9 +181,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8A7025D2191908A0034B11D /* BrightFutures.framework in Frameworks */,
-				B8A7025E2191908A0034B11D /* PureLayout.framework in Frameworks */,
-				B8A7025C2191908A0034B11D /* Result.framework in Frameworks */,
+				522DDAF42730E381005660BE /* Result.xcframework in Frameworks */,
+				522DDAF62730E381005660BE /* BrightFutures.xcframework in Frameworks */,
+				522DDAF82730E381005660BE /* PureLayout.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,12 +293,13 @@
 			isa = PBXGroup;
 			children = (
 				B8A7025421918D8E0034B11D /* Cartfile */,
+				B8A7025621918DC60034B11D /* Cartfile.private */,
+				522DDAF02730E190005660BE /* Cartfile.resolved */,
 				B8A70258219190890034B11D /* Frameworks */,
 				B8A7025121918C630034B11D /* Makefile */,
 				B82B33112191886D007FB06B /* Products */,
 				B82B33122191886D007FB06B /* ToDoList */,
 				B82B33272191886E007FB06B /* ToDoListTests */,
-				B8A7025621918DC60034B11D /* Cartfile.private */,
 			);
 			sourceTree = "<group>";
 		};
@@ -422,6 +443,9 @@
 		B8A70258219190890034B11D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				522DDAF22730E381005660BE /* BrightFutures.xcframework */,
+				522DDAF32730E381005660BE /* PureLayout.xcframework */,
+				522DDAF12730E381005660BE /* Result.xcframework */,
 				B8A7025A2191908A0034B11D /* BrightFutures.framework */,
 				B8A70262219190EE0034B11D /* Nimble.framework */,
 				B8A7025B2191908A0034B11D /* PureLayout.framework */,
@@ -473,7 +497,7 @@
 				B82B330C2191886D007FB06B /* Sources */,
 				B82B330D2191886D007FB06B /* Frameworks */,
 				B82B330E2191886D007FB06B /* Resources */,
-				B8A7025F219190940034B11D /* Carthage: Run Script */,
+				522DDAFA2730E381005660BE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -510,7 +534,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "Derek Lee";
 				TargetAttributes = {
 					B82B330F2191886D007FB06B = {
@@ -562,30 +586,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		B8A7025F219190940034B11D /* Carthage: Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/PureLayout.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/BrightFutures.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Result.framework",
-			);
-			name = "Carthage: Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B82B330C2191886D007FB06B /* Sources */ = {
@@ -695,6 +695,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -739,7 +740,7 @@
 				DEVELOPMENT_TEAM = 4LFKG3J295;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build",
 				);
 				INFOPLIST_FILE = ToDoList/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -805,6 +806,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -866,6 +868,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -904,7 +907,7 @@
 				DEVELOPMENT_TEAM = 4LFKG3J295;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build",
 				);
 				INFOPLIST_FILE = ToDoList/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -928,7 +931,7 @@
 				DEVELOPMENT_TEAM = 4LFKG3J295;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Build",
 				);
 				INFOPLIST_FILE = ToDoList/Application/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

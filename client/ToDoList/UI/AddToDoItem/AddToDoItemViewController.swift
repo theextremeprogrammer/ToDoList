@@ -1,6 +1,6 @@
 import UIKit
 
-protocol AddToDoItemDelegate: class {
+protocol AddToDoItemDelegate: AnyObject {
     func add(toDoItem: ToDoItem)
 }
 

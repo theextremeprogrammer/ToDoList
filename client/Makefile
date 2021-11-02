@@ -7,11 +7,11 @@ sort:
 #    --no-use-binaries   Build dependencies locally instead of using a pre-built dependency (if provided)
 #    --cache-builds      Speed up future dependency updates by only building those dependencies whose version has changed.
 bootstrap:
-	@carthage bootstrap --platform iOS --no-use-binaries --cache-builds
+	@carthage bootstrap --platform iOS --no-use-binaries --use-xcframeworks --cache-builds
 
 # Update and rebuild the project's dependencies using Carthage.
 update:
-	@carthage update --platform iOS --no-use-binaries --cache-builds
+	@carthage update --platform iOS --no-use-binaries --use-xcframeworks --cache-builds
 
 unit-tests:
 	@/usr/bin/time xcodebuild -project ToDoList.xcodeproj -scheme "ToDoList" -destination "platform=iOS Simulator,OS=latest,name=iPhone 11" build test
