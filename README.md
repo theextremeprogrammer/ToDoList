@@ -27,7 +27,7 @@ Ideally my goal is to illustrate at least the following features and functionali
 ### Testing
 - [x] How to execute your tests without launching the application's AppDelegate class.
 - [x] How to test-drive your app delegate and use dependency injection (DI) from the moment the app starts.
-- [ ] How to roll your own test-doubles using protocol-oriented programming as well as examples of each [kind of test double](https://engineering.pivotal.io/post/the-test-double-rule-of-thumb/).
+- [ ] How to roll your own test-doubles using protocol-oriented programming as well as examples of each [kind of test double](https://tanzu.vmware.com/content/pivotal-engineering-journal/the-test-double-rule-of-thumb-2).
   - [x] Dummy
   - [x] Spy
   - [x] Stub
