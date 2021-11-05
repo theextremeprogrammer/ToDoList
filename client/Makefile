@@ -5,6 +5,7 @@ sort:
 # Check out and build all project dependencies using Carthage.
 #    --platform iOS      Only build iOS frameworks. No need to waste time building for other platforms like MacOS or tvOS or WatchOS.
 #    --no-use-binaries   Build dependencies locally instead of using a pre-built dependency (if provided)
+#    --use-xcframeworks  XCFrameworks are required to support all architectures
 #    --cache-builds      Speed up future dependency updates by only building those dependencies whose version has changed.
 bootstrap:
 	@carthage bootstrap --platform iOS --no-use-binaries --use-xcframeworks --cache-builds
