@@ -1,5 +1,6 @@
 import Quick
 import Nimble
+import Foundation
 @testable import ToDoList
 
 class i18Spec: QuickSpec {

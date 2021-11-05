@@ -2,6 +2,7 @@ import Quick
 import Nimble
 import Succinct
 import BrightFutures
+import UIKit
 @testable import ToDoList
 
 class ToDoListTableViewControllerSpec: QuickSpec {

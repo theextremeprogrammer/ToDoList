@@ -1,6 +1,1 @@
-github "PureLayout/PureLayout" "v3.1.9"
-github "Quick/Nimble" "v9.2.1"
-github "Quick/Quick" "v4.0.0"
-github "Thomvis/BrightFutures" "8.1.0"
 github "antitypical/Result" "5.0.0"
-github "derekleerock/Succinct" "v0.4.33"
