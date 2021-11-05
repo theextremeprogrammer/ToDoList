@@ -1,0 +1,6 @@
+/* Add To Do View Controller */
+"ADDTODOITEM_TITLE" = "신규";
+"ADDTODOITEM_NEWTODOTITLEPLACEHOLDER" = "블로그 업데이트";
+
+/* To Do List View Controller */
+"TODOLIST_TITLE" = "할 일 목록";

@@ -54,10 +54,11 @@ Ideally my goal is to illustrate at least the following features and functionali
 - [x] How to make an Http call to retrieve data from a repository.
 - [x] How to test-drive reloading a UITableView or UICollectionView.
 - [x] How to use PureLayout to lay out the view hierarchy without using Storyboards.
+- [x] Discoverable & configurable i18n
+  - [x] Localize strings in English, Japanese, Korean
 - [ ] How to access images using an enum for compile-time safety when working with images.
 - [ ] How to style UI components using pre-defined enum styles.
 - [ ] How to configure a scrollview for a View Controller using PureLayout.
-- [ ] Discoverable & configurable i18n
 - [ ] Discoverable & configurable a11y
 
 ## Kotlin Spring Server Functionality
