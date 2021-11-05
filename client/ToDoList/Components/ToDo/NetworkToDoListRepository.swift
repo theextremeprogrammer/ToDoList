@@ -33,8 +33,7 @@ struct NetworkToDoListRepository: ToDoListRepository {
         return http
             .get(endpoint: "/todos")
             .map { data in
-                let decoder = JSONDecoder()
-                let toDoItems = try! decoder.decode([ToDoItem].self, from: data)
+                let toDoItems = try! JSONDecoder().decode([ToDoItem].self, from: data)
                 return toDoItems
             }
             .mapError { httpError in
@@ -47,8 +46,7 @@ struct NetworkToDoListRepository: ToDoListRepository {
         //      in the future, these should be replaced with appropriate error
         //      handling for when something goes wrong to ensure that this renders
         //      properly for the end-user.
-        let encoder = JSONEncoder()
-        let jsonData = try! encoder.encode(newToDo)
+        let jsonData = try! JSONEncoder().encode(newToDo)
         
         return http
             .post(
@@ -56,8 +54,7 @@ struct NetworkToDoListRepository: ToDoListRepository {
                 requestBody: jsonData
             )
             .map { data in
-                let decoder = JSONDecoder()
-                let toDoItem = try! decoder.decode(ToDoItem.self, from: data)
+                let toDoItem = try! JSONDecoder().decode(ToDoItem.self, from: data)
                 return toDoItem
             }
             .mapError { httpError in
