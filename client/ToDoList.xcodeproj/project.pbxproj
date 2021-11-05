@@ -214,7 +214,6 @@
 				B8C70D60219573D9001AB367 /* Http */,
 				B867A2E9223A879B009724BE /* Localization */,
 				B800B8BD219EC18F00BAE051 /* Reloading */,
-				B88F5E7421A53A720074ADBE /* Router */,
 				B80FCC1E2194182C0021CF3F /* ToDo */,
 			);
 			path = Components;
@@ -329,6 +328,7 @@
 			isa = PBXGroup;
 			children = (
 				B8A55CC821ABEC300046F80A /* AddToDoItem */,
+				B88F5E7421A53A720074ADBE /* Router */,
 				B8A55CC921ABEC300046F80A /* ToDoList */,
 			);
 			path = UI;
@@ -340,7 +340,6 @@
 				B8C70D61219573E2001AB367 /* Http */,
 				B814267C22393B6600C07D22 /* Localization */,
 				B800B8BC219EC18800BAE051 /* Reloading */,
-				B88F5E7721A53A8D0074ADBE /* Router */,
 				B85F4540219411AB00C5AB33 /* ToDo */,
 			);
 			path = Components;
@@ -443,6 +442,7 @@
 			isa = PBXGroup;
 			children = (
 				B88F5E7D21A5419F0074ADBE /* AddToDoItem */,
+				B88F5E7721A53A8D0074ADBE /* Router */,
 				B801A57B21A25B2B00A98DE0 /* ToDoList */,
 				B801A57D21A25B8200A98DE0 /* UITableView */,
 			);
