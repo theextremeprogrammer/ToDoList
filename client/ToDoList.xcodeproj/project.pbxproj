@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		522DDAF42730E381005660BE /* Result.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522DDAF12730E381005660BE /* Result.xcframework */; };
-		522DDAF52730E381005660BE /* Result.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 522DDAF12730E381005660BE /* Result.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5266F851273517FE005432D1 /* BrightFutures in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F850273517FE005432D1 /* BrightFutures */; };
 		5266F8542735180A005432D1 /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F8532735180A005432D1 /* PureLayout */; };
 		5266F85627351823005432D1 /* Succinct in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85527351823005432D1 /* Succinct */; };
@@ -81,7 +79,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				522DDAF52730E381005660BE /* Result.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,8 +86,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		522DDAF02730E190005660BE /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
-		522DDAF12730E381005660BE /* Result.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Result.xcframework; path = Carthage/Build/Result.xcframework; sourceTree = "<group>"; };
 		52E10ADA27351ABE000B7227 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52E10ADC27351CB0000B7227 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B6AD0B838BB1D31AC119DC5 /* ToDoListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -140,7 +135,6 @@
 		B8A55CC421ABB97C0046F80A /* DummyToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyToDoListRepository.swift; sourceTree = "<group>"; };
 		B8A55CCA21ABEED00046F80A /* SpyAddToDoItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyAddToDoItemDelegate.swift; sourceTree = "<group>"; };
 		B8A7025121918C630034B11D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		B8A7025421918D8E0034B11D /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttpSpec.swift; sourceTree = "<group>"; };
 		B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		B8ED821A21A63343007D5D14 /* DummyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRouter.swift; sourceTree = "<group>"; };
@@ -156,7 +150,6 @@
 			files = (
 				5266F851273517FE005432D1 /* BrightFutures in Frameworks */,
 				5266F8542735180A005432D1 /* PureLayout in Frameworks */,
-				522DDAF42730E381005660BE /* Result.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,13 +258,11 @@
 		B82B33072191886D007FB06B = {
 			isa = PBXGroup;
 			children = (
-				B8A7025421918D8E0034B11D /* Cartfile */,
 				B8A70258219190890034B11D /* Frameworks */,
 				B8A7025121918C630034B11D /* Makefile */,
 				B82B33112191886D007FB06B /* Products */,
 				B82B33122191886D007FB06B /* ToDoList */,
 				B82B33272191886E007FB06B /* ToDoListTests */,
-				522DDAF02730E190005660BE /* Cartfile.resolved */,
 			);
 			sourceTree = "<group>";
 		};
@@ -414,7 +405,6 @@
 		B8A70258219190890034B11D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				522DDAF12730E381005660BE /* Result.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
