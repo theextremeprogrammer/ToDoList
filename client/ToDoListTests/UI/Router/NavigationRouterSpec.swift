@@ -15,6 +15,7 @@ final class NavigationRouterSpec: QuickSpec {
             rootNavController = UINavigationController()
             navRouter = NavigationRouter(
                 navigationController: rootNavController,
+                toDoListRepo: StubToDoListRepository(),
                 animated: animated
             )
         }
@@ -26,8 +27,8 @@ final class NavigationRouterSpec: QuickSpec {
         describe("navigation") {
             it("shows the to do list view controller") {
                 navRouter.showToDoListViewController()
-                
-                
+
+
                 let topVC = rootNavController.topViewController
                 expect(topVC).toEventually(beAKindOf(ToDoListViewController.self))
             }
@@ -38,17 +39,17 @@ final class NavigationRouterSpec: QuickSpec {
                 beforeEach {
                     instantiateUIWindowForUnitTesting(rootViewController: rootNavController)
                     spyAddToDoItemDelegate = SpyAddToDoItemDelegate()
-                    
-                    
+
+
                     navRouter.showAddToDoItemViewController(delegate: spyAddToDoItemDelegate)
                 }
-                
+
                 it("displays as a modal") {
                     let presentedNavVC = rootNavController.presentedViewController as? UINavigationController
                     let presentedVC = presentedNavVC?.topViewController
                     expect(presentedVC).toEventually(beAKindOf(AddToDoItemViewController.self))
                 }
-                
+
                 it("sets the delegate to the passed in object") {
                     let presentedNavVC = rootNavController.presentedViewController as? UINavigationController
                     let addToDoItemVC = presentedNavVC?.topViewController as? AddToDoItemViewController

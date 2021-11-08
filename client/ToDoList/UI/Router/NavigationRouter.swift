@@ -11,21 +11,18 @@ protocol Router {
 final class NavigationRouter {
     let navigationController: UINavigationController
     let animated: Bool
-    
+
+    // MARK: - Injected Dependencies
     let toDoListRepo: ToDoListRepository!
     
-    init(navigationController: UINavigationController,
-         animated: Bool
+    init(
+        navigationController: UINavigationController,
+        toDoListRepo: ToDoListRepository,
+        animated: Bool
     ) {
         self.navigationController = navigationController
+        self.toDoListRepo = toDoListRepo
         self.animated = animated
-
-        let http = NetworkHttp(
-            baseUrl: Configuration.environment.baseURL,
-            networkSession: URLSession.shared
-        )
-        
-        toDoListRepo = NetworkToDoListRepository(http: http)
     }
 }
 
