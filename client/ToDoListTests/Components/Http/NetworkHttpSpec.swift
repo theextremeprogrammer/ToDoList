@@ -13,7 +13,7 @@ class NetworkHttpSpec: QuickSpec {
                 // Sadly, Quick does not yet support async/await the same as XCTest does:
                 //      https://github.com/Quick/Quick/issues/1084
                 Task {
-                // This test uses the SpyNetworkSession since we are only spying on the data sent to it.
+                    // This test uses the SpyNetworkSession since we are only spying on the data sent to it.
                     let spyNetworkSession = SpyNetworkSession()
                     let networkHttp = NetworkHttp(
                         baseUrl: "http://www.example.com",
@@ -37,20 +37,26 @@ class NetworkHttpSpec: QuickSpec {
             }
             
             it("ensures that newly initialized network data tasks call resume() to initiate the request") {
-                let fakeNetworkSession = FakeNetworkSession()
-                networkHttp = NetworkHttp(
-                    baseUrl: "http://www.example.com",
-                    networkSession: fakeNetworkSession
-                )
-                
-                let spySessionDataTask = SpySessionDataTask()
-                fakeNetworkSession.dataTask_returnValue = spySessionDataTask
-                
-                
-//                let _ = networkHttp.get(endpoint: "")
-                
-                
-                expect(spySessionDataTask.resume_wasCalled).to(beTrue())
+                Task {
+                    let fakeNetworkSession = FakeNetworkSession()
+                    let networkHttp = NetworkHttp(
+                        baseUrl: "http://www.example.com",
+                        networkSession: fakeNetworkSession
+                    )
+                    
+                    let spySessionDataTask = SpySessionDataTask()
+                    fakeNetworkSession.dataTask_returnValue = spySessionDataTask
+                    
+                    
+                    do {
+                        let _ = try await networkHttp.get(endpoint: "")
+                    } catch {
+                        
+                    }
+                    
+                    
+                    expect(spySessionDataTask.resume_wasCalled).to(beTrue())
+                }
             }
             
             it("returns a future which resolves the request with response data") {
