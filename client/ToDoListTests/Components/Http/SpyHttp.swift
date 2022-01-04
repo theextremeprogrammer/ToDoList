@@ -28,10 +28,9 @@ class SpyHttp: Http {
 //    private(set) var get_returnPromise = Promise<Data, HttpError>()
 
     func get(endpoint: String) async throws -> Data {
-//    func get(endpoint: String) -> Future<Data, HttpError> {
-//        // Save the argument(s) that are passed in so the test can make assertions.
-//        get_argument_endpoint = endpoint
-//
+        // Save the argument(s) that are passed in so the test can make assertions.
+        get_argument_endpoint = endpoint
+
 //        // Return the future asspociated to the promise. This way we can configure
 //        //      the promise to succeed or fail according to what we are testing.
 //        return get_returnPromise.future

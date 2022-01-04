@@ -9,7 +9,7 @@ import Foundation
 //      always navigate to the protocol definition and not the implementation. By
 //      co-locating these in the same file it makes it a bit easier to get around.
 protocol ToDoListRepository {
-//    func getAll() -> Future<[ToDoItem], RepoError>
+    func getAll() async throws -> [ToDoItem]
 //    func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError>
 }
 
@@ -20,7 +20,7 @@ struct NetworkToDoListRepository: ToDoListRepository {
         self.http = http
     }
     
-//    func getAll() -> Future<[ToDoItem], RepoError> {
+    func getAll() async throws -> [ToDoItem] {
 //        // Our http component returns a future so one way to implement this is to simply
 //        //      use the BrightFutures map() implementation to convert the result of one
 //        //      future to the result of another future. However, since an error could also
@@ -29,8 +29,8 @@ struct NetworkToDoListRepository: ToDoListRepository {
 //        //      "undefined" is returned. Due to Swift's type system - we can't even
 //        //      compile the code until we return something, so this must be added (for
 //        //      better or for worse).
-//        return http
-//            .get(endpoint: "/todos")
+        let _ = try await http
+            .get(endpoint: "/todos")
 //            .map { data in
 //                let toDoItems = try! JSONDecoder().decode([ToDoItem].self, from: data)
 //                return toDoItems
@@ -38,8 +38,9 @@ struct NetworkToDoListRepository: ToDoListRepository {
 //            .mapError { httpError in
 //                return RepoError.undefined
 //            }
-//    }
-//    
+        return []
+    }
+    
 //    func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError> {
 //        // Lots of exclamation points here. For each exclamation point, at some time
 //        //      in the future, these should be replaced with appropriate error
