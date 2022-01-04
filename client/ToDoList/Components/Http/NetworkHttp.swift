@@ -18,16 +18,16 @@ struct NetworkHttp: Http {
         //      the appropriate data or error that is received.
 //        let requestPromise = Promise<Data, HttpError>()
 //
-//        let urlString = baseUrl + endpoint
-//        let url = URL(string: urlString)!
-//        let urlRequest = URLRequest(url: url)
-//
-//        let _ = networkSession
-//            .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
+        let urlString = baseUrl + endpoint
+        let url = URL(string: urlString)!
+        let urlRequest = URLRequest(url: url)
+
+        let _ = networkSession
+            .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
 //                if let data = maybeData {
 //                    requestPromise.success(data)
 //                }
-//            }
+            }
 //            .resume()
 //
 //        return requestPromise.future
