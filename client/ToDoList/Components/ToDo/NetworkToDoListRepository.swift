@@ -21,15 +21,12 @@ struct NetworkToDoListRepository: ToDoListRepository {
     }
     
     func getAll() async throws -> [ToDoItem] {
-        // Our http component returns a future so one way to implement this is to simply
-        //      use the BrightFutures map() implementation to convert the result of one
-        //      future to the result of another future. However, since an error could also
-        //      occur, we also need to map the error from the HttpError type to the
-        //      RepoError type. Since there is no test for this yet a temporary value of
-        //      "undefined" is returned. Due to Swift's type system - we can't even
-        //      compile the code until we return something, so this must be added (for
-        //      better or for worse).
+        // This branch uses async/await to implement this, so the code can read as if it is synchronous - please note
+        //      however that the next line with `await` will wait for the function to complete before continuing.
         let data = try await http.get(endpoint: "/todos")
+        
+        // try! would be replaced here with proper error handling in case the response cannot be parsed
+        //      (driven by tests, of course)
         let toDoItems = try! JSONDecoder().decode([ToDoItem].self, from: data)
         return toDoItems
     }

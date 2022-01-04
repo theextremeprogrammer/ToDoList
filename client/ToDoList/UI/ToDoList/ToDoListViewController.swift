@@ -46,6 +46,7 @@ class ToDoListViewController: UIViewController {
         addSubviews()
         configureSubviews()
         
+        // A `Task` is used here because the following code is executed asynchronously.
         Task {
             toDoItems = try await toDoListRepo.getAll()
             reloader.reload(reloadable: self.tableView)

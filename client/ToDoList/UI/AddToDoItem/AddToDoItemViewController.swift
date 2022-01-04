@@ -100,6 +100,7 @@ fileprivate extension AddToDoItemViewController {
             .withTitle(titleTextField.text!)
             .build()
 
+        // A `Task` is used here because the following code is executed asynchronously.
         Task {
             let toDoItem = try await toDoListRepo.create(newToDo: newToDo)
             delegate?.add(toDoItem: toDoItem)

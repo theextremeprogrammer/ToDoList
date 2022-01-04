@@ -8,6 +8,13 @@ protocol NetworkSession {
 
 extension URLSession: NetworkSession {}
 
+protocol Http {
+    func get(endpoint: String) async throws -> Data
+    func post(endpoint: String, requestBody: Data) async throws -> Data
+}
+
+enum HttpError: Error {}
+
 struct NetworkHttp: Http {
     let baseUrl: String
     let networkSession: NetworkSession
@@ -42,6 +49,8 @@ struct NetworkHttp: Http {
             forHTTPHeaderField: "Content-Type"
         )
 
+        // Since there is no "async/await" version of networkSession.dataTask(with:), the special
+        //      `await withCheckedContinuation` contstruct must be used to work with async/await.
         return await withCheckedContinuation { continuation in
             networkSession
                 .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
