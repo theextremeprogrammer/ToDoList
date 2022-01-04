@@ -42,14 +42,14 @@ struct NetworkHttp: Http {
             forHTTPHeaderField: "Content-Type"
         )
 
-        let _ = networkSession
-            .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
-//                if let data = maybeData {
-//                    requestPromise.success(data)
-//                }
-            }
-            .resume()
-
-        return Data()
+        return await withCheckedContinuation { continuation in
+            networkSession
+                .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
+                    if let data = maybeData {
+                        continuation.resume(with: Result.success(data))
+                    }
+                }
+                .resume()
+        }
     }
 }

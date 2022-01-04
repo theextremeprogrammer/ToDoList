@@ -182,60 +182,31 @@ final class NetworkHttpPostTest: XCTestCase {
         XCTAssertTrue(spySessionDataTask.resume_wasCalled)
     }
     
+    func testReturnsResponseData() async {
+        // This test uses the stubNetworkSession to allow us to set data on the dataTask.
+        let stubNetworkSession = StubNetworkSession()
+        let networkHttp = NetworkHttp(
+            baseUrl: "http://www.example.com",
+            networkSession: stubNetworkSession
+        )
 
-//    func spec() {
-//        describe("http post requests") {
-//            var spyNetworkSession: SpyNetworkSession!
-//
-//            it("ensures that newly initialized network data tasks call resume() to initiate the request") {
-//                let stubNetworkSession = stubNetworkSession()
-//                networkHttp = NetworkHttp(
-//                    baseUrl: "http://www.example.com",
-//                    networkSession: stubNetworkSession
-//                )
-//
-//                let spySessionDataTask = SpySessionDataTask()
-//                stubNetworkSession.dataTask_returnValue = spySessionDataTask
-//
-//
-//                let _ = networkHttp.post(
-//                    endpoint: "http://www.example.com",
-//                    requestBody: "some data".data(using: .utf8)!
-//                )
-//
-//
-//                expect(spySessionDataTask.resume_wasCalled).to(beTrue())
-//            }
-//
-//            it("resolves the request with response data") {
-//                // This test uses the stubNetworkSession to allow us to set data on the dataTask.
-//                let stubNetworkSession = stubNetworkSession()
-//                networkHttp = NetworkHttp(
-//                    baseUrl: "http://www.example.com",
-//                    networkSession: stubNetworkSession
-//                )
-//
-//                let responseData = "POST Response".data(using: String.Encoding.utf8)
-//                stubNetworkSession.dataTask_completionHandler_inputs = (
-//                    maybeData: responseData,
-//                    maybeResponse: nil,
-//                    maybeError: nil
-//                )
-//
-//
-//                let maybeResponseFuture = networkHttp.post(
-//                    endpoint: "http://www.example.com",
-//                    requestBody: "some data".data(using: .utf8)!
-//                )
-//
-//                var actualData: Data?
-//                maybeResponseFuture.onSuccess { data in
-//                    actualData = data
-//                }
-//
-//
-//                expect(actualData).toEventually(equal(responseData))
-//            }
-//        }
-//    }
+        let responseData = "POST Response".data(using: String.Encoding.utf8)
+        stubNetworkSession.dataTask_completionHandler_inputs = (
+            maybeData: responseData,
+            maybeResponse: nil,
+            maybeError: nil
+        )
+
+
+        var actualData: Data?
+        do {
+            actualData = try await networkHttp.post(
+                endpoint: "http://www.example.com",
+                requestBody: "some data".data(using: .utf8)!
+            )
+        } catch {}
+
+
+        expect(actualData).to(equal(responseData))
+    }
 }
