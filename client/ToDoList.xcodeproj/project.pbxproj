@@ -412,12 +412,12 @@
 		B8C70D60219573D9001AB367 /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				B871361B2195870500D9C489 /* StubNetworkSession.swift */,
 				B8C70D62219573EA001AB367 /* NetworkHttpGetTest.swift */,
 				52C5CC8727842A1500A6DF6D /* NetworkHttpPostTest.swift */,
 				B82180BB219C192A00780BA7 /* SpyHttp.swift */,
 				B87136192195850800D9C489 /* SpyNetworkSession.swift */,
 				B800B8BA219EB89700BAE051 /* SpySessionDataTask.swift */,
+				B871361B2195870500D9C489 /* StubNetworkSession.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -593,11 +593,11 @@
 				B8ED821D21A63393007D5D14 /* DummyReloader.swift in Sources */,
 				B8ED821B21A63343007D5D14 /* DummyRouter.swift in Sources */,
 				B8A55CC521ABB97C0046F80A /* DummyToDoListRepository.swift in Sources */,
-				B871361C2195870500D9C489 /* StubNetworkSession.swift in Sources */,
 				B825839F21B51F8D000D0922 /* FakeToDoListRepo.swift in Sources */,
 				B867A2EB223A87AA009724BE /* i18nSpec.swift in Sources */,
 				B88F5E7B21A540060074ADBE /* NavigationRouterSpec.swift in Sources */,
 				B8C70D63219573EA001AB367 /* NetworkHttpGetTest.swift in Sources */,
+				52C5CC8827842A1500A6DF6D /* NetworkHttpPostTest.swift in Sources */,
 				B80FCC27219421860021CF3F /* NetworkToDoListRepositorySpec.swift in Sources */,
 				B86E72EA21A65EA9006B9AC0 /* NewToDoItemSpec.swift in Sources */,
 				B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */,
@@ -606,11 +606,11 @@
 				B82180BC219C192A00780BA7 /* SpyHttp.swift in Sources */,
 				B871361A2195850800D9C489 /* SpyNetworkSession.swift in Sources */,
 				B8536B03219EC4CB00BE7026 /* SpyReloadable.swift in Sources */,
-				52C5CC8827842A1500A6DF6D /* NetworkHttpPostTest.swift in Sources */,
 				B800B8C3219EC1FB00BAE051 /* SpyReloader.swift in Sources */,
 				B88F5E7621A53A760074ADBE /* SpyRouter.swift in Sources */,
 				B800B8BB219EB89700BAE051 /* SpySessionDataTask.swift in Sources */,
 				B8ED822121A63EA5007D5D14 /* SpyToDoListRepo.swift in Sources */,
+				B871361C2195870500D9C489 /* StubNetworkSession.swift in Sources */,
 				B80FCC20219418340021CF3F /* StubToDoListRepository.swift in Sources */,
 				B86E72EC21A65F31006B9AC0 /* ToDoItemSpec.swift in Sources */,
 				5B6AD8EFF0F647F4A3E25D1E /* ToDoListViewControllerBuilder.swift in Sources */,
