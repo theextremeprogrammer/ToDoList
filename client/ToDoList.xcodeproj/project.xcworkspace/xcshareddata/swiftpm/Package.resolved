@@ -2,15 +2,6 @@
   "object": {
     "pins": [
       {
-        "package": "BrightFutures",
-        "repositoryURL": "https://github.com/Thomvis/BrightFutures",
-        "state": {
-          "branch": "master",
-          "revision": "8f51ed022816b6f9db68ebe8e3bc65bb1cbf1525",
-          "version": null
-        }
-      },
-      {
         "package": "CwlCatchException",
         "repositoryURL": "https://github.com/mattgallagher/CwlCatchException.git",
         "state": {

@@ -46,12 +46,12 @@ class ToDoListViewController: UIViewController {
         addSubviews()
         configureSubviews()
         
-        toDoListRepo
-            .getAll()
-            .onSuccess { toDoItems in
-                self.toDoItems = toDoItems
-                self.reloader.reload(reloadable: self.tableView)
-            }
+//        toDoListRepo
+//            .getAll()
+//            .onSuccess { toDoItems in
+//                self.toDoItems = toDoItems
+//                self.reloader.reload(reloadable: self.tableView)
+//            }
     }
 
     override func updateViewConstraints() {

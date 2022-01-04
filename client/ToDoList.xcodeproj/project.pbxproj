@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5266F851273517FE005432D1 /* BrightFutures in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F850273517FE005432D1 /* BrightFutures */; };
 		5266F8542735180A005432D1 /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F8532735180A005432D1 /* PureLayout */; };
 		5266F85627351823005432D1 /* Succinct in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85527351823005432D1 /* Succinct */; };
 		5266F85827351823005432D1 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85727351823005432D1 /* Quick */; };
@@ -148,7 +147,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5266F851273517FE005432D1 /* BrightFutures in Frameworks */,
 				5266F8542735180A005432D1 /* PureLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -459,7 +457,6 @@
 			);
 			name = ToDoList;
 			packageProductDependencies = (
-				5266F850273517FE005432D1 /* BrightFutures */,
 				5266F8532735180A005432D1 /* PureLayout */,
 			);
 			productName = ToDoList;
@@ -525,7 +522,6 @@
 				5266F846273517CF005432D1 /* XCRemoteSwiftPackageReference "Succinct" */,
 				5266F849273517DB005432D1 /* XCRemoteSwiftPackageReference "Quick" */,
 				5266F84C273517E8005432D1 /* XCRemoteSwiftPackageReference "Nimble" */,
-				5266F84F273517FE005432D1 /* XCRemoteSwiftPackageReference "BrightFutures" */,
 				5266F8522735180A005432D1 /* XCRemoteSwiftPackageReference "PureLayout" */,
 			);
 			productRefGroup = B82B33112191886D007FB06B /* Products */;
@@ -695,7 +691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -804,7 +800,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -861,7 +857,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1023,14 +1019,6 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		5266F84F273517FE005432D1 /* XCRemoteSwiftPackageReference "BrightFutures" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Thomvis/BrightFutures";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		5266F8522735180A005432D1 /* XCRemoteSwiftPackageReference "PureLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/PureLayout/PureLayout";
@@ -1042,11 +1030,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5266F850273517FE005432D1 /* BrightFutures */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5266F84F273517FE005432D1 /* XCRemoteSwiftPackageReference "BrightFutures" */;
-			productName = BrightFutures;
-		};
 		5266F8532735180A005432D1 /* PureLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5266F8522735180A005432D1 /* XCRemoteSwiftPackageReference "PureLayout" */;

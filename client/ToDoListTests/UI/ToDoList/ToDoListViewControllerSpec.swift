@@ -1,7 +1,6 @@
 import Quick
 import Nimble
 import Succinct
-import BrightFutures
 import UIKit
 @testable import ToDoList
 
@@ -32,14 +31,14 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                 }
                 
                 it("displays the title of several to do list items") {
-                    stubToDoListRepository.getAll_returnPromise.success([
-                        ToDoItemBuilder()
-                            .withTitle("Get groceries")
-                            .build(),
-                        ToDoItemBuilder()
-                            .withTitle("Pick up dry cleaning")
-                            .build()
-                    ])
+//                    stubToDoListRepository.getAll_returnPromise.success([
+//                        ToDoItemBuilder()
+//                            .withTitle("Get groceries")
+//                            .build(),
+//                        ToDoItemBuilder()
+//                            .withTitle("Pick up dry cleaning")
+//                            .build()
+//                    ])
                     
                     
                     expect(toDoListTableViewController.hasLabel(withExactText: "Get groceries")).toEventually(beTrue())
@@ -47,7 +46,7 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                 }
                 
                 it("reloads the tableview's data once the repository returns data") {
-                    stubToDoListRepository.getAll_returnPromise.success([])
+//                    stubToDoListRepository.getAll_returnPromise.success([])
                     
                     
                     expect(spyReloader.reload_argument_reloadable).toEventually(beAKindOf(UITableView.self))

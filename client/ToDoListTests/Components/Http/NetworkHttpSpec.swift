@@ -17,7 +17,7 @@ class NetworkHttpSpec: QuickSpec {
                 )
                 
                 
-                let _ = networkHttp.get(endpoint: "/endpoint")
+//                let _ = networkHttp.get(endpoint: "/endpoint")
                 
                 
                 let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
@@ -35,7 +35,7 @@ class NetworkHttpSpec: QuickSpec {
                 fakeNetworkSession.dataTask_returnValue = spySessionDataTask
                 
                 
-                let _ = networkHttp.get(endpoint: "")
+//                let _ = networkHttp.get(endpoint: "")
                 
                 
                 expect(spySessionDataTask.resume_wasCalled).to(beTrue())
@@ -57,12 +57,12 @@ class NetworkHttpSpec: QuickSpec {
                 )
                 
                 
-                let maybeResponseFuture = networkHttp.get(endpoint: "http://www.example.com")
+//                let maybeResponseFuture = networkHttp.get(endpoint: "http://www.example.com")
                 
                 var actualData: Data?
-                maybeResponseFuture.onSuccess { data in
-                    actualData = data
-                }
+//                maybeResponseFuture.onSuccess { data in
+//                    actualData = data
+//                }
                 
                 
                 expect(actualData).toEventually(equal(responseData))
@@ -81,10 +81,10 @@ class NetworkHttpSpec: QuickSpec {
                     )
                     
                     
-                    let _ = networkHttp.post(
-                        endpoint: "/endpoint",
-                        requestBody: "some data".data(using: .utf8)!
-                    )
+//                    let _ = networkHttp.post(
+//                        endpoint: "/endpoint",
+//                        requestBody: "some data".data(using: .utf8)!
+//                    )
                 }
                 
                 it("sets the request type to POST") {
@@ -119,10 +119,10 @@ class NetworkHttpSpec: QuickSpec {
                 fakeNetworkSession.dataTask_returnValue = spySessionDataTask
                 
                 
-                let _ = networkHttp.post(
-                    endpoint: "http://www.example.com",
-                    requestBody: "some data".data(using: .utf8)!
-                )
+//                let _ = networkHttp.post(
+//                    endpoint: "http://www.example.com",
+//                    requestBody: "some data".data(using: .utf8)!
+//                )
                 
                 
                 expect(spySessionDataTask.resume_wasCalled).to(beTrue())
@@ -144,15 +144,15 @@ class NetworkHttpSpec: QuickSpec {
                 )
                 
                 
-                let maybeResponseFuture = networkHttp.post(
-                    endpoint: "http://www.example.com",
-                    requestBody: "some data".data(using: .utf8)!
-                )
+//                let maybeResponseFuture = networkHttp.post(
+//                    endpoint: "http://www.example.com",
+//                    requestBody: "some data".data(using: .utf8)!
+//                )
                 
                 var actualData: Data?
-                maybeResponseFuture.onSuccess { data in
-                    actualData = data
-                }
+//                maybeResponseFuture.onSuccess { data in
+//                    actualData = data
+//                }
                 
                 
                 expect(actualData).toEventually(equal(responseData))

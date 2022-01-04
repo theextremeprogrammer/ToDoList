@@ -1,7 +1,6 @@
 import Quick
 import Nimble
 import Succinct
-import BrightFutures
 @testable import ToDoList
 
 class NetworkToDoListRepositorySpec: QuickSpec {
@@ -18,7 +17,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                 }
 
                 it("hits the expected endpoint") {
-                    let _ = toDoListRepo.getAll()
+//                    let _ = toDoListRepo.getAll()
 
 
                     expect(spyHttp.get_argument_endpoint).to(equal("/todos"))
@@ -28,12 +27,12 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                     it("returns a future with to do items from the http response") {
                         var toDoItems: [ToDoItem]? = nil
                         AsyncExpectation.execute() { expectation in
-                            toDoListRepo
-                                .getAll()
-                                .onSuccess { returnedToDoItems in
-                                    toDoItems = returnedToDoItems
-                                    expectation.fulfill()
-                                }
+//                            toDoListRepo
+//                                .getAll()
+//                                .onSuccess { returnedToDoItems in
+//                                    toDoItems = returnedToDoItems
+//                                    expectation.fulfill()
+//                                }
 
                             // We can use a multi-string literal 
                             let jsonResponse = """
@@ -50,7 +49,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                                   }
                                 ]
                                """
-                            spyHttp.get_returnPromise.success(jsonResponse.data(using: .utf8)!)
+//                            spyHttp.get_returnPromise.success(jsonResponse.data(using: .utf8)!)
                         }
 
 
@@ -77,7 +76,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                         .build()
 
 
-                    let _ = toDoListRepo.create(newToDo: newToDo)
+//                    let _ = toDoListRepo.create(newToDo: newToDo)
 
 
                     expect(spyHttp.post_argument_endpoint).to(equal("/todos"))
@@ -89,7 +88,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                         .build()
 
 
-                    let _ = toDoListRepo.create(newToDo: newToDo)
+//                    let _ = toDoListRepo.create(newToDo: newToDo)
 
 
                     // Sadly if the JSON here doesn't perfectly match the JSON coming
@@ -113,12 +112,12 @@ class NetworkToDoListRepositorySpec: QuickSpec {
 
                         var returnedToDoItem: ToDoItem? = nil
                         AsyncExpectation.execute() { expectation in
-                            toDoListRepo
-                                .create(newToDo: newToDo)
-                                .onSuccess { toDoItem in
-                                    returnedToDoItem = toDoItem
-                                    expectation.fulfill()
-                                }
+//                            toDoListRepo
+//                                .create(newToDo: newToDo)
+//                                .onSuccess { toDoItem in
+//                                    returnedToDoItem = toDoItem
+//                                    expectation.fulfill()
+//                                }
 
                             let jsonResponse = """
                                 {
@@ -127,7 +126,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                                   "completed": false
                                 }
                                """
-                            spyHttp.post_returnPromise.success(jsonResponse.data(using: .utf8)!)
+//                            spyHttp.post_returnPromise.success(jsonResponse.data(using: .utf8)!)
                         }
 
 
