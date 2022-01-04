@@ -11,6 +11,7 @@
 		5266F85627351823005432D1 /* Succinct in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85527351823005432D1 /* Succinct */; };
 		5266F85827351823005432D1 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85727351823005432D1 /* Quick */; };
 		5266F85A27351823005432D1 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85927351823005432D1 /* Nimble */; };
+		52C5CC8827842A1500A6DF6D /* NetworkHttpPostTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C5CC8727842A1500A6DF6D /* NetworkHttpPostTest.swift */; };
 		5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AD4932909A9BAF2E57516 /* Assets.xcassets */; };
 		5B6AD2493D89E434B2156BD1 /* AddToDoItemViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ADBDE115E29D4BA752BE6 /* AddToDoItemViewControllerSpec.swift */; };
 		5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */; };
@@ -53,7 +54,7 @@
 		B88F5E7F21A541A50074ADBE /* AddToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88F5E7E21A541A50074ADBE /* AddToDoItemViewController.swift */; };
 		B8A55CC521ABB97C0046F80A /* DummyToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A55CC421ABB97C0046F80A /* DummyToDoListRepository.swift */; };
 		B8A55CCB21ABEED00046F80A /* SpyAddToDoItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A55CCA21ABEED00046F80A /* SpyAddToDoItemDelegate.swift */; };
-		B8C70D63219573EA001AB367 /* NetworkHttpSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */; };
+		B8C70D63219573EA001AB367 /* NetworkHttpGetTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70D62219573EA001AB367 /* NetworkHttpGetTest.swift */; };
 		B8CCC73021940DB1001E4DB9 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */; };
 		B8ED821B21A63343007D5D14 /* DummyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821A21A63343007D5D14 /* DummyRouter.swift */; };
 		B8ED821D21A63393007D5D14 /* DummyReloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821C21A63393007D5D14 /* DummyReloader.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		52C5CC8727842A1500A6DF6D /* NetworkHttpPostTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttpPostTest.swift; sourceTree = "<group>"; };
 		52E10ADA27351ABE000B7227 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52E10ADC27351CB0000B7227 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B6AD0B838BB1D31AC119DC5 /* ToDoListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -134,7 +136,7 @@
 		B8A55CC421ABB97C0046F80A /* DummyToDoListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyToDoListRepository.swift; sourceTree = "<group>"; };
 		B8A55CCA21ABEED00046F80A /* SpyAddToDoItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyAddToDoItemDelegate.swift; sourceTree = "<group>"; };
 		B8A7025121918C630034B11D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttpSpec.swift; sourceTree = "<group>"; };
+		B8C70D62219573EA001AB367 /* NetworkHttpGetTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttpGetTest.swift; sourceTree = "<group>"; };
 		B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
 		B8ED821A21A63343007D5D14 /* DummyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRouter.swift; sourceTree = "<group>"; };
 		B8ED821C21A63393007D5D14 /* DummyReloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyReloader.swift; sourceTree = "<group>"; };
@@ -411,7 +413,8 @@
 			isa = PBXGroup;
 			children = (
 				B871361B2195870500D9C489 /* StubNetworkSession.swift */,
-				B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */,
+				B8C70D62219573EA001AB367 /* NetworkHttpGetTest.swift */,
+				52C5CC8727842A1500A6DF6D /* NetworkHttpPostTest.swift */,
 				B82180BB219C192A00780BA7 /* SpyHttp.swift */,
 				B87136192195850800D9C489 /* SpyNetworkSession.swift */,
 				B800B8BA219EB89700BAE051 /* SpySessionDataTask.swift */,
@@ -594,7 +597,7 @@
 				B825839F21B51F8D000D0922 /* FakeToDoListRepo.swift in Sources */,
 				B867A2EB223A87AA009724BE /* i18nSpec.swift in Sources */,
 				B88F5E7B21A540060074ADBE /* NavigationRouterSpec.swift in Sources */,
-				B8C70D63219573EA001AB367 /* NetworkHttpSpec.swift in Sources */,
+				B8C70D63219573EA001AB367 /* NetworkHttpGetTest.swift in Sources */,
 				B80FCC27219421860021CF3F /* NetworkToDoListRepositorySpec.swift in Sources */,
 				B86E72EA21A65EA9006B9AC0 /* NewToDoItemSpec.swift in Sources */,
 				B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */,
@@ -603,6 +606,7 @@
 				B82180BC219C192A00780BA7 /* SpyHttp.swift in Sources */,
 				B871361A2195850800D9C489 /* SpyNetworkSession.swift in Sources */,
 				B8536B03219EC4CB00BE7026 /* SpyReloadable.swift in Sources */,
+				52C5CC8827842A1500A6DF6D /* NetworkHttpPostTest.swift in Sources */,
 				B800B8C3219EC1FB00BAE051 /* SpyReloader.swift in Sources */,
 				B88F5E7621A53A760074ADBE /* SpyRouter.swift in Sources */,
 				B800B8BB219EB89700BAE051 /* SpySessionDataTask.swift in Sources */,
