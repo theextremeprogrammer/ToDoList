@@ -53,8 +53,7 @@ class AddToDoItemViewControllerSpec: QuickSpec {
                     let expectedNewToDo = NewToDoItemBuilder()
                         .withTitle("Buy groceries")
                         .build()
-                    
-                    expect(spyToDoListRepo.create_argument_newToDo).to(equal(expectedNewToDo))
+                    expect(spyToDoListRepo.create_argument_newToDo).toEventually(equal(expectedNewToDo))
                 }
                 
                 context("when the request is successful") {
