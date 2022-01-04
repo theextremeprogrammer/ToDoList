@@ -24,15 +24,15 @@ final class NetworkHttpGetTest: XCTestCase {
     }
     
     func testHttpGet_ensuresThatNewlyInitializedNetworkDataTasksInitiateTheRequest() async {
-        let fakeNetworkSession = FakeNetworkSession()
+        let stubNetworkSession = StubNetworkSession()
         let networkHttp = NetworkHttp(
             baseUrl: "http://www.example.com",
-            networkSession: fakeNetworkSession
+            networkSession: stubNetworkSession
         )
 
         let spySessionDataTask = SpySessionDataTask()
-        fakeNetworkSession.dataTask_returnValue = spySessionDataTask
-        fakeNetworkSession.dataTask_completionHandler_inputs = (
+        stubNetworkSession.dataTask_returnValue = spySessionDataTask
+        stubNetworkSession.dataTask_completionHandler_inputs = (
             maybeData: Data(),
             maybeResponse: nil,
             maybeError: nil
@@ -48,15 +48,15 @@ final class NetworkHttpGetTest: XCTestCase {
     }
     
     func testHttpGet_returnsResponseData() async {
-        // This test uses the FakeNetworkSession to allow us to set data on the dataTask.
-        let fakeNetworkSession = FakeNetworkSession()
+        // This test uses the stubNetworkSession to allow us to set data on the dataTask.
+        let stubNetworkSession = StubNetworkSession()
         let networkHttp = NetworkHttp(
             baseUrl: "http://www.example.com",
-            networkSession: fakeNetworkSession
+            networkSession: stubNetworkSession
         )
 
         let responseData = "GET Response".data(using: String.Encoding.utf8)
-        fakeNetworkSession.dataTask_completionHandler_inputs = (
+        stubNetworkSession.dataTask_completionHandler_inputs = (
             maybeData: responseData,
             maybeResponse: nil,
             maybeError: nil
@@ -115,14 +115,14 @@ final class NetworkHttpSpec: QuickSpec {
 ////            }
 ////
 ////            it("ensures that newly initialized network data tasks call resume() to initiate the request") {
-////                let fakeNetworkSession = FakeNetworkSession()
+////                let stubNetworkSession = stubNetworkSession()
 ////                networkHttp = NetworkHttp(
 ////                    baseUrl: "http://www.example.com",
-////                    networkSession: fakeNetworkSession
+////                    networkSession: stubNetworkSession
 ////                )
 ////
 ////                let spySessionDataTask = SpySessionDataTask()
-////                fakeNetworkSession.dataTask_returnValue = spySessionDataTask
+////                stubNetworkSession.dataTask_returnValue = spySessionDataTask
 ////
 ////
 //////                let _ = networkHttp.post(
@@ -135,15 +135,15 @@ final class NetworkHttpSpec: QuickSpec {
 ////            }
 ////
 ////            it("resolves the request with response data") {
-////                // This test uses the FakeNetworkSession to allow us to set data on the dataTask.
-////                let fakeNetworkSession = FakeNetworkSession()
+////                // This test uses the stubNetworkSession to allow us to set data on the dataTask.
+////                let stubNetworkSession = stubNetworkSession()
 ////                networkHttp = NetworkHttp(
 ////                    baseUrl: "http://www.example.com",
-////                    networkSession: fakeNetworkSession
+////                    networkSession: stubNetworkSession
 ////                )
 ////
 ////                let responseData = "POST Response".data(using: String.Encoding.utf8)
-////                fakeNetworkSession.dataTask_completionHandler_inputs = (
+////                stubNetworkSession.dataTask_completionHandler_inputs = (
 ////                    maybeData: responseData,
 ////                    maybeResponse: nil,
 ////                    maybeError: nil

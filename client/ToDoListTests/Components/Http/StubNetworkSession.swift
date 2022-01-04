@@ -1,7 +1,7 @@
 import Foundation
 @testable import ToDoList
 
-class FakeNetworkSession: NetworkSession {
+class StubNetworkSession: NetworkSession {
     var dataTask_completionHandler_inputs: (maybeData: Data?, maybeResponse: URLResponse?, maybeError: Error?) = (nil, nil, nil)
     var dataTask_returnValue: SpySessionDataTask? = nil
     
