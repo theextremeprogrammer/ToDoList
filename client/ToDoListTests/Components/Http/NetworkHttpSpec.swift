@@ -2,6 +2,7 @@ import Quick
 import Nimble
 import Foundation
 @testable import ToDoList
+import XCTest
 
 class NetworkHttpSpec: QuickSpec {
     override func spec() {
@@ -9,19 +10,30 @@ class NetworkHttpSpec: QuickSpec {
 
         describe("http get requests") {
             it("makes a request to the correct endpoint") {
+                // Sadly, Quick does not yet support async/await the same as XCTest does:
+                //      https://github.com/Quick/Quick/issues/1084
+                Task {
                 // This test uses the SpyNetworkSession since we are only spying on the data sent to it.
-                let spyNetworkSession = SpyNetworkSession()
-                networkHttp = NetworkHttp(
-                    baseUrl: "http://www.example.com",
-                    networkSession: spyNetworkSession
-                )
+                    let spyNetworkSession = SpyNetworkSession()
+                    let networkHttp = NetworkHttp(
+                        baseUrl: "http://www.example.com",
+                        networkSession: spyNetworkSession
+                    )
                 
                 
-//                let _ = networkHttp.get(endpoint: "/endpoint")
-                
-                
-                let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
-                expect(actualUrlString).to(equal("http://www.example.com/endpoint"))
+                    do {
+                        let _ = try await networkHttp.get(endpoint: "/endpoint")
+                    } catch {
+                        
+                    }
+
+
+                    let actualUrlString = spyNetworkSession.dataTask_argument_request?.url?.absoluteString
+                    // Nimble matchers also do not support async/await and throw an error
+                    //      when not called on the main thread
+                    //expect(actualUrlString).to(equal("http://www.example.com/endpoint"))
+                    XCTAssertEqual(actualUrlString, "http://www.example.com/endpoint")
+                }
             }
             
             it("ensures that newly initialized network data tasks call resume() to initiate the request") {
