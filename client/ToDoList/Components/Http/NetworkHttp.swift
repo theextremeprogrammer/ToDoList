@@ -13,25 +13,21 @@ struct NetworkHttp: Http {
     let networkSession: NetworkSession
 
     func get(endpoint: String) async throws -> Data {
-        // First create a promise so we can return the future from this method call. We
-        //      can then call success() or failure() when we receive a response with
-        //      the appropriate data or error that is received.
-//        let requestPromise = Promise<Data, HttpError>()
-//
         let urlString = baseUrl + endpoint
         let url = URL(string: urlString)!
         let urlRequest = URLRequest(url: url)
 
-        let _ = networkSession
-            .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
-//                if let data = maybeData {
-//                    requestPromise.success(data)
-//                }
-            }
-            .resume()
-//
-//        return requestPromise.future
-        return Data()
+        // Since there is no "async/await" version of networkSession.dataTask(with:), the special
+        //      `await withCheckedContinuation` contstruct must be used to work with async/await.
+        return await withCheckedContinuation { continuation in
+            let _ = networkSession
+                .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
+                    if let data = maybeData {
+                        continuation.resume(with: Result.success(data))
+                    }
+                }
+                .resume()
+        }
     }
 
 //    func post(endpoint: String, requestBody: Data) -> Future<Data, HttpError> {
