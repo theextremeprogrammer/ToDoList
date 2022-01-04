@@ -48,7 +48,7 @@ struct NetworkHttp: Http {
 //                    requestPromise.success(data)
 //                }
             }
-//            .resume()
+            .resume()
 
         return Data()
     }

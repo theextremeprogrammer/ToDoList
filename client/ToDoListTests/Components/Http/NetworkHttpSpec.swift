@@ -154,6 +154,35 @@ final class NetworkHttpPostTest: XCTestCase {
         XCTAssertEqual(actualBodyData, "some data".data(using: .utf8))
     }
     
+    func testEnsuresThatNewlyInitializedNetworkDataTasksInitiateTheRequest() async {
+        let stubNetworkSession = StubNetworkSession()
+        let networkHttp = NetworkHttp(
+            baseUrl: "http://www.example.com",
+            networkSession: stubNetworkSession
+        )
+
+        let spySessionDataTask = SpySessionDataTask()
+        stubNetworkSession.dataTask_returnValue = spySessionDataTask
+        stubNetworkSession.dataTask_completionHandler_inputs = (
+            maybeData: Data(),
+            maybeResponse: nil,
+            maybeError: nil
+        )
+
+
+        do {
+            let _ = try await networkHttp.post(
+                endpoint: "http://www.example.com",
+                requestBody: "some data".data(using: .utf8)!
+            )
+
+        } catch {}
+
+
+        XCTAssertTrue(spySessionDataTask.resume_wasCalled)
+    }
+    
+
 //    func spec() {
 //        describe("http post requests") {
 //            var spyNetworkSession: SpyNetworkSession!
