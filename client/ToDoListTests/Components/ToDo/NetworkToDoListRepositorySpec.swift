@@ -54,97 +54,94 @@ final class NetworkToDoListRepositoryTest: XCTestCase {
         XCTAssertEqual(toDoItems.last?.title, "Pick up dry cleaning")
         XCTAssertEqual(toDoItems.last?.completed, true)
     }
-}
+    
+    func testCreatingNewToDoItemHitsTheExpectedEndpoint() async {
+        let spyHttp = SpyHttp()
+        let jsonResponse = """
+            {
+              "id": 0,
+              "title": "",
+              "completed": false
+            }
+           """
+        spyHttp.post_returnValue = jsonResponse.data(using: .utf8)!
+        let toDoListRepo = NetworkToDoListRepository(http: spyHttp)
 
-//class NetworkToDoListRepositorySpec: QuickSpec {
-//    override func spec() {
-//        var toDoListRepo: NetworkToDoListRepository!
-//
-//        describe("the network to do list repository") {
-//            var spyHttp: SpyHttp!
-//
-//            describe("getting all to do list items") {
-//                context("when the request is successful") {
-//                    it("returns a future with to do items from the http response") {
-//                    }
-//                }
-//            }
-//
-//            describe("creating a new to do item") {
-//                beforeEach {
-//                    spyHttp = SpyHttp()
-//                    toDoListRepo = NetworkToDoListRepository(http: spyHttp)
-//                }
-//
-//                it("hits the expected endpoint") {
-//                    let newToDo = NewToDoItemBuilder()
-//                        .withTitle("Make restaurant reservation")
-//                        .build()
-//
-//
-//                    let _ = toDoListRepo.create(newToDo: newToDo)
-//
-//
-//                    expect(spyHttp.post_argument_endpoint).to(equal("/todos"))
-//                }
-//
-//                it("passes the request body to the http request for the new to do item") {
-//                    let newToDo = NewToDoItemBuilder()
-//                        .withTitle("Make restaurant reservation")
-//                        .build()
-//
-//
-//                    let _ = toDoListRepo.create(newToDo: newToDo)
-//
-//
-//                    // Sadly if the JSON here doesn't perfectly match the JSON coming
-//                    //      back from the call then this test fails - so we cannot format
-//                    //      the JSON inside this string in a more readable way. This means
-//                    //      that auto-formatting will break this layout. There must be a
-//                    //      better way.
-//                    let expectedJSON = """
-//                        {"title":"Make restaurant reservation"}
-//                        """
-//                    let expectedJSONData = expectedJSON.data(using: .utf8)!
-//                    expect(spyHttp.post_argument_requestBody).to(equal(expectedJSONData))
-//                }
-//
-//                context("when the request is successful") {
-//                    it("returns a future with the to do item from the response") {
-//                        let newToDo = NewToDoItemBuilder()
-//                            .withTitle("Make restaurant reservation")
-//                            .build()
-//
-//
-//                        var returnedToDoItem: ToDoItem? = nil
-//                        AsyncExpectation.execute() { expectation in
-//                            toDoListRepo
-//                                .create(newToDo: newToDo)
-//                                .onSuccess { toDoItem in
-//                                    returnedToDoItem = toDoItem
-//                                    expectation.fulfill()
-//                                }
-//
-//                            let jsonResponse = """
-//                                {
-//                                  "id": 99,
-//                                  "title": "Make restaurant reservation",
-//                                  "completed": false
-//                                }
-//                               """
-//                            spyHttp.post_returnPromise.success(jsonResponse.data(using: .utf8)!)
-//                        }
-//
-//
-//                        let expectedToDoItem = ToDoItemBuilder()
-//                            .withId(99)
-//                            .withTitle("Make restaurant reservation")
-//                            .withCompleted(false)
-//                            .build()
-//                        expect(returnedToDoItem).to(equal(expectedToDoItem))
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
+        let newToDo = NewToDoItemBuilder()
+            .withTitle("Make restaurant reservation")
+            .build()
+        
+        
+        do {
+            let _ = try await toDoListRepo.create(newToDo: newToDo)
+        } catch {}
+        
+        
+        expect(spyHttp.post_argument_endpoint).to(equal("/todos"))
+    }
+    
+    func testCreatingNewToDoItemPassesRequestBody() async {
+        let spyHttp = SpyHttp()
+        let jsonResponse = """
+            {
+              "id": 0,
+              "title": "",
+              "completed": false
+            }
+           """
+        spyHttp.post_returnValue = jsonResponse.data(using: .utf8)!
+        let toDoListRepo = NetworkToDoListRepository(http: spyHttp)
+
+        let newToDo = NewToDoItemBuilder()
+            .withTitle("Make restaurant reservation")
+            .build()
+        
+        
+        do {
+            let _ = try await toDoListRepo.create(newToDo: newToDo)
+        } catch {}
+
+        
+        // Sadly if the JSON here doesn't perfectly match the JSON coming
+        //      back from the call then this test fails - so we cannot format
+        //      the JSON inside this string in a more readable way. This means
+        //      that auto-formatting will break this layout. There must be a
+        //      better way.
+        let expectedJSON = """
+            {"title":"Make restaurant reservation"}
+            """
+        let expectedJSONData = expectedJSON.data(using: .utf8)!
+        expect(spyHttp.post_argument_requestBody).to(equal(expectedJSONData))
+    }
+    
+    func testCreatingNewToDoItem_whenTheRequestIsSuccessful_returnsCreatedToDoItem() async {
+        let spyHttp = SpyHttp()
+        let jsonResponse = """
+            {
+              "id": 99,
+              "title": "Make restaurant reservation",
+              "completed": false
+            }
+           """
+        spyHttp.post_returnValue = jsonResponse.data(using: .utf8)!
+        let toDoListRepo = NetworkToDoListRepository(http: spyHttp)
+
+        let newToDo = NewToDoItemBuilder()
+            .withTitle("Make restaurant reservation")
+            .build()
+        
+        
+        var returnedToDoItem: ToDoItem? = nil
+        do {
+            returnedToDoItem = try await toDoListRepo.create(newToDo: newToDo)
+        } catch {}
+
+        
+        let expectedToDoItem = ToDoItemBuilder()
+            .withId(99)
+            .withTitle("Make restaurant reservation")
+            .withCompleted(false)
+            .build()
+        expect(returnedToDoItem).to(equal(expectedToDoItem))
+    }
+}

@@ -2,13 +2,12 @@
 
 final class DummyToDoListRepository: ToDoListRepository {
     func getAll() async throws -> [ToDoItem] {
-        //        assertionFailure("getAll() - not expected to have been called")
-        //        return Future()
+        assertionFailure("getAll() - not expected to have been called")
         return []
     }
     
-//    func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError> {
-//        assertionFailure("create() - not expected to have been called")
-//        return Future()
-//    }
+    func create(newToDo: NewToDoItem) async throws -> ToDoItem {
+        assertionFailure("create() - not expected to have been called")
+        return ToDoItem(id: -1, title: "", completed: false)
+    }
 }

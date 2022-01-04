@@ -38,12 +38,11 @@ class SpyHttp: Http {
     
     private(set) var post_argument_endpoint: String? = nil
     private(set) var post_argument_requestBody: Data? = nil
-//    private(set) var post_returnPromise = Promise<Data, HttpError>()
+    var post_returnValue = Data()
     func post(endpoint: String, requestBody: Data) async throws -> Data {
-//        post_argument_endpoint = endpoint
-//        post_argument_requestBody = requestBody
-//
-//        return post_returnPromise.future
-        return Data()
+        post_argument_endpoint = endpoint
+        post_argument_requestBody = requestBody
+
+        return post_returnValue
     }
 }

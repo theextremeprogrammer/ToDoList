@@ -10,7 +10,7 @@ import Foundation
 //      co-locating these in the same file it makes it a bit easier to get around.
 protocol ToDoListRepository {
     func getAll() async throws -> [ToDoItem]
-//    func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError>
+    func create(newToDo: NewToDoItem) async throws -> ToDoItem
 }
 
 struct NetworkToDoListRepository: ToDoListRepository {
@@ -34,24 +34,19 @@ struct NetworkToDoListRepository: ToDoListRepository {
         return toDoItems
     }
     
-//    func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError> {
-//        // Lots of exclamation points here. For each exclamation point, at some time
-//        //      in the future, these should be replaced with appropriate error
-//        //      handling for when something goes wrong to ensure that this renders
-//        //      properly for the end-user.
-//        let jsonData = try! JSONEncoder().encode(newToDo)
-//        
-//        return http
-//            .post(
-//                endpoint: "/todos",
-//                requestBody: jsonData
-//            )
-//            .map { data in
-//                let toDoItem = try! JSONDecoder().decode(ToDoItem.self, from: data)
-//                return toDoItem
-//            }
-//            .mapError { httpError in
-//                return RepoError.undefined
-//            }
-//    }
+    func create(newToDo: NewToDoItem) async throws -> ToDoItem {
+        // Lots of exclamation points here. For each exclamation point, at some time
+        //      in the future, these should be replaced with appropriate error
+        //      handling for when something goes wrong to ensure that this renders
+        //      properly for the end-user.
+        let jsonData = try! JSONEncoder().encode(newToDo)
+
+        let data = try await http
+            .post(
+                endpoint: "/todos",
+                requestBody: jsonData
+            )
+        let toDoItem = try! JSONDecoder().decode(ToDoItem.self, from: data)
+        return toDoItem
+    }
 }

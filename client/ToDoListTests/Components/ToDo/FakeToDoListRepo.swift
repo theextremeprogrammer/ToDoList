@@ -5,13 +5,13 @@ final class FakeToDoListRepo: ToDoListRepository {
         return []
     }
     
-//    func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError> {
-//        let toDoItem = ToDoItemBuilder()
-//            .withId(1)
-//            .withTitle(newToDo.title)
-//            .withCompleted(false)
-//            .build()
-//
-//        return Future(value: toDoItem)
-//    }
+    func create(newToDo: NewToDoItem) async throws -> ToDoItem {
+        let toDoItem = ToDoItemBuilder()
+            .withId(1)
+            .withTitle(newToDo.title)
+            .withCompleted(false)
+            .build()
+        
+        return toDoItem
+    }
 }
