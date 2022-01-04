@@ -6,12 +6,10 @@ import XCTest
 
 class NetworkHttpSpec: QuickSpec {
     override func spec() {
-        var networkHttp: NetworkHttp!
-
         describe("http get requests") {
             it("makes a request to the correct endpoint") {
-                // Sadly, Quick does not yet support async/await the same as XCTest does:
-                //      https://github.com/Quick/Quick/issues/1084
+                // Sadly, Quick does not yet support async/await the same as XCTest does, so each test needs to be
+                //      wrapped in a Task to execute properly: https://github.com/Quick/Quick/issues/1084
                 Task {
                     // This test uses the SpyNetworkSession since we are only spying on the data sent to it.
                     let spyNetworkSession = SpyNetworkSession()
@@ -23,8 +21,6 @@ class NetworkHttpSpec: QuickSpec {
                 
                     do {
                         let _ = try await networkHttp.get(endpoint: "/endpoint")
-                    } catch {
-                        
                     }
 
 
@@ -50,8 +46,6 @@ class NetworkHttpSpec: QuickSpec {
                     
                     do {
                         let _ = try await networkHttp.get(endpoint: "")
-                    } catch {
-                        
                     }
                     
                     
@@ -80,8 +74,6 @@ class NetworkHttpSpec: QuickSpec {
                     var actualData: Data?
                     do {
                         actualData = try await networkHttp.get(endpoint: "http://www.example.com")
-                    } catch {
-                        
                     }
                     
                     
