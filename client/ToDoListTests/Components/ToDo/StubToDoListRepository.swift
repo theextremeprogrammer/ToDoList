@@ -1,17 +1,15 @@
 @testable import ToDoList
 
 class StubToDoListRepository: ToDoListRepository {
-//    private(set) var getAll_returnPromise = Promise<[ToDoItem], RepoError>()
+    var getAll_returnValue: [ToDoItem] = []
     func getAll() async throws -> [ToDoItem] {
-//        // If this Stub Repository is being used then we should always expect to get
-//        //      something back from it, and if not it's OK for this to complain.
-//        return getAll_returnPromise.future
-        return []
+        // If this Stub Repository is being used then we should always expect to get
+        //      something back from it, and if not it's OK for this to complain.
+        return getAll_returnValue
     }
 
-//    private(set) var create_returnPromise = Promise<ToDoItem, RepoError>()
+    var create_returnValue: ToDoItem? = nil
     func create(newToDo: NewToDoItem) async throws -> ToDoItem {
-//        return create_returnPromise.future
-        return ToDoItem(id: -1, title: "", completed: false)
+        return create_returnValue!
     }
 }
