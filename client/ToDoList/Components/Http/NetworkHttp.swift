@@ -31,20 +31,17 @@ struct NetworkHttp: Http {
     }
 
     func post(endpoint: String, requestBody: Data) async throws -> Data {
-//        let requestPromise = Promise<Data, HttpError>()
-//
         let urlString = baseUrl + endpoint
         let url = URL(string: urlString)!
         var urlRequest = URLRequest(url: url)
-//
-//        urlRequest.httpMethod = "POST"
-//        urlRequest.httpBody = requestBody
-//
-//        urlRequest.setValue(
-//            "application/json; charset=utf-8",
-//            forHTTPHeaderField: "Content-Type"
-//        )
-//
+
+        urlRequest.httpMethod = "POST"
+        urlRequest.httpBody = requestBody
+        urlRequest.setValue(
+            "application/json; charset=utf-8",
+            forHTTPHeaderField: "Content-Type"
+        )
+
         let _ = networkSession
             .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
 //                if let data = maybeData {
@@ -52,8 +49,7 @@ struct NetworkHttp: Http {
 //                }
             }
 //            .resume()
-//
-//        return requestPromise.future
+
         return Data()
     }
 }
