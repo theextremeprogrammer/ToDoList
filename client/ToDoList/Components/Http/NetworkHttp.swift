@@ -30,12 +30,12 @@ struct NetworkHttp: Http {
         }
     }
 
-//    func post(endpoint: String, requestBody: Data) -> Future<Data, HttpError> {
+    func post(endpoint: String, requestBody: Data) async throws -> Data {
 //        let requestPromise = Promise<Data, HttpError>()
 //
-//        let urlString = baseUrl + endpoint
-//        let url = URL(string: urlString)!
-//        var urlRequest = URLRequest(url: url)
+        let urlString = baseUrl + endpoint
+        let url = URL(string: urlString)!
+        var urlRequest = URLRequest(url: url)
 //
 //        urlRequest.httpMethod = "POST"
 //        urlRequest.httpBody = requestBody
@@ -45,14 +45,15 @@ struct NetworkHttp: Http {
 //            forHTTPHeaderField: "Content-Type"
 //        )
 //
-//        let _ = networkSession
-//            .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
+        let _ = networkSession
+            .dataTask(with: urlRequest) { (maybeData, maybeUrlResponse, maybeError) in
 //                if let data = maybeData {
 //                    requestPromise.success(data)
 //                }
-//            }
+            }
 //            .resume()
 //
 //        return requestPromise.future
-//    }
+        return Data()
+    }
 }
