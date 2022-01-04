@@ -25,16 +25,13 @@ class SpyHttp: Http {
     //
     // The format used for the names of these variables is:
     //      <methodname>_returnPromise
-//    private(set) var get_returnPromise = Promise<Data, HttpError>()
+    var get_returnValue = Data()
 
     func get(endpoint: String) async throws -> Data {
         // Save the argument(s) that are passed in so the test can make assertions.
         get_argument_endpoint = endpoint
-
-//        // Return the future asspociated to the promise. This way we can configure
-//        //      the promise to succeed or fail according to what we are testing.
-//        return get_returnPromise.future
-        return Data()
+        
+        return get_returnValue
     }
 
     

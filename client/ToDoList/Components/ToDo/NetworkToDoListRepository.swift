@@ -21,24 +21,17 @@ struct NetworkToDoListRepository: ToDoListRepository {
     }
     
     func getAll() async throws -> [ToDoItem] {
-//        // Our http component returns a future so one way to implement this is to simply
-//        //      use the BrightFutures map() implementation to convert the result of one
-//        //      future to the result of another future. However, since an error could also
-//        //      occur, we also need to map the error from the HttpError type to the
-//        //      RepoError type. Since there is no test for this yet a temporary value of
-//        //      "undefined" is returned. Due to Swift's type system - we can't even
-//        //      compile the code until we return something, so this must be added (for
-//        //      better or for worse).
-        let _ = try await http
-            .get(endpoint: "/todos")
-//            .map { data in
-//                let toDoItems = try! JSONDecoder().decode([ToDoItem].self, from: data)
-//                return toDoItems
-//            }
-//            .mapError { httpError in
-//                return RepoError.undefined
-//            }
-        return []
+        // Our http component returns a future so one way to implement this is to simply
+        //      use the BrightFutures map() implementation to convert the result of one
+        //      future to the result of another future. However, since an error could also
+        //      occur, we also need to map the error from the HttpError type to the
+        //      RepoError type. Since there is no test for this yet a temporary value of
+        //      "undefined" is returned. Due to Swift's type system - we can't even
+        //      compile the code until we return something, so this must be added (for
+        //      better or for worse).
+        let data = try await http.get(endpoint: "/todos")
+        let toDoItems = try! JSONDecoder().decode([ToDoItem].self, from: data)
+        return toDoItems
     }
     
 //    func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError> {

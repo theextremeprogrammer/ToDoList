@@ -7,6 +7,7 @@ import Succinct
 final class NetworkToDoListRepositoryTest: XCTestCase {
     func testGettingAllToDoListItems() async {
         let spyHttp = SpyHttp()
+        spyHttp.get_returnValue = "[]".data(using: .utf8)!
         let toDoListRepo = NetworkToDoListRepository(http: spyHttp)
 
 
@@ -16,6 +17,42 @@ final class NetworkToDoListRepositoryTest: XCTestCase {
 
 
         XCTAssertEqual(spyHttp.get_argument_endpoint, "/todos")
+    }
+    
+    func testWhenTheRequestIsSuccessful_returnsToDoItems() async {
+        let spyHttp = SpyHttp()
+        let jsonResponse = """
+            [
+              {
+                "id": 1,
+                "title": "Get groceries",
+                "completed": false
+              },
+              {
+                "id": 2,
+                "title": "Pick up dry cleaning",
+                "completed": true
+              }
+            ]
+           """
+        spyHttp.get_returnValue = jsonResponse.data(using: .utf8)!
+
+        let toDoListRepo = NetworkToDoListRepository(http: spyHttp)
+
+
+        var toDoItems: [ToDoItem] = []
+        do {
+            toDoItems = try await toDoListRepo.getAll()
+        } catch {}
+
+        
+        XCTAssertEqual(toDoItems.count, 2)
+        XCTAssertEqual(toDoItems.first?.id, 1)
+        XCTAssertEqual(toDoItems.first?.title, "Get groceries")
+        XCTAssertEqual(toDoItems.first?.completed, false)
+        XCTAssertEqual(toDoItems.last?.id, 2)
+        XCTAssertEqual(toDoItems.last?.title, "Pick up dry cleaning")
+        XCTAssertEqual(toDoItems.last?.completed, true)
     }
 }
 
@@ -27,55 +64,8 @@ final class NetworkToDoListRepositoryTest: XCTestCase {
 //            var spyHttp: SpyHttp!
 //
 //            describe("getting all to do list items") {
-//                beforeEach {
-//                    spyHttp = SpyHttp()
-//                    toDoListRepo = NetworkToDoListRepository(http: spyHttp)
-//                }
-//
-//                it("hits the expected endpoint") {
-//                    let _ = toDoListRepo.getAll()
-//
-//
-//                    expect(spyHttp.get_argument_endpoint).to(equal("/todos"))
-//                }
-//
 //                context("when the request is successful") {
 //                    it("returns a future with to do items from the http response") {
-//                        var toDoItems: [ToDoItem]? = nil
-//                        AsyncExpectation.execute() { expectation in
-//                            toDoListRepo
-//                                .getAll()
-//                                .onSuccess { returnedToDoItems in
-//                                    toDoItems = returnedToDoItems
-//                                    expectation.fulfill()
-//                                }
-//
-//                            // We can use a multi-string literal
-//                            let jsonResponse = """
-//                                [
-//                                  {
-//                                    "id": 1,
-//                                    "title": "Get groceries",
-//                                    "completed": false
-//                                  },
-//                                  {
-//                                    "id": 2,
-//                                    "title": "Pick up dry cleaning",
-//                                    "completed": true
-//                                  }
-//                                ]
-//                               """
-//                            spyHttp.get_returnPromise.success(jsonResponse.data(using: .utf8)!)
-//                        }
-//
-//
-//                        expect(toDoItems?.count).to(equal(2))
-//                        expect(toDoItems?.first?.id).to(equal(1))
-//                        expect(toDoItems?.first?.title).to(equal("Get groceries"))
-//                        expect(toDoItems?.first?.completed).to(equal(false))
-//                        expect(toDoItems?.last?.id).to(equal(2))
-//                        expect(toDoItems?.last?.title).to(equal("Pick up dry cleaning"))
-//                        expect(toDoItems?.last?.completed).to(equal(true))
 //                    }
 //                }
 //            }
