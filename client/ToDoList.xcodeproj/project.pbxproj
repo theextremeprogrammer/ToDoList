@@ -44,7 +44,6 @@
 		B86E72EA21A65EA9006B9AC0 /* NewToDoItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E72E921A65EA9006B9AC0 /* NewToDoItemSpec.swift */; };
 		B86E72EC21A65F31006B9AC0 /* ToDoItemSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E72EB21A65F31006B9AC0 /* ToDoItemSpec.swift */; };
 		B871022F21A2615200B34891 /* ToDoItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B871022E21A2615200B34891 /* ToDoItemTableViewCell.swift */; };
-		B87136162195812500D9C489 /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136152195812500D9C489 /* Http.swift */; };
 		B87136182195812A00D9C489 /* NetworkHttp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136172195812A00D9C489 /* NetworkHttp.swift */; };
 		B871361A2195850800D9C489 /* SpyNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87136192195850800D9C489 /* SpyNetworkSession.swift */; };
 		B871361C2195870500D9C489 /* FakeNetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B871361B2195870500D9C489 /* FakeNetworkSession.swift */; };
@@ -124,7 +123,6 @@
 		B86E72E921A65EA9006B9AC0 /* NewToDoItemSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoItemSpec.swift; sourceTree = "<group>"; };
 		B86E72EB21A65F31006B9AC0 /* ToDoItemSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemSpec.swift; sourceTree = "<group>"; };
 		B871022E21A2615200B34891 /* ToDoItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoItemTableViewCell.swift; sourceTree = "<group>"; };
-		B87136152195812500D9C489 /* Http.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
 		B87136172195812A00D9C489 /* NetworkHttp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttp.swift; sourceTree = "<group>"; };
 		B87136192195850800D9C489 /* SpyNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyNetworkSession.swift; sourceTree = "<group>"; };
 		B871361B2195870500D9C489 /* FakeNetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeNetworkSession.swift; sourceTree = "<group>"; };
@@ -424,7 +422,6 @@
 		B8C70D61219573E2001AB367 /* Http */ = {
 			isa = PBXGroup;
 			children = (
-				B87136152195812500D9C489 /* Http.swift */,
 				B87136172195812A00D9C489 /* NetworkHttp.swift */,
 			);
 			path = Http;
@@ -568,7 +565,6 @@
 				5B6AD48BABD14A56A08540C6 /* Configuration.swift in Sources */,
 				B800B8BF219EC1A300BAE051 /* DefaultReloader.swift in Sources */,
 				B825839D21B517D7000D0922 /* Environment.swift in Sources */,
-				B87136162195812500D9C489 /* Http.swift in Sources */,
 				B814267E22393B7000C07D22 /* i18n.swift in Sources */,
 				B82B333B21918A1E007FB06B /* main.swift in Sources */,
 				B88F5E7921A53A940074ADBE /* NavigationRouter.swift in Sources */,

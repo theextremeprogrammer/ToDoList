@@ -9,6 +9,13 @@ protocol NetworkSession {
 
 extension URLSession: NetworkSession {}
 
+enum HttpError: Error {}
+
+protocol Http {
+    func get(endpoint: String) -> Future<Data, HttpError>
+    func post(endpoint: String, requestBody: Data) -> Future<Data, HttpError>
+}
+
 struct NetworkHttp: Http {
     let baseUrl: String
     let networkSession: NetworkSession
