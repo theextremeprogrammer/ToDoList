@@ -1,13 +1,13 @@
 @testable import ToDoList
 
 final class SpyToDoListRepo: ToDoListRepository {
-    func getAll() -> AsyncReturnValue<[ToDoItem], RepoError> {
-        return AsyncReturnValue()
+    func getAll() -> AsyncReturnValue<[ToDoItem]> {
+        return AsyncReturnValue<[ToDoItem]>.pending().promise
     }
     
     private(set) var create_argument_newToDo: NewToDoItem? = nil
-    func create(newToDo: NewToDoItem) -> AsyncReturnValue<ToDoItem, RepoError> {
+    func create(newToDo: NewToDoItem) -> AsyncReturnValue<ToDoItem> {
         create_argument_newToDo = newToDo
-        return AsyncReturnValue()
+        return AsyncReturnValue<ToDoItem>.pending().promise
     }
 }

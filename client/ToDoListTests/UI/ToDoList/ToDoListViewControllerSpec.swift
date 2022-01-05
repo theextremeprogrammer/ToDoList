@@ -31,7 +31,7 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                 }
                 
                 it("displays the title of several to do list items") {
-                    stubToDoListRepository.getAll_returnPromise.success([
+                    stubToDoListRepository.getAll_returnResolver.fulfill([
                         ToDoItemBuilder()
                             .withTitle("Get groceries")
                             .build(),
@@ -46,7 +46,7 @@ class ToDoListTableViewControllerSpec: QuickSpec {
                 }
                 
                 it("reloads the tableview's data once the repository returns data") {
-                    stubToDoListRepository.getAll_returnPromise.success([])
+                    stubToDoListRepository.getAll_returnResolver.fulfill([])
                     
                     
                     expect(spyReloader.reload_argument_reloadable).toEventually(beAKindOf(UITableView.self))

@@ -29,10 +29,11 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                         AsyncExpectation.execute() { expectation in
                             toDoListRepo
                                 .getAll()
-                                .onSuccess { returnedToDoItems in
+                                .done { returnedToDoItems in
                                     toDoItems = returnedToDoItems
                                     expectation.fulfill()
                                 }
+                                .catch { _ in }
 
                             // We can use a multi-string literal 
                             let jsonResponse = """
@@ -49,7 +50,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                                   }
                                 ]
                                """
-                            spyHttp.get_returnPromise.success(jsonResponse.data(using: .utf8)!)
+                            spyHttp.get_returnResolver.fulfill(jsonResponse.data(using: .utf8)!)
                         }
 
 
@@ -114,10 +115,11 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                         AsyncExpectation.execute() { expectation in
                             toDoListRepo
                                 .create(newToDo: newToDo)
-                                .onSuccess { toDoItem in
+                                .done { toDoItem in
                                     returnedToDoItem = toDoItem
                                     expectation.fulfill()
                                 }
+                                .catch { _ in }
 
                             let jsonResponse = """
                                 {
@@ -126,7 +128,7 @@ class NetworkToDoListRepositorySpec: QuickSpec {
                                   "completed": false
                                 }
                                """
-                            spyHttp.post_returnPromise.success(jsonResponse.data(using: .utf8)!)
+                            spyHttp.post_returnResolver.fulfill(jsonResponse.data(using: .utf8)!)
                         }
 
 

@@ -25,26 +25,26 @@ class SpyHttp: Http {
     //
     // The format used for the names of these variables is:
     //      <methodname>_returnPromise
-    private(set) var get_returnPromise = AsyncPromise<Data, HttpError>()
+    private(set) var ( get_returnPromise, get_returnResolver ) = AsyncReturnValue<Data>.pending()
 
-    func get(endpoint: String) -> AsyncReturnValue<Data, HttpError> {
+    func get(endpoint: String) -> AsyncReturnValue<Data> {
         // Save the argument(s) that are passed in so the test can make assertions.
         get_argument_endpoint = endpoint
         
         // Return the future asspociated to the promise. This way we can configure
         //      the promise to succeed or fail according to what we are testing.
-        return get_returnPromise.future
+        return get_returnPromise
     }
     
     
     
     private(set) var post_argument_endpoint: String? = nil
     private(set) var post_argument_requestBody: Data? = nil
-    private(set) var post_returnPromise = AsyncPromise<Data, HttpError>()
-    func post(endpoint: String, requestBody: Data) -> AsyncReturnValue<Data, HttpError> {
+    private(set) var ( post_returnPromise, post_returnResolver ) = AsyncReturnValue<Data>.pending()
+    func post(endpoint: String, requestBody: Data) -> AsyncReturnValue<Data> {
         post_argument_endpoint = endpoint
         post_argument_requestBody = requestBody
         
-        return post_returnPromise.future
+        return post_returnPromise
     }
 }
