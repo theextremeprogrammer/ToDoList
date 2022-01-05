@@ -9,8 +9,8 @@ import Foundation
 //      always navigate to the protocol definition and not the implementation. By
 //      co-locating these in the same file it makes it a bit easier to get around.
 protocol ToDoListRepository {
-    func getAll() -> AsyncReturnValue<[ToDoItem], RepoError>
-    func create(newToDo: NewToDoItem) -> AsyncReturnValue<ToDoItem, RepoError>
+    func getAll() -> AsyncReturnValue<[ToDoItem]>
+    func create(newToDo: NewToDoItem) -> AsyncReturnValue<ToDoItem>
 }
 
 struct NetworkToDoListRepository: ToDoListRepository {
@@ -20,7 +20,9 @@ struct NetworkToDoListRepository: ToDoListRepository {
         self.http = http
     }
     
-    func getAll() -> AsyncReturnValue<[ToDoItem], RepoError> {
+    private var (getAllPromise, getAllResolver) = AsyncReturnValue<[ToDoItem]>.pending()
+
+    func getAll() -> AsyncReturnValue<[ToDoItem]> {
         // Our http component returns a future so one way to implement this is to simply
         //      use the BrightFutures map() implementation to convert the result of one
         //      future to the result of another future. However, since an error could also
@@ -29,35 +31,37 @@ struct NetworkToDoListRepository: ToDoListRepository {
         //      "undefined" is returned. Due to Swift's type system - we can't even
         //      compile the code until we return something, so this must be added (for
         //      better or for worse).
-        return http
+        http
             .get(endpoint: "/todos")
-            .map { data in
+            .done { data in
                 let toDoItems = try! JSONDecoder().decode([ToDoItem].self, from: data)
-                return toDoItems
+                getAllResolver.fulfill(toDoItems)
             }
-            .mapError { httpError in
-                return RepoError.undefined
-            }
+            .catch { _ in }
+        
+        return getAllPromise
     }
     
-    func create(newToDo: NewToDoItem) -> AsyncReturnValue<ToDoItem, RepoError> {
+    private var (createPromise, createResolver) = AsyncReturnValue<ToDoItem>.pending()
+
+    func create(newToDo: NewToDoItem) -> AsyncReturnValue<ToDoItem> {
         // Lots of exclamation points here. For each exclamation point, at some time
         //      in the future, these should be replaced with appropriate error
         //      handling for when something goes wrong to ensure that this renders
         //      properly for the end-user.
         let jsonData = try! JSONEncoder().encode(newToDo)
         
-        return http
+        http
             .post(
                 endpoint: "/todos",
                 requestBody: jsonData
             )
-            .map { data in
+            .done { data in
                 let toDoItem = try! JSONDecoder().decode(ToDoItem.self, from: data)
-                return toDoItem
+                createResolver.fulfill(toDoItem)
             }
-            .mapError { httpError in
-                return RepoError.undefined
-            }
+            .catch { _ in }
+        
+        return createPromise
     }
 }

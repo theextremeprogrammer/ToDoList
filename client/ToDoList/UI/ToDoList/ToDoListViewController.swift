@@ -48,10 +48,11 @@ class ToDoListViewController: UIViewController {
         
         toDoListRepo
             .getAll()
-            .onSuccess { toDoItems in
+            .done { toDoItems in
                 self.toDoItems = toDoItems
                 self.reloader.reload(reloadable: self.tableView)
             }
+            .catch { _ in }
     }
 
     override func updateViewConstraints() {

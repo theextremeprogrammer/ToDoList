@@ -102,9 +102,10 @@ fileprivate extension AddToDoItemViewController {
 
         let _ = toDoListRepo
             .create(newToDo: newToDo)
-            .onSuccess { toDoItem in
+            .done { toDoItem in
                 self.delegate?.add(toDoItem: toDoItem)
                 self.router.dismissModalVC()
             }
+            .catch { _ in }
     }
 }

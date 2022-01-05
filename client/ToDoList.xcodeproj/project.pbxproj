@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5266F851273517FE005432D1 /* BrightFutures in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F850273517FE005432D1 /* BrightFutures */; };
 		5266F8542735180A005432D1 /* PureLayout in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F8532735180A005432D1 /* PureLayout */; };
 		5266F85627351823005432D1 /* Succinct in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85527351823005432D1 /* Succinct */; };
 		5266F85827351823005432D1 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85727351823005432D1 /* Quick */; };
 		5266F85A27351823005432D1 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85927351823005432D1 /* Nimble */; };
-		52C59E5F2785301E00B8D39C /* BrightFuturesTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C59E5E2785301E00B8D39C /* BrightFuturesTypes.swift */; };
+		52E9D305278533CB00E46D01 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 52E9D304278533CB00E46D01 /* PromiseKit */; };
+		52E9D3072785343100E46D01 /* PromiseKitTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9D3062785343100E46D01 /* PromiseKitTypes.swift */; };
+		52E9D30B2785416D00E46D01 /* PMKFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 52E9D30A2785416D00E46D01 /* PMKFoundation */; };
+		52E9D30D2785456F00E46D01 /* PromiseKitNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52E9D30C2785456F00E46D01 /* PromiseKitNetworking.swift */; };
 		5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AD4932909A9BAF2E57516 /* Assets.xcassets */; };
 		5B6AD2493D89E434B2156BD1 /* AddToDoItemViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ADBDE115E29D4BA752BE6 /* AddToDoItemViewControllerSpec.swift */; };
 		5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */; };
@@ -86,9 +88,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		52C59E5E2785301E00B8D39C /* BrightFuturesTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightFuturesTypes.swift; sourceTree = "<group>"; };
 		52E10ADA27351ABE000B7227 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52E10ADC27351CB0000B7227 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		52E9D3062785343100E46D01 /* PromiseKitTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKitTypes.swift; sourceTree = "<group>"; };
+		52E9D30C2785456F00E46D01 /* PromiseKitNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKitNetworking.swift; sourceTree = "<group>"; };
 		5B6AD0B838BB1D31AC119DC5 /* ToDoListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerSpec.swift; sourceTree = "<group>"; };
 		5B6AD2AC48120B63E3C9E067 /* ToDoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewController.swift; sourceTree = "<group>"; };
 		5B6AD42E111941A0DCBD6BE4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
@@ -148,8 +151,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5266F851273517FE005432D1 /* BrightFutures in Frameworks */,
+				52E9D305278533CB00E46D01 /* PromiseKit in Frameworks */,
 				5266F8542735180A005432D1 /* PureLayout in Frameworks */,
+				52E9D30B2785416D00E46D01 /* PMKFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,7 +173,8 @@
 		52C59E5D2785300200B8D39C /* Async */ = {
 			isa = PBXGroup;
 			children = (
-				52C59E5E2785301E00B8D39C /* BrightFuturesTypes.swift */,
+				52E9D3062785343100E46D01 /* PromiseKitTypes.swift */,
+				52E9D30C2785456F00E46D01 /* PromiseKitNetworking.swift */,
 			);
 			path = Async;
 			sourceTree = "<group>";
@@ -467,8 +472,9 @@
 			);
 			name = ToDoList;
 			packageProductDependencies = (
-				5266F850273517FE005432D1 /* BrightFutures */,
 				5266F8532735180A005432D1 /* PureLayout */,
+				52E9D304278533CB00E46D01 /* PromiseKit */,
+				52E9D30A2785416D00E46D01 /* PMKFoundation */,
 			);
 			productName = ToDoList;
 			productReference = B82B33102191886D007FB06B /* ToDoList.app */;
@@ -533,8 +539,9 @@
 				5266F846273517CF005432D1 /* XCRemoteSwiftPackageReference "Succinct" */,
 				5266F849273517DB005432D1 /* XCRemoteSwiftPackageReference "Quick" */,
 				5266F84C273517E8005432D1 /* XCRemoteSwiftPackageReference "Nimble" */,
-				5266F84F273517FE005432D1 /* XCRemoteSwiftPackageReference "BrightFutures" */,
 				5266F8522735180A005432D1 /* XCRemoteSwiftPackageReference "PureLayout" */,
+				52E9D303278533CB00E46D01 /* XCRemoteSwiftPackageReference "PromiseKit" */,
+				52E9D3092785416D00E46D01 /* XCRemoteSwiftPackageReference "Foundation" */,
 			);
 			productRefGroup = B82B33112191886D007FB06B /* Products */;
 			projectDirPath = "";
@@ -573,18 +580,19 @@
 			files = (
 				B88F5E7F21A541A50074ADBE /* AddToDoItemViewController.swift in Sources */,
 				5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */,
-				52C59E5F2785301E00B8D39C /* BrightFuturesTypes.swift in Sources */,
 				5B6AD48BABD14A56A08540C6 /* Configuration.swift in Sources */,
 				B800B8BF219EC1A300BAE051 /* DefaultReloader.swift in Sources */,
 				B825839D21B517D7000D0922 /* Environment.swift in Sources */,
 				B814267E22393B7000C07D22 /* i18n.swift in Sources */,
 				B82B333B21918A1E007FB06B /* main.swift in Sources */,
+				52E9D3072785343100E46D01 /* PromiseKitTypes.swift in Sources */,
 				B88F5E7921A53A940074ADBE /* NavigationRouter.swift in Sources */,
 				B87136182195812A00D9C489 /* NetworkHttp.swift in Sources */,
 				B80FCC1C219417D00021CF3F /* NetworkToDoListRepository.swift in Sources */,
 				B8ED821F21A63E73007D5D14 /* NewToDoItem.swift in Sources */,
 				B80FCC252194201A0021CF3F /* RepoError.swift in Sources */,
 				B85F4542219411AC00C5AB33 /* ToDoItem.swift in Sources */,
+				52E9D30D2785456F00E46D01 /* PromiseKitNetworking.swift in Sources */,
 				B871022F21A2615200B34891 /* ToDoItemTableViewCell.swift in Sources */,
 				5B6ADD8130CC868C1F89113B /* ToDoListViewController.swift in Sources */,
 				5B6ADA1D066A93FF4AA87736 /* UITableView+Reloadable.swift in Sources */,
@@ -1031,14 +1039,6 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		5266F84F273517FE005432D1 /* XCRemoteSwiftPackageReference "BrightFutures" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Thomvis/BrightFutures";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 		5266F8522735180A005432D1 /* XCRemoteSwiftPackageReference "PureLayout" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/PureLayout/PureLayout";
@@ -1047,14 +1047,25 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		52E9D303278533CB00E46D01 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = exactVersion;
+				version = 6.16.2;
+			};
+		};
+		52E9D3092785416D00E46D01 /* XCRemoteSwiftPackageReference "Foundation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PromiseKit/Foundation";
+			requirement = {
+				kind = exactVersion;
+				version = 3.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		5266F850273517FE005432D1 /* BrightFutures */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5266F84F273517FE005432D1 /* XCRemoteSwiftPackageReference "BrightFutures" */;
-			productName = BrightFutures;
-		};
 		5266F8532735180A005432D1 /* PureLayout */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5266F8522735180A005432D1 /* XCRemoteSwiftPackageReference "PureLayout" */;
@@ -1074,6 +1085,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5266F84C273517E8005432D1 /* XCRemoteSwiftPackageReference "Nimble" */;
 			productName = Nimble;
+		};
+		52E9D304278533CB00E46D01 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52E9D303278533CB00E46D01 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+		52E9D30A2785416D00E46D01 /* PMKFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52E9D3092785416D00E46D01 /* XCRemoteSwiftPackageReference "Foundation" */;
+			productName = PMKFoundation;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
