@@ -12,6 +12,7 @@
 		5266F85627351823005432D1 /* Succinct in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85527351823005432D1 /* Succinct */; };
 		5266F85827351823005432D1 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85727351823005432D1 /* Quick */; };
 		5266F85A27351823005432D1 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85927351823005432D1 /* Nimble */; };
+		52C59E5F2785301E00B8D39C /* BrightFuturesTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C59E5E2785301E00B8D39C /* BrightFuturesTypes.swift */; };
 		5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AD4932909A9BAF2E57516 /* Assets.xcassets */; };
 		5B6AD2493D89E434B2156BD1 /* AddToDoItemViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ADBDE115E29D4BA752BE6 /* AddToDoItemViewControllerSpec.swift */; };
 		5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		52C59E5E2785301E00B8D39C /* BrightFuturesTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrightFuturesTypes.swift; sourceTree = "<group>"; };
 		52E10ADA27351ABE000B7227 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52E10ADC27351CB0000B7227 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B6AD0B838BB1D31AC119DC5 /* ToDoListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52C59E5D2785300200B8D39C /* Async */ = {
+			isa = PBXGroup;
+			children = (
+				52C59E5E2785301E00B8D39C /* BrightFuturesTypes.swift */,
+			);
+			path = Async;
+			sourceTree = "<group>";
+		};
 		52E10AD427351A59000B7227 /* i18n */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +306,7 @@
 		B82B33342191889A007FB06B /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				52C59E5D2785300200B8D39C /* Async */,
 				B825839B21B51790000D0922 /* Environment */,
 				52E10AD427351A59000B7227 /* i18n */,
 				5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */,
@@ -562,6 +573,7 @@
 			files = (
 				B88F5E7F21A541A50074ADBE /* AddToDoItemViewController.swift in Sources */,
 				5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */,
+				52C59E5F2785301E00B8D39C /* BrightFuturesTypes.swift in Sources */,
 				5B6AD48BABD14A56A08540C6 /* Configuration.swift in Sources */,
 				B800B8BF219EC1A300BAE051 /* DefaultReloader.swift in Sources */,
 				B825839D21B517D7000D0922 /* Environment.swift in Sources */,

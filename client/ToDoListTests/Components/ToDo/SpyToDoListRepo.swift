@@ -1,14 +1,13 @@
-import BrightFutures
 @testable import ToDoList
 
 final class SpyToDoListRepo: ToDoListRepository {
-    func getAll() -> Future<[ToDoItem], RepoError> {
-        return Future()
+    func getAll() -> AsyncReturnValue<[ToDoItem], RepoError> {
+        return AsyncReturnValue()
     }
     
     private(set) var create_argument_newToDo: NewToDoItem? = nil
-    func create(newToDo: NewToDoItem) -> Future<ToDoItem, RepoError> {
+    func create(newToDo: NewToDoItem) -> AsyncReturnValue<ToDoItem, RepoError> {
         create_argument_newToDo = newToDo
-        return Future()
+        return AsyncReturnValue()
     }
 }

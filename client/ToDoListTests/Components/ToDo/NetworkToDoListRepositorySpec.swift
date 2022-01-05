@@ -1,7 +1,6 @@
 import Quick
 import Nimble
 import Succinct
-import BrightFutures
 @testable import ToDoList
 
 class NetworkToDoListRepositorySpec: QuickSpec {

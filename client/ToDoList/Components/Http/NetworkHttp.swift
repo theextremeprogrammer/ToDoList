@@ -1,5 +1,4 @@
 import Foundation
-import BrightFutures
 
 protocol NetworkSession {
     func dataTask(
@@ -12,19 +11,19 @@ extension URLSession: NetworkSession {}
 enum HttpError: Error {}
 
 protocol Http {
-    func get(endpoint: String) -> Future<Data, HttpError>
-    func post(endpoint: String, requestBody: Data) -> Future<Data, HttpError>
+    func get(endpoint: String) -> AsyncReturnValue<Data, HttpError>
+    func post(endpoint: String, requestBody: Data) -> AsyncReturnValue<Data, HttpError>
 }
 
 struct NetworkHttp: Http {
     let baseUrl: String
     let networkSession: NetworkSession
 
-    func get(endpoint: String) -> Future<Data, HttpError> {
+    func get(endpoint: String) -> AsyncReturnValue<Data, HttpError> {
         // First create a promise so we can return the future from this method call. We
         //      can then call success() or failure() when we receive a response with
         //      the appropriate data or error that is received.
-        let requestPromise = Promise<Data, HttpError>()
+        let requestPromise = AsyncPromise<Data, HttpError>()
         
         let urlString = baseUrl + endpoint
         let url = URL(string: urlString)!
@@ -41,8 +40,8 @@ struct NetworkHttp: Http {
         return requestPromise.future
     }
 
-    func post(endpoint: String, requestBody: Data) -> Future<Data, HttpError> {
-        let requestPromise = Promise<Data, HttpError>()
+    func post(endpoint: String, requestBody: Data) -> AsyncReturnValue<Data, HttpError> {
+        let requestPromise = AsyncPromise<Data, HttpError>()
         
         let urlString = baseUrl + endpoint
         let url = URL(string: urlString)!

@@ -1,5 +1,4 @@
 import Foundation
-import BrightFutures
 @testable import ToDoList
 
 // Often times spies and stubs are combined into a single test double.
@@ -26,9 +25,9 @@ class SpyHttp: Http {
     //
     // The format used for the names of these variables is:
     //      <methodname>_returnPromise
-    private(set) var get_returnPromise = Promise<Data, HttpError>()
+    private(set) var get_returnPromise = AsyncPromise<Data, HttpError>()
 
-    func get(endpoint: String) -> Future<Data, HttpError> {
+    func get(endpoint: String) -> AsyncReturnValue<Data, HttpError> {
         // Save the argument(s) that are passed in so the test can make assertions.
         get_argument_endpoint = endpoint
         
@@ -41,8 +40,8 @@ class SpyHttp: Http {
     
     private(set) var post_argument_endpoint: String? = nil
     private(set) var post_argument_requestBody: Data? = nil
-    private(set) var post_returnPromise = Promise<Data, HttpError>()
-    func post(endpoint: String, requestBody: Data) -> Future<Data, HttpError> {
+    private(set) var post_returnPromise = AsyncPromise<Data, HttpError>()
+    func post(endpoint: String, requestBody: Data) -> AsyncReturnValue<Data, HttpError> {
         post_argument_endpoint = endpoint
         post_argument_requestBody = requestBody
         
