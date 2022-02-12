@@ -4,21 +4,24 @@ import Succinct
 import UIKit
 @testable import ToDoList
 
-class AppDelegateSpec: QuickSpec {
+class SceneDelegateSpec: QuickSpec {
     override func spec() {
-        describe("the appliation delegate") {
+        xdescribe("the scene delegate") {
             describe("when the application launches") {
                 var spyRouter: SpyRouter!
                 
                 beforeEach {
                     spyRouter = SpyRouter()
-                    let appDelegate = AppDelegate(router: spyRouter)
+                    let sceneDelegate = SceneDelegate(router: spyRouter)
                     
-                    
-                    let _ = appDelegate.application(
-                        UIApplication.shared,
-                        didFinishLaunchingWithOptions: nil
-                    )
+
+                    // TODO: Instantiate objects needed to test the SceneDelegate
+                    //       https://qualitycoding.org/unit-test-scene-delegates/
+                    //let _ = sceneDelegate.scene(
+                    //    UIWindowScene(),
+                    //    willConnectTo: UISceneSession(),
+                    //    options: UIScene.ConnectionOptions()
+                    //)
                 }
                 
                 it("navigates to the to do list view controller") {

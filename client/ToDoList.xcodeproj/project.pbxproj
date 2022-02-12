@@ -12,6 +12,7 @@
 		5266F85627351823005432D1 /* Succinct in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85527351823005432D1 /* Succinct */; };
 		5266F85827351823005432D1 /* Quick in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85727351823005432D1 /* Quick */; };
 		5266F85A27351823005432D1 /* Nimble in Frameworks */ = {isa = PBXBuildFile; productRef = 5266F85927351823005432D1 /* Nimble */; };
+		52A31CE527B7ABFA000F87FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52A31CE427B7ABFA000F87FF /* SceneDelegate.swift */; };
 		5B6AD1077C473A3A924E8002 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B6AD4932909A9BAF2E57516 /* Assets.xcassets */; };
 		5B6AD2493D89E434B2156BD1 /* AddToDoItemViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6ADBDE115E29D4BA752BE6 /* AddToDoItemViewControllerSpec.swift */; };
 		5B6AD2F90E0E59F9D696C8FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6AD51CB6A4A8E34C204342 /* AppDelegate.swift */; };
@@ -54,7 +55,7 @@
 		B8A55CC521ABB97C0046F80A /* DummyToDoListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A55CC421ABB97C0046F80A /* DummyToDoListRepository.swift */; };
 		B8A55CCB21ABEED00046F80A /* SpyAddToDoItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A55CCA21ABEED00046F80A /* SpyAddToDoItemDelegate.swift */; };
 		B8C70D63219573EA001AB367 /* NetworkHttpSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */; };
-		B8CCC73021940DB1001E4DB9 /* AppDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */; };
+		B8CCC73021940DB1001E4DB9 /* SceneDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8CCC72F21940DB1001E4DB9 /* SceneDelegateSpec.swift */; };
 		B8ED821B21A63343007D5D14 /* DummyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821A21A63343007D5D14 /* DummyRouter.swift */; };
 		B8ED821D21A63393007D5D14 /* DummyReloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821C21A63393007D5D14 /* DummyReloader.swift */; };
 		B8ED821F21A63E73007D5D14 /* NewToDoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED821E21A63E73007D5D14 /* NewToDoItem.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		52A31CE427B7ABFA000F87FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		52E10ADA27351ABE000B7227 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		52E10ADC27351CB0000B7227 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5B6AD0B838BB1D31AC119DC5 /* ToDoListViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoListViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -134,7 +136,7 @@
 		B8A55CCA21ABEED00046F80A /* SpyAddToDoItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpyAddToDoItemDelegate.swift; sourceTree = "<group>"; };
 		B8A7025121918C630034B11D /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		B8C70D62219573EA001AB367 /* NetworkHttpSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHttpSpec.swift; sourceTree = "<group>"; };
-		B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateSpec.swift; sourceTree = "<group>"; };
+		B8CCC72F21940DB1001E4DB9 /* SceneDelegateSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegateSpec.swift; sourceTree = "<group>"; };
 		B8ED821A21A63343007D5D14 /* DummyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyRouter.swift; sourceTree = "<group>"; };
 		B8ED821C21A63393007D5D14 /* DummyReloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyReloader.swift; sourceTree = "<group>"; };
 		B8ED821E21A63E73007D5D14 /* NewToDoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewToDoItem.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				5B6AD6FB7690707120910247 /* Info.plist */,
 				5B6ADACF40DC1582CBAFA381 /* LaunchScreen.storyboard */,
 				B82B333A21918A1E007FB06B /* main.swift */,
+				52A31CE427B7ABFA000F87FF /* SceneDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -310,8 +313,8 @@
 		B82B33372191891A007FB06B /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				B8CCC72F21940DB1001E4DB9 /* AppDelegateSpec.swift */,
 				5B6AD42E111941A0DCBD6BE4 /* Info.plist */,
+				B8CCC72F21940DB1001E4DB9 /* SceneDelegateSpec.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -572,6 +575,7 @@
 				B80FCC1C219417D00021CF3F /* NetworkToDoListRepository.swift in Sources */,
 				B8ED821F21A63E73007D5D14 /* NewToDoItem.swift in Sources */,
 				B80FCC252194201A0021CF3F /* RepoError.swift in Sources */,
+				52A31CE527B7ABFA000F87FF /* SceneDelegate.swift in Sources */,
 				B85F4542219411AC00C5AB33 /* ToDoItem.swift in Sources */,
 				B871022F21A2615200B34891 /* ToDoItemTableViewCell.swift in Sources */,
 				5B6ADD8130CC868C1F89113B /* ToDoListViewController.swift in Sources */,
@@ -585,7 +589,6 @@
 			files = (
 				5B6AD5B7F045FE9601C8888F /* AddToDoItemViewControllerBuilder.swift in Sources */,
 				5B6AD2493D89E434B2156BD1 /* AddToDoItemViewControllerSpec.swift in Sources */,
-				B8CCC73021940DB1001E4DB9 /* AppDelegateSpec.swift in Sources */,
 				B8536B01219EC43500BE7026 /* DefaultReloaderSpec.swift in Sources */,
 				B8ED821D21A63393007D5D14 /* DummyReloader.swift in Sources */,
 				B8ED821B21A63343007D5D14 /* DummyRouter.swift in Sources */,
@@ -598,6 +601,7 @@
 				B80FCC27219421860021CF3F /* NetworkToDoListRepositorySpec.swift in Sources */,
 				B86E72EA21A65EA9006B9AC0 /* NewToDoItemSpec.swift in Sources */,
 				B80FCC2321941FAD0021CF3F /* Runloop+Advance.swift in Sources */,
+				B8CCC73021940DB1001E4DB9 /* SceneDelegateSpec.swift in Sources */,
 				B8239C8D2194660700CFC2F5 /* SimpleAsyncXCTestExpectation.swift in Sources */,
 				B8A55CCB21ABEED00046F80A /* SpyAddToDoItemDelegate.swift in Sources */,
 				B82180BC219C192A00780BA7 /* SpyHttp.swift in Sources */,
@@ -691,7 +695,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -800,7 +804,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -857,7 +861,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
